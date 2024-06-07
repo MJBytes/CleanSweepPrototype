@@ -4,12 +4,12 @@
 
 <head>
 
-    <!-- Required meta tags can go here -->
+    <!-- Required meta tags and links can go here -->
 
 <title>{% block title %} {% endblock %}</title>
 
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
 </head>
 
 <body>
@@ -18,15 +18,15 @@
 <nav>
     <div>
         <ul>
-            <li>Home</li>
-            <li>Profile</li>
-            <li>Tasks</li>
-            <li>About Us</li>
-            <li>Contact</li>
+            <li><a href='#home'>Home</a></li>
+            <li><a href='#profile'>Profile</a></li>
+            <li><a href='#tasks'>Tasks</a></li>
+            <li><a href='#aboutUs'>About Us</a></li>
+            <li><a href='#contact'>Contact</a></li>
         </ul>
     </div>
 </nav>
-
+{% block content %}{% endblock %}
 
 <!--Bootstrapping at the and of body-->
 </body>
