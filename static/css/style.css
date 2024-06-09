@@ -1,3 +1,4 @@
+/* static/css/style.css */
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.5;
@@ -8,7 +9,7 @@ body {
 nav ul {
     position: -webkit-sticky; /* For Safari */
     position: sticky;
-    Top: 0;
+    top: 0;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -23,12 +24,41 @@ nav li a {
     display: block;
     font-weight: 600;
     font-size: medium;
-    color: #F8F8F7; /*Adding  the color black for now while editing - will change to white once images is added*/
+    color: #F8F8F7; /* Text color set to light gray */
     text-align: center;
-    padding: 15px 30px;
+    padding: 20px 30px; /* Increased padding to make the navbar thicker */
     text-decoration: none;
 }
 
 nav li a:hover {
     background-color: #A7BA9C;
 }
+
+.navbar {
+    background: url('/static/images/Home Background.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 300px; /* Set a minimum height for the navbar */
+    align-items: flex-start; /* Align items to the top */
+    padding-top: 10px; /* Add padding at the top */
+    justify-content: space-between; /* Align items with space between them */
+}
+
+.navbar .container-fluid {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+}
+
+.navbar .navbar-nav {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+    padding-top: 10px; /* Adjust padding to position text */
+}
+
+.navbar .d-flex {
+    align-items: flex-start; /* Align search bar to the top */
+    padding-top: 10px; /* Adjust padding to position search bar */
+}
+
