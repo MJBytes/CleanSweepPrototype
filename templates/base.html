@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name ="viewpoint" content="width=device-width, initial-scale=1.0">       <!-- For responsive webpage, mobile friendly-->
     <title>{% block title %} {% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
-    <meta name ="viewpoint" content="width=device-width, initial-scale=1.0">       <!-- For responsive webpage, mobile friendly-->
-<style>
-
+    <style>
 /* to add a new image for each page--> */
-    .navbar {
+        .navbar {
         background-image: url('{{ navbar_background_url }}');
-    }
-
-</style>
-
-
+        }
+    </style>
 </head>
 
 <body>
@@ -52,7 +49,11 @@
 
 </nav>
 
-{% block content %}{% endblock %}
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
 
 </body>
 </html>
