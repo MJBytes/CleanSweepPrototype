@@ -74,7 +74,7 @@ footer {
     width: 100%;
     position: absolute;
     bottom: 0;
-    background: linear-gradient(to right, #A7BA9C, #b3c7a7, #cadbbf);
+    background: linear-gradient(to right, #A7BA9C, #95aa88);
     color: #fff;      /* Text colour */
     padding: 100px 0 30px;
     border-top-left-radius: 125px;   /* Curve of left corner */
@@ -82,8 +82,8 @@ footer {
     line-height: 20px;
 }
 
-.row {
-    width: 85%;
+footer .row {
+    width: 85%;  /* HAVE A PLAY WITH THIS */
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -91,12 +91,45 @@ footer {
     justify-content: space-between;
 }
 
-.col {
-    flex-basis: 25%;
-    padding: 10px;
+footer .col {
+    flex-basis: 10%;
+    padding: 5px;
 }
 
-.logo {
+footer .logo {
     width: 250px;
     margin-bottom: 30px;
+}
+
+footer .col h3 {
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+footer .col p {
+    margin-bottom: -6px;
+}
+
+footer .email-id {
+    width: fit-content;
+    border-bottom: 1px solid #779181; 
+    margin: 20px 0;
+}
+
+footer ul li {
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: -40px;
+}
+
+footer form {
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
 }

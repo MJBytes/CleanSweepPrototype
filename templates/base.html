@@ -8,6 +8,7 @@
     <title>{% block title %} {% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    <script src="https://kit.fontawesome.com/017c367aad.js"></script>  <!-- Font/icon kit -->
     <style>
 /* to add a new image for each page--> */
         .navbar {
@@ -61,9 +62,32 @@
             <img src="static/img/logos/logo-footer.png" class="logo">
             <p>Subscribe to Clean Sweep to enjoy cleaning inspiration and receive tips and tricks to improve your daily life.</p>
         </div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
+        <div class="col">
+            <h3>Office</h3>
+            <p>69 Clear View Road</p>
+            <p>Somewhere Amazing</p>
+            <p>In a Beautiful Town, New Zealand</p>
+            <p class="email-id">hello@cleansweep.co.nz</p>
+            <h4>+64 206 895 664</h4>
+        </div>
+        <div class="col">
+            <h3>Links</h3>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Profile</a></li>
+                <li><a href="">Tasks</a></li>
+                <li><a href="">Tips</a></li>
+                <li><a href="">About Us</a></li>
+            </ul>
+        </div>
+        <div class="col">
+            <h3>Newsletter</h3>
+            <form>
+                <i class="fa-regular fa-envelope" style="color: #e7eaee;"></i>
+                <input type="email" placeholder="Enter Email" required>
+                <button type="submit"><i class="fa-regular fa-arrow-right" style="color: #e2e5e9;"></i></button>
+            </form>
+        </div>
     </div>
 </footer>
 </body>
