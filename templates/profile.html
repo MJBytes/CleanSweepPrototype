@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block heading %}
+User Profile
+{% endblock %}
+
+{% block content %}
+<form>
+    <label for="name">Name*</label>
+    <br>
+    <input type="text" id="name">
+    <br>
+    <label for="email">Email*</label>
+    <br>
+    <input type="text" id="email">
+    <br>
+    <label for="dateofBirth">Date of Birth*</label>
+    <br>
+    <input type="text" id="dateofBirth">
+    <br><br>
+    <input type="submit" value="Save Changes">
+</form>
+
+<section class="achievements">
+    <h2>Achievements</h2>
+    <div class="achievement-category">
+        <h3>Daily Cleaning Streaks</h3>
+        <p>Current streak: </p>
+        <p>Best streak: </p>
+    </div>
+    <div class="achievement-category">
+        <h3>Weekly Cleaning Streaks</h3>
+        <p>Current streak: </p>
+        <p>Best streak: </p>
+    </div>
+    <div class="achievement-category">
+        <h3>Monthly Cleaning Streaks</h3>
+        <p>Current streak: </p>
+        <p>Best streak: </p>
+    </div>
+</section>
+
+<section class="statistics">
+    <h2>Statistics</h2>
+    <div class="statistics-category">
+        <h3>Total Rooms Cleaned</h3>
+        <p></p> <!--data from the database -->
+    </div>
+    <div class="statistics-category">
+        <h3>Hours Spent Cleaning</h3>
+        <p></p> <!-- data from the database -->
+    </div>
+    <div class="statistics-category">
+        <h3>Total Days Cleaning</h3>
+        <p></p> <!-- data from the database -->
+    </div>
+</section>
+{% endblock %}

@@ -1,6 +1,5 @@
 body {
     font-family: 'Poppins', sans-serif;
-    line-height: 1.5;
     margin: 0;
     padding: 0;
 }
@@ -30,9 +29,9 @@ body {
     display: block;
     font-weight: 600;
     font-size: medium;
-    color: #F8F8F7; 
+    color: #F8F8F7;
     text-align: center;
-    padding: 20px 30px; 
+    padding: 20px 30px;
     text-decoration: none;
 }
 
@@ -43,13 +42,13 @@ body {
 .navbar {
     background-size: cover;
     padding-top: 10px;
-    
 }
 
 .navbar .container-fluid {
     display: flex;
     align-items: center;
-    justify-content: space-between; 
+    font-family: 'Poppins', sans-serif;
+    justify-content: space-between;
 }
 
 .navbar .navbar-nav {
@@ -60,10 +59,213 @@ body {
 }
 
 .navbar .navbar-nav .nav-item .nav-link {
-    padding-top: 10px; 
+    padding-top: 10px;
 }
 
 .navbar .d-flex {
-    margin-right: 10px; 
+    margin-right: 10px;
     float: right;
+}
+
+main {
+    height: 100vh;   /* For testing footer, main is where main block content goes */
+}
+
+/* Task Categories Styles */
+.task-categories {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.task-category {
+    flex: 1;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.task-category h3 {
+    margin-bottom: 10px;
+}
+
+.task-category p {
+    margin: 0;
+}
+
+/* FOOTER */
+
+footer {
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    background: linear-gradient(to right, #A7BA9C, #95aa88);
+    color: #fff;      /* Text colour */
+    padding: 100px 0 30px;
+    border-top-left-radius: 125px;   /* Curve of left corner */
+    font-size: 13px;
+    line-height: 20px;
+    padding-top: 60px;
+    padding-left: -40px;
+    padding-bottom: 3px;
+}
+
+footer .row {
+    width: 85%;  /* HAVE A PLAY WITH THIS */
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+footer .col {
+    flex-basis: 10%;
+    padding: 5px;
+}
+
+footer .col:nth-child(2) .col:nth-child(3) {
+    flex-basis: 15%;
+}
+
+footer .logo {
+    width: 250px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    padding-top: 10px;
+    margin-left: -4px;
+}
+
+footer .col h3 {
+    width: fit-content;
+    margin-bottom: 40px;
+    padding-top: 10px;
+    position: relative;
+}
+
+footer .col h4 {
+    letter-spacing: 1px;
+}
+
+footer .col p {
+    margin-bottom: -8px;
+    margin-right: 20px;
+}
+
+footer .email-id {
+    width: fit-content;
+    border-bottom: 1px solid #779181;
+    margin: 25px 20px 0px 0px;
+    padding-bottom: 2px;
+}
+
+footer ul li {
+    list-style: none;
+    margin-bottom: 12px;
+    width: 50px;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: -40px;
+}
+
+footer form {
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
+}
+
+footer form .fa-regular {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+footer input {
+    background: transparent;
+    color: #2b3d2c;
+    border: 0;
+    outline: none;
+    width: 250px;
+}
+
+footer form button {
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+footer form button .fa-solid {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+footer .social-icons .fa-brands {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: #95aa88;
+    background: #fff;
+    margin-right: 15px;
+    cursor: pointer;
+    border: 2px solid #779181
+}
+
+footer hr {
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 20px auto;
+}
+
+footer .copyright {
+    text-align: center;
+}
+
+footer .underline {
+    width: 100%;
+    height: 3px;
+    background: #6b7e6c;;
+    border-radius: 3px;
+    position: relative;
+    top: 8px;
+    left: 0;
+    overflow: hidden;
+}
+
+footer .underline span {
+    width: 15px;
+    height: 110%;
+    background: #fff;
+    border-radius: 3px;
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    animation: moving 2s linear infinite;
+}
+
+@keyframes moving {
+    0% {
+        left: -20px;
+    }
+    100% {
+        left: 100%;
+    }
 }
