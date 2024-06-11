@@ -1,46 +1,27 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
 
 <head>
     <title>{% block title %} {% endblock %}</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+/* to add a new image for each page--> */
+    .navbar {
+        background-image: url('{{ navbar_background_url }}');
+    }
+
+</style>
+
+
 </head>
 
 <body>
 
-<!-- Top header -->
-
-<!--<div class="header">
-    <img id="call" alt="Call" src="static/img/icons/telephone.png">
-     <a id="contact" href="contact.html">Contact us</a>
-     <a id="register" href="login.html">Register</a>
-    <img id="user" alt="User" src="static/img/icons/account.png">
-     <a id="login" href="login.html">Sign in</a> 
-  </div> -->
-
-<!-- Nav Bar -->
-  <nav class="nav">
-    <a href="index.html"><img alt="Clean Sweep" src="static/img/logo.png"></a>
-      <div>
-        <a class="link" href="index.html">Home</a>
-        <a class="link" href="profile.html">Profile</a>
-        <a class="link" href="tasks.html">Cleaning Tasks</a>
-        <a class="link" href="about.html">About Us</a>
-        <a class="link" href="contact.html">Contact Us</a>
-      <div class="buttons"> 
-           <form class="search">
-            <input type="text" placeholder="Search">
-            <button type="submit"><i class="fa fa-search" style="font-size:17px"></i></button>
-           </form>
-      </div>
-  </nav>
-
-<!--<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-between">
@@ -57,7 +38,7 @@
                     <a class="nav-link" href="#">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
                 </li>
             </ul>
             <form class="d-flex" role="search">
@@ -66,49 +47,12 @@
             </form>
         </div>
     </div>
-</nav> -->
+
+  {% block heading %}{% endblock %}
+
+</nav>
 
 {% block content %}{% endblock %}
-
-<!-- Footer -->
-
-<footer class="footer">
-  <hr class="line1">
-
-<div class="footer-top">
-  <div class="footer-logo"></div>
-    <img src="static/img/logo-footer.png" alt="Logo">
-  </div>
-</div>
-
-<div class="footer-content">  <!-- Links and email subscription -->
-  <div class="footer-links">
-    <a class="link" href="index.html">Home</a>
-	<a class="link" href="profile.html">Profile</a>
-	<a class="link" href="tasks.html">Cleaning Tasks</a>
-	<a class="link" href="about.html">About Us</a>
-	<a class="link" href="contact.html">Contact Us</a>
-  </div>
-  <div class="email-bar">
-    <form action="/subscribe" method="post">
-        <label for="email">Subscribe to our newsletter:</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        <button type="submit">Subscribe</button>
-    </form>
-  </div>
-</div>
-
-<!--<hr class="line1">-->
-<div class="footer-bottom">
-	<a class="face" href="#"><img alt="Facebook" src="static/img/social-icons/facebook.png"></a>
-	<a class="insta" href="#"><img alt="Instagram" src="static/img/social-icons/instagram.png"></a>
-	<div class="line3"></div>
-	<a class="call" href="contact.html"><img alt="Contact" src="static/images/icons/phone.png"></a>
-	<a class="contact" href="contact.html"><b>Give us a call</b><br>03 528 5679</a>
-	<div class="line3"></div>
-	<a class="policy" href="#">Privacy policy</a>
-</div>
-</footer>
 
 </body>
 </html>
