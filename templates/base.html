@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
 
+<style>
+
+/* to add a new image for each page--> */
+    .navbar {
+        background-image: url('{{ navbar_background_url }}');
+    }
+
+</style>
+
+
 </head>
 
 <body>
@@ -28,7 +38,7 @@
                     <a class="nav-link" href="#">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
                 </li>
             </ul>
             <form class="d-flex" role="search">
@@ -37,6 +47,9 @@
             </form>
         </div>
     </div>
+
+  {% block heading %}{% endblock %}
+
 </nav>
 
 {% block content %}{% endblock %}
