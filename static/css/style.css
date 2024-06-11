@@ -1,6 +1,5 @@
-body {
+body {          
     font-family: 'Poppins', sans-serif;
-    line-height: 1.5;
     margin: 0;
     padding: 0;
 }
@@ -49,6 +48,7 @@ body {
 .navbar .container-fluid {
     display: flex;
     align-items: center;
+    font-family: 'Poppins', sans-serif;
     justify-content: space-between; 
 }
 
@@ -87,5 +87,16 @@ footer {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    align-items: space-between;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.col {
+    flex-basis: 25%;
+    padding: 10px;
+}
+
+.logo {
+    width: 250px;
+    margin-bottom: 30px;
 }
