@@ -67,3 +67,25 @@ body {
     margin-right: 10px; 
     float: right;
 }
+
+/* FOOTER */
+
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to right, #A7BA9C, #b3c7a7, #cadbbf);
+    color: #fff;      /* Text colour */
+    padding: 100px 0 30px;
+    border-top-left-radius: 125px;   /* Curve of left corner */
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.row {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-between;
+}
