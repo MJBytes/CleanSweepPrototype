@@ -8,6 +8,7 @@ body {
 .navbar {
     padding-bottom: 40%;
     position: relative;
+    background: no-repeat;
 }
 
 /*.navbar ul {
