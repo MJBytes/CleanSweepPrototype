@@ -3,7 +3,8 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: hsl(0, 0%, 100%);
+    height:100vh;  /* Could also be put in "main" */ 
 }
 
 
@@ -79,9 +80,7 @@ body {
     float: right;
 }*/
 
-main {
-    min-height:100vh;   /* For testing footer, main is where main block content goes */
-}
+
 
 /* FOOTER */
 
