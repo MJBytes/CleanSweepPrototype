@@ -6,10 +6,13 @@ body {
     background-color: #fff;
 }
 
+
 .navbar {
     padding-bottom: 40%;
     position: relative;
     background: no-repeat;
+    /*background-position: fixed;*/
+    height: 50px;
 }
 
 /*.navbar ul {
