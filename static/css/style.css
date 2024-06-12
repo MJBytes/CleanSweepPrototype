@@ -7,13 +7,60 @@ body {
     height:100vh;          /* Could also be put in "main" */ 
 }
 
+/* NAV BAR */
 
 .navbar {
     padding-bottom: 40%;
     position: relative;
     background: no-repeat;
     /*background-position: fixed;*/
-    height: 50px;
+    height: 60px;
+    width: 100%;
+    max-width: 1200%;
+    margin: 0 auto;
+    display: flex;
+   /* align-items: center; /* Revisit */
+    justify-content: space-between;
+}
+
+.navbar li {
+    list-style: none;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;     /* Font size of links */
+    cursor: pointer;
+}
+
+.navbar a:hover {
+    color: #285a31;
+}
+
+.navbar .header-logo {
+    width: 200px;
+    /*margin-bottom: 30px; Take out if not needed */
+    margin-left: -3px;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle_btn {
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+/* HEADER */
+
+header {
+    position: relative;
+    padding: 0 2rem;
 }
 
 /*.navbar ul {
@@ -90,7 +137,6 @@ footer {
     bottom: 0;
     background: linear-gradient(to right, #A7BA9C, #95aa88);
     color: #fff;      /* Text colour */
-    padding: 100px 0 30px;
     border-top-left-radius: 125px;   /* Curve of left corner */
     font-size: 13px;
     line-height: 20px;
