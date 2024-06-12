@@ -13,13 +13,23 @@
 /* to add a new image for each page--> */
         .navbar {
         background-image: url('{{ navbar_background_url }}');
+       
         }
     </style>
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<header>
+    <div class="navbar">
+        <a herf="#"><img src="static/img/logos/logo.png" class="header-logo" alt="Clean Sweep"></a>
+
+    </div>
+</header>
+
+
+
+<!--<nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-between">
@@ -44,13 +54,11 @@
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
-    </div>
-
-  {% block heading %}{% endblock %}
-
-</nav>
+    </div> 
+</nav>-->
 
 <main>
+    {% block heading %}{% endblock %}
     {% block content %}
     {% endblock %}
 </main>
@@ -59,7 +67,7 @@
 <footer>
     <div class="row">
         <div class="col">
-            <img src="static/img/logos/logo-footer.png" class="logo">
+            <img src="static/img/logos/logo-footer.png" alt="Clean Sweep" class="logo">
             <p>Subscribe to Clean Sweep to enjoy cleaning inspiration and receive tips and tricks to improve your daily life.</p>
         </div>
         <div class="col">
