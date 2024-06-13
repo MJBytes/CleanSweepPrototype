@@ -24,7 +24,7 @@ body {
     display: flex;
     width: 100%;
     max-width: 1200%;
-    height: 60px;
+    height: 57.8px;
     justify-content: space-between;
     align-items: center;
 }
@@ -45,7 +45,8 @@ body {
 }
 
 .navbar .header-logo {
-    width: 200px;
+    width: 125px;
+    margin-left: 20px;
     display: flex;
 }
 
@@ -79,8 +80,9 @@ body {
 }
 
 .navbar .action_btn:hover {
-    box-shadow: 0 5px 5px 0 rgba(34, 53, 31, 0.24),0 10px 15px 0 rgba(159, 230, 168, 0.19);
-    color: #385538;
+    /* box-shadow: 0 5px 5px 0 rgba(40, 61, 37, 0.24),0 10px 15px 0 rgba(166, 230, 174, 0.19); */
+    scale: 1.05;
+    color: #2f472f;
 }
 
 
