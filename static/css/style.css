@@ -11,12 +11,18 @@ body {
 
 .navbar {
     padding-bottom: 40%;
-   /*  position: relative; */  
+    position: relative; 
     background: no-repeat;
-    /*background-position: fixed;*/
+    background-position: fixed;
     max-width: 1200%;
     margin: 0 auto;
     margin-bottom: 30px;
+}
+
+@media (max-width: 800px) {  /* RESPONSIVE HEIGHT OF NAVBAR IMAGE WHEN PAGE SCALED DOWN */
+    .navbar {
+        height: 250px;
+        }
 }
 
 .nav-container {
@@ -56,14 +62,15 @@ body {
 }
 
 .navbar .toggle_btn {     /* Hamburger */
-    color: #fff;
+    color: #6b7763;
+    margin-right: 20px;
     font-size: 1.5rem;
     cursor: pointer;
     display: none;
 }
 
 .navbar .action_btn {      /* Login button */
-    background-color: #7e8b76;
+    background-color: #677260;
     color: #fff;
     padding: 5px 20px;
     border: none;
@@ -77,21 +84,104 @@ body {
     margin-bottom: auto;
     margin-right: 20px;
     width: 40px;
+    transition: scale 0.2 ease;
 }
 
 .navbar .action_btn:hover {
-    /* box-shadow: 0 5px 5px 0 rgba(40, 61, 37, 0.24),0 10px 15px 0 rgba(166, 230, 174, 0.19); */
     scale: 1.05;
-    color: #2f472f;
+    color: #323b32;
 }
 
+.navbar .action_btn:active {
+    scale: 0.95;
+}
+
+/* DROP DOWN MENU */
+
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 70px;
+    height: 0;
+    width: 400px;
+    background: rgba(7, 8, 7, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+    height: 290px;
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_btn {
+    background-color: #677260;
+    color: #fff;
+    padding: 5px 20px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 85%;
+    transition: scale 0.2 ease;
+}
+
+.dropdown_menu .action_btn:hover {
+    scale: 1.05;
+    color: #323b32;
+}
+
+.dropdown_menu .action_btn:active {
+    scale: 0.80;
+}
+
+.dropdown_menu a {
+    cursor: pointer;
+}
+
+.dropdown_menu a:hover {
+    color: white;
+}
+
+/* RESPONSIVE NAV/HEADER DESIGN */
+
+@media(max-width: 1010px) {
+    .navbar .links,
+    .navbar .action_btn {
+        display: none;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+    }
+}
 
 /* HEADER */
 
 header {
     position: relative;
-    padding: 0 2rem;
+    padding: 0 1rem;
 }
+
+/* MAIN CONTENT */
 
 main {
     width: 100%;

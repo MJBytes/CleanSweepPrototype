@@ -39,8 +39,32 @@
         </div>
     </div>
     </div>
+    <div class="dropdown_menu">
+        <li><a herf="index.html">Home</a></li>
+            <li><a herf="#">Profile</a></li>
+            <li><a herf="#">Tasks</a></li>
+            <li><a herf="#">About</a></li>
+            <li><a herf="#">Tips & Tricks</a></li>
+            <li><a herf="#" class="action_btn">Login</a></li>
+    </div>
 </header>
 
+<!-- DROP DOWN JS FUNCTIONALITY -->
+
+<script>                         
+    const toggleBtn = document.querySelector('.toggle_btn') 
+    const toggleBtnIcon = document.querySelector('.toggle_btn i') 
+    const dropDownMenu = document.querySelector('.dropdown_menu') 
+
+    toggleBtn.onclick = function () {
+        dropDownMenu.classList.toggle('open')
+        const isOpen = dropDownMenu.classList.contains('open')
+
+        toggleBtnIcon.classList = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+    }
+</script>
 
 
 <!--<nav class="navbar navbar-expand-lg bg-body-tertiary">
