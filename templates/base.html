@@ -4,67 +4,49 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name ="viewpoint" content="width=device-width, initial-scale=1.0">       <!-- For responsive webpage, mobile friendly-->
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">       <!-- For responsive webpage, mobile friendly-->
     <title>{% block title %} {% endblock %}</title>
     <link rel="icon" type="image/x-icon" href="static/img/logos/favicon.ico">       <!-- Favicon -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
     <script src="https://kit.fontawesome.com/017c367aad.js"></script>  <!-- Font/icon kit -->
     <style>
-/* to add a new image for each page--> */
+        /* to add a new image for each page--> */
         .navbar {
-        background-image: url('{{ navbar_background_url }}');
-        background-position: top;
-        background-size: cover;
+            background-image: url('{{ navbar_background_url }}');
+            background-position: top;
+            background-size: cover;
         }
     </style>
 </head>
 
 <body>
-
 <header>
     <div class="navbar">
-    <div class="nav-container">
-        <a herf="index.html"><img src="static/img/logos/logo.png" alt="Clean Sweep" class="header-logo"></a>
-        <ul class="links">
-            <li><a herf="index.html">Home</a></li>
-            <li><a herf="#">Profile</a></li>
-            <li><a herf="#">Tasks</a></li>
-            <li><a herf="#">About</a></li>
-            <li><a herf="#">Tips & Tricks</a></li>
-        </ul>
-        <a herf="#" class="action_btn">Login</a>      <!-- Login page link goes here -->
-        <div class="toggle_btn">
-            <i class="fa-solid fa-bars"></i>          <!-- Responsive hamburger icon -->
+        <div class="nav-container">
+            <a herf="#"><img src="static/img/logos/logo.png" alt="Clean Sweep" class="header-logo"></a>
+            <ul class="links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Tasks</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Tips & Tricks</a></li>
+            </ul>
+            <a href="#" class="action_btn">Login</a>      <!-- Login page link goes here -->
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>          <!-- Responsive hamburger icon -->
+            </div>
         </div>
     </div>
-    </div>
     <div class="dropdown_menu">
-        <li><a herf="index.html">Home</a></li>
-            <li><a herf="#">Profile</a></li>
-            <li><a herf="#">Tasks</a></li>
-            <li><a herf="#">About</a></li>
-            <li><a herf="#">Tips & Tricks</a></li>
-            <li><a herf="#" class="action_btn">Login</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Tasks</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Tips & Tricks</a></li>
+        <li><a href="#" class="action_btn">Login</a></li>
     </div>
 </header>
-
-<!-- DROP DOWN JS FUNCTIONALITY -->
-
-<script>                         
-    const toggleBtn = document.querySelector('.toggle_btn') 
-    const toggleBtnIcon = document.querySelector('.toggle_btn i') 
-    const dropDownMenu = document.querySelector('.dropdown_menu') 
-
-    toggleBtn.onclick = function () {
-        dropDownMenu.classList.toggle('open')
-        const isOpen = dropDownMenu.classList.contains('open')
-
-        toggleBtnIcon.classList = isOpen
-        ? 'fa-solid fa-xmark'
-        : 'fa-solid fa-bars'
-    }
-</script>
 
 <main>
     {% block heading %}{% endblock %}
@@ -73,6 +55,7 @@
 </main>
 
 <!-- FOOTER -->
+
 <footer>
     <div class="row">
         <div class="col">
@@ -116,5 +99,6 @@
     <hr>
     <p class="copyright">Clean Sweep &#169; 2024</p>
 </footer>
+<script src="static/js/script.js"></script>
 </body>
 </html>
