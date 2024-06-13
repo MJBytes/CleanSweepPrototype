@@ -20,7 +20,7 @@ body {
 }
 
 .nav-container {
-    background: #9aa19d;
+    background-color: rgba(154, 161, 157, .5); /* #9aa19d */
     display: flex;
     width: 100%;
     max-width: 1200%;
@@ -36,12 +36,12 @@ body {
 .navbar a {
     text-decoration: none;
     color: #fff;
-    font-size: 1rem;     /* Font size of links */
+    font-size: 1.2rem;     /* Font size of links */
     cursor: pointer;
 }
 
-.navbar a:hover {
-    color: #435e47;
+.navbar ul a:hover {
+    color: #516d55;
 }
 
 .navbar .header-logo {
@@ -51,7 +51,7 @@ body {
 
 .navbar .links {
     display: flex;
-    gap: 2rem;
+    gap: 4rem;
 }
 
 .navbar .toggle_btn {     /* Hamburger */
@@ -62,12 +62,9 @@ body {
 }
 
 .navbar .action_btn {      /* Login button */
-    background-color: #A7BA9C;
+    background-color: #7e8b76;
     color: #fff;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 5px 20px;
     border: none;
     outline: none;
     border-radius: 20px;
@@ -79,6 +76,11 @@ body {
     margin-bottom: auto;
     margin-right: 20px;
     width: 40px;
+}
+
+.navbar .action_btn:hover {
+    box-shadow: 0 5px 5px 0 rgba(34, 53, 31, 0.24),0 10px 15px 0 rgba(159, 230, 168, 0.19);
+    color: #385538;
 }
 
 
