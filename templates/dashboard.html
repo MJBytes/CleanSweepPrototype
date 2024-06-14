@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} Dashboard {% endblock %}
+
+{% set navbar_background_url = url_for('static', filename='img/images/cleaning-tips1.jpg') %}
+
+{% block heading %}
+
+<div class="heading-container">
+    <div class="site-heading">
+        <h1>{{ first_name }}'s Dashboard</h1>     <!-- Will display user's first name from the DB -->
+    </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+{% endblock %}

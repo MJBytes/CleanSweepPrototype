@@ -24,12 +24,14 @@
 <header>
     <div class="navbar">
         <div class="nav-container">
-            <a herf="#"><img src="static/img/logos/logo.png" alt="Clean Sweep" class="header-logo"></a>
+            <a href="{{ url_for('main') }}">
+                <img src="static/img/logos/logo.png" alt="Clean Sweep" class="header-logo">
+            </a>
             <ul class="links">
-                <li><a href="#">Home</a></li>
+                <li><a href="{{ url_for('main') }}">Home</a></li>
                 <li><a href="#">Profile</a></li>
                 <li><a href="#">Tasks</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
                 <li><a href="#">Tips & Tricks</a></li>
             </ul>
             <a href="#" class="action_btn">Login</a>      <!-- Login page link goes here -->
@@ -37,19 +39,19 @@
                 <i class="fa-solid fa-bars"></i>          <!-- Responsive hamburger icon -->
             </div>
         </div>
+        <div> {% block heading %}{% endblock %} </div>
     </div>
     <div class="dropdown_menu">
-        <li><a href="#">Home</a></li>
+        <li><a href="{{ url_for('main') }}">Home</a></li>
         <li><a href="#">Profile</a></li>
         <li><a href="#">Tasks</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
         <li><a href="#">Tips & Tricks</a></li>
         <li><a href="#" class="action_btn">Login</a></li>
     </div>
 </header>
 
 <main>
-    {% block heading %}{% endblock %}
     {% block content %}
     {% endblock %}
 </main>
@@ -74,11 +76,11 @@
         <div class="col">
             <h3>Links <div class="underline"><span></span></div> </h3>
             <ul>
-                <li><a href="">Home</a></li>
+                <li><a href="{{ url_for('main') }}">Home</a></li>
                 <li><a href="">Profile</a></li>
                 <li><a href="">Tasks</a></li>
                 <li><a href="">Tips</a></li>
-                <li><a href="">About Us</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
             </ul>
         </div>
         <div class="col">

@@ -2,13 +2,16 @@
 
 {% block title %} About Us {% endblock %}
 
-{% set navbar_background_url = url_for('static', filename='images/About us banner.jpg') %}
-{{ super() }}
+{% set navbar_background_url = url_for('static', filename='img/images/about1.jpg') %}
 
 {% block heading %}
-   About
-   <br>
-   Clean Sweep
+
+<div class="heading-container">
+   <div class="site-heading">
+      <h1>About</h1>   <!-- Remember to layout your headings to have the class "heading-container" & "site-heading" -->
+   </div>
+</div>
+
 {% endblock %}
 
 {% block content %}
@@ -21,7 +24,7 @@
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
     nisi ut aliquip ex ea commodo consequat. </p>
  <br>
-   <img  src="url_for('static', filename='img/Our Vision.jpg')">
+   <img  src="url_for('static', filename='img/images/our-vision.jpg')">
 </div>
 
 <div>
@@ -32,7 +35,7 @@
         aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
         ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
  <br>
-    <img  src="url_for('static', filename='img/Our Mission.jpg')">
+    <img  src="url_for('static', filename='img/images/our-mission.jpg')">
 </div>
 
 <div>
