@@ -1,2 +1,3 @@
-# CleanSweepPrototype
-A prototype of our proposal application called Clean Sweep.
+# **Clean Sweep Prototype**
+
+![Clean Sweep](static/img/logos/logo.png)
