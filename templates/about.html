@@ -3,12 +3,15 @@
 {% block title %} About Us {% endblock %}
 
 {% set navbar_background_url = url_for('static', filename='img/images/about1.jpg') %}
-{{ super() }}
 
 {% block heading %}
-   About
-   <br>
-   Clean Sweep
+
+<div class="heading-container">
+   <div class="site-heading">
+      <h1>About</h1>   <!-- Remember to layout your headings to have the class "heading-container" & "site-heading" -->
+   </div>
+</div>
+
 {% endblock %}
 
 {% block content %}
