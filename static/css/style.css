@@ -1,15 +1,5 @@
 body {
     font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar ul {
-    position: -webkit-sticky; /* For Safari */
-    position: sticky;
-    top: 0;
-    list-style-type: none;
-    margin: 0;
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
@@ -27,12 +17,6 @@ body {
     max-width: 1200%;
     margin: 0 auto;
     margin-bottom: 30px;
-}
-
-@media (max-width: 800px) {  /* RESPONSIVE HEIGHT OF NAVBAR IMAGE WHEN PAGE SCALED DOWN */
-    .navbar {
-        height: 250px;
-    }
 }
 
 .nav-container {
@@ -66,11 +50,6 @@ body {
     display: flex;
 }
 
-.navbar li a {
-    display: block;
-    font-weight: 600;
-    font-size: medium;
-    color: #F8F8F7;
 .navbar .links {
     display: flex;
     gap: 4rem;
@@ -148,7 +127,6 @@ body {
     font-size: 12px;
     font-weight: bold;
     text-align: center;
-    padding: 20px 30px;
     cursor: pointer;
     margin-top: auto;
     margin-bottom: auto;
@@ -199,22 +177,216 @@ body {
     }
 }
 
+/* RESPONSIVE HEIGHT OF NAVBAR IMAGE WHEN PAGE SCALED DOWN */
+
+@media (max-width: 100px) {
+    .navbar {
+        height: 220px;
+    }
+}
+
+/* RESPONSIVE HEIGHT OF NAVBAR IMAGE WHEN PAGE SCALED UP */
+
+@media (min-width: 1000px) {
+    .navbar {
+        height: 10px;
+    }
+}
+
 /* HEADER */
 
-header {
+header {                     /* If we don't want the left-right margin we can remove this header code */
     position: relative;
     padding: 0 1rem;
+}
+
+/* HEADER BLOCK CONTENT */
+
+.heading-container {
+    margin-left: 40px;
+    margin-top: 15%;
+    border-left: 4px solid #516d55;
+    height: 90px;
+}
+
+.site-heading {
+    margin-left: 20px;
+    color: #3c5f41;
+    display: flex;
 }
 
 /* MAIN CONTENT */
 
 main {
-    width: 100%;
     max-width: 1200%;
-    margin: 0 auto;
     position: relative;
-    margin-left: 30px;
+    margin: 30px;
 }
+
+
+/* RICHARD'S CODE */
+
+/* Task Categories Styles */
+.task-categories {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.task-category {
+    flex: 1;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.task-category h3 {
+    margin-bottom: 10px;
+}
+
+.task-category p {
+    margin: 0;
+}
+
+.half-width-paragraph {
+    width: 50%;
+    margin-right: auto;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+}
+
+.image-container img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover; /* This will ensure the image covers the area without stretching */
+}
+
+.image-text {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(80% - 10px);
+    background: rgba(211, 211, 211, 0.7);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px 10px 40px;
+}
+
+button {
+  background: linear-gradient(to bottom, #758769, #5a6b55);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(to bottom, #5a6b55, #758769);
+  box-shadow: 0 2px #4b5946;
+}
+
+.text-box {
+    background-color: rgba(211, 211, 211, 0.9); /* Light grey with semi-transparency */
+    backdrop-filter: blur(5px); /* Adjust the blur level as needed */
+    padding: 10px; /* padding around the text */
+    border-radius: 5px; /* rounded corners for the box */
+}
+
+.text-box {
+    background-color: rgba(211, 211, 211, 0.9); /* Light grey with semi-transparency */
+    backdrop-filter: blur(5px); /* Adjust the blur level as needed */
+    padding: 10px; /* padding around the text */
+    border-radius: 5px; /* rounded corners for the box */
+}
+
+ /*FORM STYLES*/
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns items to the start of the flex container */
+}
+
+form label,
+form input[type="text"] {
+    align-self: flex-start; /* Aligns each item individually to the start */
+}
+
+/* Set a specific width for the Name and Email input fields */
+form input[type="text"] {
+    width: 200px; /* Adjust this value to match the size in the image */
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form input[type="submit"] {
+    background-color: #758769; /* Sets the background color of the button */
+    color: white; /* Sets the text color of the button */
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #5a6b55; /* Sets a darker shade for the hover state */
+}
+
+/* Additional styles for the date of birth dropdowns */
+.dob-dropdowns {
+    display: flex;
+    gap: 10px;
+}
+
+.dob-dropdowns select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    max-width: 100px; /* Sets a maximum width for the dropdowns */
+}
+
+/* Achievements and Statistics sections */
+.achievements, .statistics {
+    position: absolute;
+    right: 20px; /* Adjust the right padding as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 20px;
+    width: 300px; /* Adjust the width as needed */
+    background-color: #f9f9f9; /* Your desired background color */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.achievement-category, .statistics-category {
+    margin-bottom: 20px;
+}
+
+.achievement-category:last-child, .statistics-category:last-child {
+    margin-bottom: 0;
+}
+
+
+/* RICHARD'S CODE */
 
 /* FOOTER */
 
@@ -302,19 +474,6 @@ footer form {
     padding-bottom: 15px;
     display: flex;
     align-items: center;
-    font-family: 'Poppins', sans-serif;
-    justify-content: space-between;
-}
-
-.navbar .navbar-nav {
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar .navbar-nav .nav-item .nav-link {
-    padding-top: 10px;
     justify-content: space-between;
     border-bottom: 1px solid #ccc;
     margin-bottom: 50px;
@@ -392,212 +551,6 @@ footer .underline span {
     top: 0px;
     left: 10px;
     animation: moving 2s linear infinite;
-.navbar .d-flex {
-    margin-right: 10px;
-    float: right;
-}
-
-main {
-    height: 100vh;   /* For testing footer, main is where main block content goes */
-}
-
-/* Task Categories Styles */
-.task-categories {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.task-category {
-    flex: 1;
-    padding: 20px;
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.task-category h3 {
-    margin-bottom: 10px;
-}
-
-.task-category p {
-    margin: 0;
-}
-
-/* FOOTER */
-
-footer {
-    width: 100%;
-    position: relative;
-    bottom: 0;
-    background: linear-gradient(to right, #A7BA9C, #95aa88);
-    color: #fff;      /* Text colour */
-    padding: 100px 0 30px;
-    border-top-left-radius: 125px;   /* Curve of left corner */
-    font-size: 13px;
-    line-height: 20px;
-    padding-top: 60px;
-    padding-left: -40px;
-    padding-bottom: 3px;
-}
-
-footer .row {
-    width: 85%;  /* HAVE A PLAY WITH THIS */
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-footer .col {
-    flex-basis: 10%;
-    padding: 5px;
-}
-
-footer .col:nth-child(2) .col:nth-child(3) {
-    flex-basis: 15%;
-}
-
-footer .logo {
-    width: 250px;
-    margin-bottom: 30px;
-    margin-top: 10px;
-    padding-top: 10px;
-    margin-left: -4px;
-}
-
-footer .col h3 {
-    width: fit-content;
-    margin-bottom: 40px;
-    padding-top: 10px;
-    position: relative;
-}
-
-footer .col h4 {
-    letter-spacing: 1px;
-}
-
-footer .col p {
-    margin-bottom: -8px;
-    margin-right: 20px;
-}
-
-footer .email-id {
-    width: fit-content;
-    border-bottom: 1px solid #779181;
-    margin: 25px 20px 0px 0px;
-    padding-bottom: 2px;
-}
-
-footer ul li {
-    list-style: none;
-    margin-bottom: 12px;
-    width: 50px;
-}
-
-footer ul li a {
-    text-decoration: none;
-    color: #fff;
-    margin-left: -40px;
-}
-
-footer form {
-    padding-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 50px;
-}
-
-footer form .fa-regular {
-    font-size: 18px;
-    margin-right: 10px;
-}
-
-footer input {
-    background: transparent;
-    color: #2b3d2c;
-    border: 0;
-    outline: none;
-    width: 250px;
-}
-
-footer form button {
-    background: transparent;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-}
-
-footer form button .fa-solid {
-    font-size: 16px;
-    color: #ffffff;
-}
-
-footer .social-icons .fa-brands {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
-    font-size: 20px;
-    color: #95aa88;
-    background: #fff;
-    margin-right: 15px;
-    cursor: pointer;
-    border: 2px solid #779181
-}
-
-footer hr {
-    width: 90%;
-    border: 0;
-    border-bottom: 1px solid #ccc;
-    margin: 20px auto;
-}
-
-footer .copyright {
-    text-align: center;
-}
-
-footer .underline {
-    width: 100%;
-    height: 3px;
-    background: #6b7e6c;;
-    border-radius: 3px;
-    position: relative;
-    top: 8px;
-    left: 0;
-    overflow: hidden;
-}
-
-footer .underline span {
-    width: 15px;
-    height: 110%;
-    background: #fff;
-    border-radius: 3px;
-    position: absolute;
-    top: 0px;
-    left: 10px;
-    animation: moving 2s linear infinite;
-}
-
-@keyframes moving {
-    0% {
-        left: -20px;
-    }
-    100% {
-        left: 100%;
-    }
 }
 
 @keyframes moving {

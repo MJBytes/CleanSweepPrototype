@@ -2,13 +2,10 @@
 
 {% block title %} About Us {% endblock %}
 
-{% set navbar_background_url = url_for('static', filename='images/About us banner.jpg') %}
-{{ super() }}
+{% set navbar_background_url = url_for('static', filename='img/images/about1.jpg') %}
 
 {% block heading %}
-   About
-   <br>
-   Clean Sweep
+<h1>About</h1>
 {% endblock %}
 
 {% block content %}
@@ -16,39 +13,39 @@
 <div>
    <h3>Our Vision</h3>
  <br>
-   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
     nisi ut aliquip ex ea commodo consequat. </p>
  <br>
-   <img  src="url_for('static', filename='img/Our Vision.jpg')">
+   <img  src=" {{ url_for('static', filename='img/images/our-vision.jpg') }} ">
 </div>
 
 <div>
     <h3>Our Mission</h3>
  <br>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna 
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
         ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
  <br>
-    <img  src="url_for('static', filename='img/Our Mission.jpg')">
+    <img  src=" {{ url_for('static', filename='img/images/our-mission.jpg') }}">
 </div>
 
 <div>
    <h2>More about us</h2>
  <br>
-   <p>Lorem ipsum dolor sit amet consectetur. Tempor tellus posuere 
-    proin sit sollicitudin urna elit dui lobortis. Donec dolor viverra 
-    facilisis sollicitudin quis eu nibh ut. Augue ultricies gravida 
-    arcu convallis vitae urna. Volutpat orci ac tellus neque viverra 
-    nullam id velit. Purus quisque eu sit eu. Massa velit pulvinar 
-    suscipit duis aliquam mauris sem. Venenatis mauris ultrices eget 
-    rhoncus quis molestie. Tortor quis tempor ut amet. Etiam molestie 
-    leo adipiscing vel aliquet odio facilisis scelerisque. Quis non 
-    nunc nisl mauris tellus. Amet euismod sed sed neque dignissim 
-    egestas interdum id egestas. Non consectetur neque id lectus neque 
-    at cursus. Augue elit massa gravida id vitae. Id quis sit sit 
+   <p>Lorem ipsum dolor sit amet consectetur. Tempor tellus posuere
+    proin sit sollicitudin urna elit dui lobortis. Donec dolor viverra
+    facilisis sollicitudin quis eu nibh ut. Augue ultricies gravida
+    arcu convallis vitae urna. Volutpat orci ac tellus neque viverra
+    nullam id velit. Purus quisque eu sit eu. Massa velit pulvinar
+    suscipit duis aliquam mauris sem. Venenatis mauris ultrices eget
+    rhoncus quis molestie. Tortor quis tempor ut amet. Etiam molestie
+    leo adipiscing vel aliquet odio facilisis scelerisque. Quis non
+    nunc nisl mauris tellus. Amet euismod sed sed neque dignissim
+    egestas interdum id egestas. Non consectetur neque id lectus neque
+    at cursus. Augue elit massa gravida id vitae. Id quis sit sit
     nulla.</p>
 </div>
 
