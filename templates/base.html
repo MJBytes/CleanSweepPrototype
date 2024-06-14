@@ -26,7 +26,7 @@
         <div class="nav-container">
             <a herf="#"><img src="static/img/logos/logo.png" alt="Clean Sweep" class="header-logo"></a>
             <ul class="links">
-                <li><a href="#">Home</a></li>
+                <li><a href="{{ url_for('main') }}">Home</a></li>
                 <li><a href="#">Profile</a></li>
                 <li><a href="#">Tasks</a></li>
                 <li><a href="#">About</a></li>
@@ -37,6 +37,7 @@
                 <i class="fa-solid fa-bars"></i>          <!-- Responsive hamburger icon -->
             </div>
         </div>
+        <div class="heading"> {% block heading %}{% endblock %} </div>
     </div>
     <div class="dropdown_menu">
         <li><a href="#">Home</a></li>
@@ -49,7 +50,6 @@
 </header>
 
 <main>
-    {% block heading %}{% endblock %}
     {% block content %}
     {% endblock %}
 </main>

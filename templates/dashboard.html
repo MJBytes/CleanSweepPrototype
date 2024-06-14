@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} Dashboard {% endblock %}
+
+{% set navbar_background_url = url_for('static', filename='img/images/cleaning-tips.jpg') %}
+{{ super() }}
+
+{% block heading %}
+   About
+   <br>
+   Clean Sweep
+{% endblock %}
+
+{% block content %}
+{% endblock %}
