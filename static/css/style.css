@@ -19,18 +19,6 @@ body {
     margin-bottom: 30px;
 }
 
-@media (max-width: 800px) {  /* RESPONSIVE HEIGHT OF NAVBAR IMAGE WHEN PAGE SCALED DOWN */
-    .navbar {
-        height: 220px;
-    }
-}
-
-@media (min-width: 1000px) {  /* RESPONSIVE HEIGHT OF NAVBAR IMAGE WHEN PAGE SCALED UP */
-    .navbar {
-        height: 10px;
-    }
-}
-
 .nav-container {
     background-color: rgba(154, 161, 157, .5); /* #9aa19d */
     display: flex;
@@ -189,11 +177,42 @@ body {
     }
 }
 
+/* RESPONSIVE HEIGHT OF NAVBAR IMAGE WHEN PAGE SCALED DOWN */
+
+@media (max-width: 100px) {  
+    .navbar {
+        height: 220px;
+    }
+}
+
+/* RESPONSIVE HEIGHT OF NAVBAR IMAGE WHEN PAGE SCALED UP */
+
+@media (min-width: 1000px) {  
+    .navbar {
+        height: 10px;
+    }
+}
+
 /* HEADER */
 
-header {
+header {                     /* If we don't want the left-right margin we can remove this header code */
     position: relative;
     padding: 0 1rem;
+}
+
+/* HEADER BLOCK CONTENT */
+
+.heading-container {
+    margin-left: 40px;
+    margin-top: 15%;
+    border-left: 4px solid #516d55;
+    height: 90px;
+}
+
+.site-heading {
+    margin-left: 20px;
+    color: #3c5f41;
+    display: flex;
 }
 
 /* MAIN CONTENT */

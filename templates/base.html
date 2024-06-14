@@ -39,7 +39,11 @@
                 <i class="fa-solid fa-bars"></i>          <!-- Responsive hamburger icon -->
             </div>
         </div>
-        <div> {% block heading %}{% endblock %} </div>
+        <div class="heading-container">
+            <div class="site-heading">
+                {% block heading %}{% endblock %}
+            </div>
+        </div>
     </div>
     <div class="dropdown_menu">
         <li><a href="{{ url_for('main') }}">Home</a></li>
