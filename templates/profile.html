@@ -11,73 +11,78 @@
 {% block content %}
 
 
-<form>
-    <label for="name">Name*</label>
-    <input type="text" id="name" name="name" required>
 
-    <label for="email">Email*</label>
-    <input type="email" id="email" name="email" required>
 
-    <label for="dob-day">Date of Birth*</label>
-<div class="dob-dropdowns">
-    <select id="dob-day" name="dob-day" required>
-        <!-- Options for day (1-31) -->
-        {% for day in range(1, 32) %}
-        <option value="{{ day }}">{{ day }}</option>
-        {% endfor %}
-    </select>
-    <select id="dob-month" name="dob-month" required>
-        <!-- Options for month (Jan-Dec) -->
-        {% set months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %}
-        {% for month in months %}
-        <option value="{{ month }}">{{ month }}</option>
-        {% endfor %}
-    </select>
-    <select id="dob-year" name="dob-year" required>
-        <!-- Options for year (e.g., 1920-2024) -->
-        {% for year in range(1920, 2025) %}
-        <option value="{{ year }}">{{ year }}</option>
-        {% endfor %}
-    </select>
+<div class="profile-container">
+    <div class="profile-form">
+        <form>
+            <label for="name">Name*</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email*</label>
+            <input type="text" id="email" name="email" required>
+
+            <label for="dob-day">Date of Birth*</label>
+            <div class="dob-dropdowns">
+                <select id="dob-day" name="dob-day" required>
+                    <!-- Options for day (1-31) -->
+                    {% for day in range(1, 32) %}
+                    <option value="{{ day }}">{{ day }}</option>
+                    {% endfor %}
+                </select>
+                <select id="dob-month" name="dob-month" required>
+                    <!-- Options for month (Jan-Dec) -->
+                    {% set months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %}
+                    {% for month in months %}
+                    <option value="{{ month }}">{{ month }}</option>
+                    {% endfor %}
+                </select>
+                <select id="dob-year" name="dob-year" required>
+                    <!-- Options for year (e.g., 1920-2024) -->
+                    {% for year in range(1920, 2025) %}
+                    <option value="{{ year }}">{{ year }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <input type="submit" value="Save Changes">
+        </form>
+    </div>
+
+    <div class="profile-details">
+        <section class="achievements">
+            <h2>Achievements</h2>
+            <div class="achievement-category">
+                <h3>Daily Cleaning Streaks</h3>
+                <p>Current streak: </p>
+                <p>Best streak: </p>
+            </div>
+            <div class="achievement-category">
+                <h3>Weekly Cleaning Streaks</h3>
+                <p>Current streak: </p>
+                <p>Best streak: </p>
+            </div>
+            <div class="achievement-category">
+                <h3>Monthly Cleaning Streaks</h3>
+                <p>Current streak: </p>
+                <p>Best streak: </p>
+            </div>
+        </section>
+
+        <section class="statistics">
+            <h2>Statistics</h2>
+            <div class="statistics-category">
+                <h3>Total Rooms Cleaned</h3>
+                <p></p> <!--data from the database -->
+            </div>
+            <div class="statistics-category">
+                <h3>Hours Spent Cleaning</h3>
+                <p></p> <!-- data from the database -->
+            </div>
+            <div class="statistics-category">
+                <h3>Total Days Cleaning</h3>
+                <p></p> <!-- data from the database -->
+            </div>
+        </section>
+    </div>
 </div>
-
-
-    <input type="submit" value="Save Changes">
-</form>
-
-
-<section class="achievements">
-    <h2>Achievements</h2>
-    <div class="achievement-category">
-        <h3>Daily Cleaning Streaks</h3>
-        <p>Current streak: </p>
-        <p>Best streak: </p>
-    </div>
-    <div class="achievement-category">
-        <h3>Weekly Cleaning Streaks</h3>
-        <p>Current streak: </p>
-        <p>Best streak: </p>
-    </div>
-    <div class="achievement-category">
-        <h3>Monthly Cleaning Streaks</h3>
-        <p>Current streak: </p>
-        <p>Best streak: </p>
-    </div>
-</section>
-
-<section class="statistics">
-    <h2>Statistics</h2>
-    <div class="statistics-category">
-        <h3>Total Rooms Cleaned</h3>
-        <p></p> <!--data from the database -->
-    </div>
-    <div class="statistics-category">
-        <h3>Hours Spent Cleaning</h3>
-        <p></p> <!-- data from the database -->
-    </div>
-    <div class="statistics-category">
-        <h3>Total Days Cleaning</h3>
-        <p></p> <!-- data from the database -->
-    </div>
-</section>
 {% endblock %}

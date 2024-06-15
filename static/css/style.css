@@ -226,6 +226,7 @@ main {
 
 /* RICHARD'S CODE */
 
+
 /* Task Categories Styles */
 .task-categories {
     display: flex;
@@ -363,27 +364,46 @@ form input[type="submit"]:hover {
     max-width: 100px; /* Sets a maximum width for the dropdowns */
 }
 
-/* Achievements and Statistics sections */
-.achievements, .statistics {
-    position: absolute;
-    right: 20px; /* Adjust the right padding as needed */
-    top: 50%;
-    transform: translateY(-50%);
+/* Container for the entire content to use flexbox */
+.profile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     padding: 20px;
-    width: 300px; /* Adjust the width as needed */
+}
+
+/* Form section */
+.profile-form {
+    flex: 1;
+    margin-right: 20px;
+}
+
+/*Achievements and Statistics sections*/
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 300px;
+}
+
+.achievements,
+.statistics {
     background-color: #f9f9f9; /* Your desired background color */
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #e0e0e0; /*border color*/
 }
 
-.achievement-category, .statistics-category {
+.achievement-category,
+.statistics-category{
     margin-bottom: 20px;
 }
 
 .achievement-category:last-child, .statistics-category:last-child {
     margin-bottom: 0;
 }
+
 
 
 /* RICHARD'S CODE */
