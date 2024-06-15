@@ -179,7 +179,8 @@ body {
 
 /* RESPONSIVE HEIGHT OF NAVBAR IMAGE WHEN PAGE SCALED DOWN */
 
-@media (max-width: 100px) {
+
+@media (max-width: 100px) {  
     .navbar {
         height: 220px;
     }
@@ -187,7 +188,7 @@ body {
 
 /* RESPONSIVE HEIGHT OF NAVBAR IMAGE WHEN PAGE SCALED UP */
 
-@media (min-width: 1000px) {
+@media (min-width: 1000px) {  
     .navbar {
         height: 10px;
     }
@@ -221,6 +222,7 @@ main {
     max-width: 1200%;
     position: relative;
     margin: 30px;
+
 }
 
 
