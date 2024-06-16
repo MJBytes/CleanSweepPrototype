@@ -73,6 +73,11 @@
    height: 50px;
 }
 
+.mapsLocation{
+   width: 50%;
+   height: 600px;
+}
+
 </style>
 
 <div class="navHeading">
@@ -125,6 +130,8 @@
 
    </form>
 
+   <div class="contactContentHead">
+
    <div class="contactInfo">
 
        <h4>Contact Information</h4>
@@ -144,6 +151,8 @@
    </div>
 
    <!--Google Maps Embed-->
-   <iframe src="https://www.google.com/maps/place/Te+Mahana+Spa/@-16.4712799,-151.7054246,17z/data=!3m1!4b1!4m6!3m5!1s0x769a351bc9068167:0x2889c4b140035482!8m2!3d-16.4712799!4d-151.7054246!16s%2Fg%2F11f3c_jkvy?entry=ttu" title="CleanSweep Head Office"></iframe>
+   <iframe class="mapsLocation" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.084076410459!2d-151.7054246!3d-16.4712799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x769a351bc9068167%3A0x2889c4b140035482!2sTe%20Mahana%20Spa!5e0!3m2!1sen!2snz!4v1718549827186!5m2!1sen!2snz" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</div>
 
 {% endblock %}
