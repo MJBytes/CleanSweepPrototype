@@ -22,6 +22,51 @@
     margin: 0; 
 }
 
+.contactForm{
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    flex-direction: column;
+    margin: auto;
+    max-width: 600px; 
+    padding: 20px;
+}
+
+.contactForm input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.contactForm input[type=submit] {
+  width: 400px;
+  height: 50px;
+  background-color: #A7BA9C;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+#message {
+  width: 100%;
+  height: 150px;
+}
+
+.contactInfo{
+   background-color: #A7BA9C;
+   width: 50%;
+   height: 600px;
+}
+
 </style>
 
 <div class="navHeading">
@@ -52,25 +97,25 @@
 
    <br>
 
-   <form>
+   <form class="contactForm">
 
        <label for="name">Name*</label>
     <br>
-       <input type="text" id="name">
+       <input type="text" id="name" placeholder="Your Full Name">
     <br>
        <label for="email">Email*</label>
     <br>
-       <input type="text" id="email">
+       <input type="text" id="email" placeholder="Enter your Email">
     <br>
        <label for="contactNum">Contact Number*</label>
     <br>
-       <input type="text" id="contactNum">
+       <input type="text" id="contactNum" placeholder="Enter your Contact Number">
     <br>
        <label for="message">Message*</label>
     <br>
-       <input type="text" id="message">
+    <textarea id="message" placeholder="Start your message here....."></textarea>
     <br><br>
-       <input type="submit" value="submit">
+       <input type="submit" value="Submit">
 
    </form>
 

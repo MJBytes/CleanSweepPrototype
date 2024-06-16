@@ -373,6 +373,7 @@ button:hover {
 }
 
  /*FORM STYLES*/
+
 form {
     display: flex;
     flex-direction: column;
@@ -391,6 +392,13 @@ form input[type="text"] {
     margin-top: 5px;
     border: 1px solid #ddd;
     border-radius: 4px;
+}
+
+textarea::placeholder {
+    text-align: left;
+    vertical-align: top;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 10px;
 }
 
 form input[type="submit"] {
