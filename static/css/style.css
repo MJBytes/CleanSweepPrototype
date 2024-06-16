@@ -471,7 +471,7 @@ main {
     padding: 10px 20px 10px 40px;
 }
 
-button {
+.profile-form button {
   background: linear-gradient(to bottom, #758769, #5a6b55);
   border: none;
   border-radius: 5px;
@@ -483,7 +483,7 @@ button {
   transition: all 0.3s;
 }
 
-button:hover {
+.profile-form button:hover {
   background: linear-gradient(to bottom, #5a6b55, #758769);
   box-shadow: 0 2px #4b5946;
 }
@@ -503,19 +503,19 @@ button:hover {
 }
 
  /*FORM STYLES*/
- .profile-form form {
+.profile-form form {
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* Aligns items to the start of the flex container */
 }
 
-form label,
+.profile-form form label,
 form input[type="text"] {
     align-self: flex-start; /* Aligns each item individually to the start */
 }
 
 /* Set a specific width for the Name and Email input fields */
-form input[type="text"] {
+.profile-form form input[type="text"] {
     width: 200px; /* Adjust this value to match the size in the image */
     padding: 10px;
     margin-top: 5px;
@@ -523,7 +523,7 @@ form input[type="text"] {
     border-radius: 4px;
 }
 
-form input[type="submit"] {
+.profile-form form input[type="submit"] {
     background-color: #758769; /* Sets the background color of the button */
     color: white; /* Sets the text color of the button */
     padding: 10px;
@@ -532,7 +532,7 @@ form input[type="submit"] {
     border-radius: 4px;
 }
 
-form input[type="submit"]:hover {
+.profile-form form input[type="submit"]:hover {
     background-color: #5a6b55; /* Sets a darker shade for the hover state */
 }
 
