@@ -29,8 +29,8 @@
             </a>
             <ul class="links">
                 <li><a href="{{ url_for('main') }}">Home</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Tasks</a></li>
+                <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                <li><a href="{{ url_for('tasks') }}">Tasks</a></li>
                 <li><a href="{{ url_for('about') }}">About</a></li>
                 <li><a href="#">Tips & Tricks</a></li>
             </ul>
@@ -47,8 +47,8 @@
     </div>
     <div class="dropdown_menu">
         <li><a href="{{ url_for('main') }}">Home</a></li>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Tasks</a></li>
+        <li><a href="{{ url_for('profile') }}">Profile</a></li>
+        <li><a href="{{ url_for('tasks') }}">Tasks</a></li>
         <li><a href="{{ url_for('about') }}">About</a></li>
         <li><a href="#">Tips & Tricks</a></li>
         <li><a href="#" class="action_btn">Login</a></li>
@@ -81,8 +81,8 @@
             <h3>Links <div class="underline"><span></span></div> </h3>
             <ul>
                 <li><a href="{{ url_for('main') }}">Home</a></li>
-                <li><a href="">Profile</a></li>
-                <li><a href="">Tasks</a></li>
+                <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                <li><a href="{{ url_for('tasks') }}">Tasks</a></li>
                 <li><a href="">Tips</a></li>
                 <li><a href="{{ url_for('about') }}">About Us</a></li>
             </ul>
