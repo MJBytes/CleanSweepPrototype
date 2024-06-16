@@ -1,10 +1,20 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
+
 
 app = Flask(__name__)
 
 @app.route('/')
 def main():
     return render_template("index.html")
+
+@app.route('/profile')
+def profile():
+    return render_template('profile.html', navbar_background_url=url_for('static', filename='img/images/User profile1.jpg'))
+
+
+@app.route('/tasks')
+def tasks():
+    return render_template("tasks.html")
 
 @app.route('/contact')
 def contact():
