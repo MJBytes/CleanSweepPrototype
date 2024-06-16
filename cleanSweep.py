@@ -9,8 +9,7 @@ def main():
 
 @app.route('/profile')
 def profile():
-    return render_template('profile.html', navbar_background_url=url_for('static', filename='img/images/User profile1.jpg'))
-
+    return render_template('profile.html')
 
 @app.route('/tasks')
 def tasks():
