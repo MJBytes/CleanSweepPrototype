@@ -403,6 +403,8 @@ main {
     margin: 30px;
 }
 
+/* MAIN CONTENT */
+
 
 /* RICHARD'S CODE */
 
@@ -498,7 +500,7 @@ button:hover {
 }
 
  /*FORM STYLES*/
-form {
+ .profile-form form {
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* Aligns items to the start of the flex container */
