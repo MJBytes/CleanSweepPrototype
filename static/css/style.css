@@ -208,11 +208,14 @@ header {                     /* If we don't want the left-right margin we can re
 .heading-container {
     margin-left: 40px;
     margin-top: 15%;
-    border-left: 4px solid #516d55;
     height: 90px;
 }
 
 .site-heading {
+    border-left: 4px solid #516d55;
+}
+
+.block-heading {
     margin-left: 20px;
     color: #3c5f41;
     display: flex;
