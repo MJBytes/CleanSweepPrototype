@@ -2,8 +2,12 @@
 
 {% block title %} Contact Us {% endblock %}
 
+<<<<<<< HEAD
    {% set navbar_background_url = url_for('static', filename='/img/images/contact-us-banner_edited.jpg') %}
    {{ super() }}
+=======
+{% set navbar_background_url = url_for('static', filename='/img/images/contact-us-banner.jpg') %}
+>>>>>>> origin/Richard
 
 {% block heading %}
    Contact
@@ -12,20 +16,20 @@
 {% endblock %}
 
 {% block content %}
-   
+
    <h1>Lets</h1> <h2>Talk!</h2>
    <br>
 
    <p>
-    Do you have any burning questions? Well simply complete the 
-    below form and our friendly customer service team will get back 
-    to you. While waiting you can also check out our FAQ section where 
+    Do you have any burning questions? Well simply complete the
+    below form and our friendly customer service team will get back
+    to you. While waiting you can also check out our FAQ section where
     some of your questions might have already been answered.
    </p>
    <br>
 
    <form>
-       
+
        <label for="name">Name*</label>
     <br>
        <input type="text" id="name">

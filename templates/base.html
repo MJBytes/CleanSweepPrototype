@@ -1,58 +1,110 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">       <!-- For responsive webpage, mobile friendly-->
     <title>{% block title %} {% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="static/img/logos/favicon.ico">       <!-- Favicon -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
-
-<style>
-
-/* This section will allow us to set a new image for the navbar for each Page--> */
-    .navbar {
-        background-image: url('{{ navbar_background_url }}');
-    }
-
-</style>
-
-
+    <script src="https://kit.fontawesome.com/017c367aad.js"></script>  <!-- Font/icon kit -->
+    <style>
+        /* to add a new image for each page--> */
+        .navbar {
+            background-image: url('{{ navbar_background_url }}');
+            background-position: top;
+            background-size: cover;
+        }
+    </style>
 </head>
 
 <body>
-
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-between">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Task</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
-                </li>
+<header>
+    <div class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('main') }}">
+                <img src="static/img/logos/logo.png" alt="Clean Sweep" class="header-logo">
+            </a>
+            <ul class="links">
+                <li><a href="{{ url_for('main') }}">Home</a></li>
+                <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                <li><a href="{{ url_for('tasks') }}">Tasks</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="#">Tips & Tricks</a></li>
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            <a href="#" class="action_btn">Login</a>      <!-- Login page link goes here -->
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>          <!-- Responsive hamburger icon -->
+            </div>
+        </div>
+        <div class="heading-container">
+            <div class="site-heading">
+                {% block heading %}{% endblock %}
+            </div>
         </div>
     </div>
+    <div class="dropdown_menu">
+        <li><a href="{{ url_for('main') }}">Home</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Tasks</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="#">Tips & Tricks</a></li>
+        <li><a href="#" class="action_btn">Login</a></li>
+    </div>
+</header>
 
-  {% block heading %}{% endblock %}
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
 
-</nav>
+<!-- FOOTER -->
 
-{% block content %}{% endblock %}
-
+<footer>
+    <div class="row">
+        <div class="col">
+            <img src="static/img/logos/logo-footer.png" alt="Clean Sweep" class="logo">
+            <p>Subscribe to Clean Sweep to enjoy cleaning inspiration and receive tips and tricks to improve your daily life.</p>
+        </div>
+        <div class="col">
+            <h3>Office <div class="underline"><span></span></div> </h3>
+            <p>69 Clear View Road</p>
+            <p>Somewhere Amazing</p>
+            <p>In a Beautiful Town</p>
+            <p>New Zealand</p>
+            <p class="email-id">hello@cleansweep.co.nz</p>
+            <h4>+64 206 895 664</h4>
+        </div>
+        <div class="col">
+            <h3>Links <div class="underline"><span></span></div> </h3>
+            <ul>
+                <li><a href="{{ url_for('main') }}">Home</a></li>
+                <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                <li><a href="{{ url_for('tasks') }}">Tasks</a></li>
+                <li><a href="">Tips</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+            </ul>
+        </div>
+        <div class="col">
+            <h3>Newsletter <div class="underline"><span></span></div> </h3>
+            <form>
+                <i class="fa-regular fa-envelope" style="color: #e7eaee;"></i>
+                <input type="email" placeholder="Enter Email" required>
+                <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+            <div class="social-icons">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-pinterest"></i>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <p class="copyright">Clean Sweep &#169; 2024</p>
+</footer>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
