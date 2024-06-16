@@ -2,22 +2,43 @@
 
 {% block title %} Contact Us {% endblock %}
 
-<<<<<<< HEAD
    {% set navbar_background_url = url_for('static', filename='/img/images/contact-us-banner_edited.jpg') %}
-   {{ super() }}
-=======
-{% set navbar_background_url = url_for('static', filename='/img/images/contact-us-banner.jpg') %}
->>>>>>> origin/Richard
 
 {% block heading %}
-   Contact
-   <br>
-   Clean Sweep
+
+<style>
+
+.navHeading h1, .navHeading h2 {
+    display: block; 
+    margin: 0;
+}
+
+.contactContentHead {
+    display: flex; 
+    align-items: center; 
+}
+
+.contactContentHead h3, .contactContentHead h1 {
+    margin: 0; 
+}
+
+</style>
+
+<div class="navHeading">
+   <h1>Contact</h1>
+   <h2>Clean Sweep</h2>
+</div>
+
 {% endblock %}
 
 {% block content %}
 
-   <h1>Lets</h1> <h2>Talk!</h2>
+<div class="centerDiv">
+
+<div class="contactContentHead">
+
+   <h3>Let's&nbsp;</h3> <h1>Talk!</h1>
+</div>
    <br>
 
    <p>
@@ -26,6 +47,9 @@
     to you. While waiting you can also check out our FAQ section where
     some of your questions might have already been answered.
    </p>
+
+</div>
+
    <br>
 
    <form>

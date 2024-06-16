@@ -7,7 +7,41 @@ body {
     height:100vh;          /* Could also be put in "main" */
 }
 
-<<<<<<< HEAD
+h1{
+    font-size: 48px;
+    color: #A7BA9C;
+}
+
+h2{
+    font-size: 48px;
+    color: #FFFFFF;
+}
+
+h3{
+    font-size: 48px;
+    color: #333333;
+}
+
+.navHeading{
+    z-index: 4;
+}
+
+.centerDiv{
+
+    /* See contact.html for reference */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin: auto;
+    max-width: 600px; 
+    padding: 20px;
+}
+
+/* NAV BAR */
+
 .navbar ul, .navbar form {
     position: relative;
     top: 0;
@@ -16,17 +50,6 @@ body {
     padding: 0;
     overflow: hidden;
     z-index: 2; /* Ensure text is on top darker of overlay of background image */
-=======
-/* NAV BAR */
-
-.navbar {
-    padding-bottom: 40%;
-    position: relative;
-    background: no-repeat;
-    background-position: fixed;
-    max-width: 1200%;
-    margin: 0 auto;
-    margin-bottom: 30px;
 }
 
 .nav-container {
@@ -37,7 +60,6 @@ body {
     height: 57.8px;
     justify-content: space-between;
     align-items: center;
->>>>>>> origin/Richard
 }
 
 .navbar li {
@@ -55,14 +77,19 @@ body {
     color: #516d55;
 }
 
-<<<<<<< HEAD
 .navbar {
     position: relative;
     background-size: 100% 100%;
+    background: no-repeat;
+    background-position: fixed;
     padding-top: 10px;
+    padding-bottom: 40%;
     height: 150px;
     width: 100%;
+    max-width: 1200%;
+    margin: 0 auto;
     background-size: cover;
+    margin-bottom: 30px;
 }
 
 .navbar::before {
@@ -74,12 +101,13 @@ body {
     height: 100%;
     background-color: rgba(0,0,0,0.5);
     z-index: 1; /* Ensure overlay is on top of background image but below text */
-=======
+}
+
 .navbar .header-logo {
     width: 125px;
     margin-left: 20px;
     display: flex;
->>>>>>> origin/Richard
+
 }
 
 .navbar .links {
@@ -335,13 +363,6 @@ button {
 button:hover {
   background: linear-gradient(to bottom, #5a6b55, #758769);
   box-shadow: 0 2px #4b5946;
-}
-
-.text-box {
-    background-color: rgba(211, 211, 211, 0.9); /* Light grey with semi-transparency */
-    backdrop-filter: blur(5px); /* Adjust the blur level as needed */
-    padding: 10px; /* padding around the text */
-    border-radius: 5px; /* rounded corners for the box */
 }
 
 .text-box {
