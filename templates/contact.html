@@ -66,6 +66,8 @@
    width: 50%;
    height: 600px;
    padding: 0px 20px;
+   display: flex;
+   flex-direction: column;
 }
 
 .iconSpesification{
@@ -77,6 +79,28 @@
    width: 50%;
    height: 600px;
 }
+
+.contactUL{
+   list-style-type: none; 
+   padding: 0;
+   margin: 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 45px; 
+}
+
+.contactLI {
+   display: flex;
+   align-items: center;
+   margin: 10px 0;
+}
+
+.contactLI img {
+   margin-right: 10px;
+}
+
 
 </style>
 
@@ -133,16 +157,16 @@
 
    <div class="contactInfo">
 
-       <h4>Contact Information</h4>
+       <h4 class="headingFour">Contact Information</h4>
     <br>
-       <ul>
-           <li>
+       <ul class="contactUL">
+           <li class="contactLI">
                <img class="iconSpesification" src="{{ url_for('static', filename='/img/icons/telephone2.png') }}" alt="?">
                +689 555 1020</li>
-           <li>
+           <li class="contactLI">
                <img class="iconSpesification" src="{{ url_for('static', filename='/img/icons/mail.png') }}" alt="?">
                contact@clean-sweep.com</li>
-           <li>
+           <li class="contactLI">
                <img class="iconSpesification" src="{{ url_for('static', filename='/img/icons/location-pin.png') }}" alt="?">
                BP 547, Motu, Tehotu 98730, French Polynesia</li>
        </ul>
