@@ -3,6 +3,7 @@
 {% block title %} About Us {% endblock %}
 
 {% set navbar_background_url = url_for('static', filename='img/images/about1.jpg') %}
+{% set more_about_url = url_for('static', filename='img/images/more-about-us_edited.jpg') %}
 
 {% block heading %}
 
@@ -24,6 +25,27 @@
 
      .rightDiv{
       float: right;
+     }
+
+     .moreAboutUs{
+      background-image: url('{{ more_about_url }}');
+      background-repeat: no-repeat;
+      height: 430px;
+      width: 100%;
+      clear: both;
+      padding: 10px 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+     }
+
+     .aboutAlignLeft{
+      text-align: left;
+     }
+
+     .moreAboutParagr{
+      justify-content: center;
+      align-items: center;
+      text-align: center;
      }
 
 </style>
@@ -62,11 +84,11 @@
 
 </div>
 
-<div class="moreAboutDiv">
+<div class="moreAboutUs">
 
-   <h2>More about us</h2>
+   <h2 class="headingTwo aboutAlignLeft">More about us</h2>
  <br>
-   <p>Lorem ipsum dolor sit amet consectetur. Tempor tellus posuere
+   <p class="moreAboutParagr">Lorem ipsum dolor sit amet consectetur. Tempor tellus posuere
     proin sit sollicitudin urna elit dui lobortis. Donec dolor viverra
     facilisis sollicitudin quis eu nibh ut. Augue ultricies gravida
     arcu convallis vitae urna. Volutpat orci ac tellus neque viverra
