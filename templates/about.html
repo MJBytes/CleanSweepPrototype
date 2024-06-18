@@ -5,51 +5,12 @@
 {% set navbar_background_url = url_for('static', filename='img/images/about1.jpg') %}
 {% set more_about_url = url_for('static', filename='img/images/more-about-us_edited.jpg') %}
 
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+{% endblock %}
+
 {% block heading %}
-
-<style>
-
-     .leftDiv, 
-     .rightDiv{
-      width: 740px;
-      height: 425px;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 10px 10px;
-     }
-
-     .leftDiv{
-      float: left;
-     }
-
-     .rightDiv{
-      float: right;
-     }
-
-     .moreAboutUs{
-      background-image: url('{{ more_about_url }}');
-      background-repeat: no-repeat;
-      height: 430px;
-      width: 100%;
-      clear: both;
-      padding: 10px 10px;
-      padding-left: 10px;
-      padding-right: 10px;
-     }
-
-     .aboutAlignLeft{
-      text-align: left;
-     }
-
-     .moreAboutParagr{
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-     }
-
-</style>
-
 
 <h1>About</h1>
 {% endblock %}
