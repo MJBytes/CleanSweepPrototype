@@ -3,39 +3,54 @@
 {% block title %} About Us {% endblock %}
 
 {% set navbar_background_url = url_for('static', filename='img/images/about1.jpg') %}
+{% set more_about_url = url_for('static', filename='img/images/more-about-us_edited.jpg') %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+{% endblock %}
 
 {% block heading %}
+
 <h1>About</h1>
 {% endblock %}
 
 {% block content %}
 
-<div>
-   <h3>Our Vision</h3>
+
+<div class="leftDiv">
+   <h3 class="headingThree">Our Vision</h3>
  <br>
    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
     nisi ut aliquip ex ea commodo consequat. </p>
- <br>
-   <img  src=" {{ url_for('static', filename='img/images/our-vision.jpg') }} ">
 </div>
 
-<div>
-    <h3>Our Mission</h3>
+<div class="rightDiv">
+   <img src=" {{ url_for('static', filename='img/images/our-vision.jpg') }} ">
+</div>
+
+
+<div class="rightDiv">
+    <h3 class="headingThree">Our Mission</h3>
  <br>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
         sed do eiusmod tempor incididunt ut labore et dolore magna
         aliqua. Ut enim ad minim veniam, quis nostrud exercitation
         ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
- <br>
-    <img  src=" {{ url_for('static', filename='img/images/our-mission.jpg') }}">
 </div>
 
-<div>
-   <h2>More about us</h2>
+<div class="leftDiv">
+    <img src=" {{ url_for('static', filename='img/images/our-mission.jpg') }}">
+
+</div>
+
+<div class="moreAboutUs">
+
+   <h2 class="headingTwo aboutAlignLeft">More about us</h2>
  <br>
-   <p>Lorem ipsum dolor sit amet consectetur. Tempor tellus posuere
+   <p class="moreAboutParagr">Lorem ipsum dolor sit amet consectetur. Tempor tellus posuere
     proin sit sollicitudin urna elit dui lobortis. Donec dolor viverra
     facilisis sollicitudin quis eu nibh ut. Augue ultricies gravida
     arcu convallis vitae urna. Volutpat orci ac tellus neque viverra

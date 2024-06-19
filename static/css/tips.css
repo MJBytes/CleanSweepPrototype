@@ -1,0 +1,40 @@
+.intro-section {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 10px;
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 100px;
+}
+
+.leftDiv,
+.rightDiv {
+    width: 100%;
+    max-width: 740px; /* Adjust the max-width as needed */
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.leftDiv img,
+.rightDiv img {
+    width: 60%;
+    height: 350px; /* Set a fixed height */
+    object-fit: cover;
+    padding: 10px;
+}
+
+.leftDiv .text-content,
+.rightDiv .text-content {
+    width: 100%;
+    padding: 10px;
+}
+
+

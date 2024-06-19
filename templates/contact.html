@@ -2,17 +2,29 @@
 
 {% block title %} Contact Us {% endblock %}
 
-{% set navbar_background_url = url_for('static', filename='/img/images/contact-us-banner.jpg') %}
+   {% set navbar_background_url = url_for('static', filename='/img/images/contact-us-banner_edited.jpg') %}
+
+   {% block head %}
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+   {% endblock %}
 
 {% block heading %}
-   Contact
-   <br>
-   Clean Sweep
+
+
+<div class="navHeading">
+   <h1 class="headingOne">Contact</h1>
+</div>
+
 {% endblock %}
 
 {% block content %}
 
-   <h1>Lets</h1> <h2>Talk!</h2>
+<div class="centerDiv">
+
+<div class="contactContentHead">
+
+   <h3 class="headingThree">Let's&nbsp;</h3> <h1 class="headingOne">Talk!</h1>
+</div>
    <br>
 
    <p>
@@ -21,43 +33,56 @@
     to you. While waiting you can also check out our FAQ section where
     some of your questions might have already been answered.
    </p>
+
+</div>
+
    <br>
 
-   <form>
+   <form class="contactForm">
 
        <label for="name">Name*</label>
     <br>
-       <input type="text" id="name">
+       <input type="text" id="name" placeholder="Your Full Name">
     <br>
        <label for="email">Email*</label>
     <br>
-       <input type="text" id="email">
+       <input type="text" id="email" placeholder="Enter your Email">
     <br>
        <label for="contactNum">Contact Number*</label>
     <br>
-       <input type="text" id="contactNum">
+       <input type="text" id="contactNum" placeholder="Enter your Contact Number">
     <br>
        <label for="message">Message*</label>
     <br>
-       <input type="text" id="message">
+    <textarea id="message" placeholder="Start your message here....."></textarea>
     <br><br>
-       <input type="submit" value="submit">
+       <input type="submit" value="Submit">
 
    </form>
 
-   <dif class="contactInfo">
+   <div class="contactContentHead">
 
-       <h3>Contact Information</h3>
+   <div class="contactInfo">
+
+       <h4 class="headingFour">Contact Information</h4>
     <br>
-       <ul>
-           <li>+689 555 1020</li>
-           <li>contact@clean-sweep.com</li>
-           <li>BP 547, Motu, Tehotu 98730, French Polynesia</li>
+       <ul class="contactUL">
+           <li class="contactLI">
+               <img class="iconSpesification" src="{{ url_for('static', filename='/img/icons/telephone2.png') }}" alt="?">
+               +689 555 1020</li>
+           <li class="contactLI">
+               <img class="iconSpesification" src="{{ url_for('static', filename='/img/icons/mail.png') }}" alt="?">
+               contact@clean-sweep.com</li>
+           <li class="contactLI">
+               <img class="iconSpesification" src="{{ url_for('static', filename='/img/icons/location-pin.png') }}" alt="?">
+               BP 547, Motu, Tehotu 98730, French Polynesia</li>
        </ul>
 
-   </dif>
+   </div>
 
    <!--Google Maps Embed-->
-   <iframe src="https://www.google.com/maps/place/Te+Mahana+Spa/@-16.4712799,-151.7054246,17z/data=!3m1!4b1!4m6!3m5!1s0x769a351bc9068167:0x2889c4b140035482!8m2!3d-16.4712799!4d-151.7054246!16s%2Fg%2F11f3c_jkvy?entry=ttu" title="CleanSweep Head Office"></iframe>
+   <iframe class="mapsLocation" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.084076410459!2d-151.7054246!3d-16.4712799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x769a351bc9068167%3A0x2889c4b140035482!2sTe%20Mahana%20Spa!5e0!3m2!1sen!2snz!4v1718549827186!5m2!1sen!2snz" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</div>
 
 {% endblock %}
