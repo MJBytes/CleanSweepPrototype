@@ -101,7 +101,7 @@ body {
     gap: 4rem;
 }
 
-.navbar .toggle_btn {     /* Hamburger */
+.navbar .ham-btn {       /* Hamburger button */
     color: #6b7763;
     margin-right: 20px;
     font-size: 1.5rem;
@@ -109,7 +109,7 @@ body {
     display: none;
 }
 
-.navbar .action_btn {      /* Login button */
+.navbar .login-btn {      /* Login button */
     background-color: #677260;
     color: #fff;
     padding: 5px 20px;
@@ -127,12 +127,12 @@ body {
     transition: scale 0.2 ease;
 }
 
-.navbar .action_btn:hover {
+.navbar .login-btn:hover {
     scale: 1.05;
     color: #323b32;
 }
 
-.navbar .action_btn:active {
+.navbar .login-btn:active {
     scale: 0.95;
 }
 
@@ -163,7 +163,7 @@ body {
     justify-content: center;
 }
 
-.dropdown_menu .action_btn {
+.dropdown_menu .login-btn {
     background-color: #677260;
     color: #fff;
     padding: 5px 20px;
@@ -180,12 +180,12 @@ body {
     transition: scale 0.2 ease;
 }
 
-.dropdown_menu .action_btn:hover {
+.dropdown_menu .login-btn:hover {
     scale: 1.05;
     color: #323b32;
 }
 
-.dropdown_menu .action_btn:active {
+.dropdown_menu .login-btn:active {
     scale: 0.80;
 }
 
@@ -203,11 +203,11 @@ body {
 
 @media(max-width: 1010px) {
     .navbar .links,
-    .navbar .action_btn {
+    .navbar .login-btn {
         display: none;
     }
 
-    .navbar .toggle_btn {
+    .navbar .ham-btn {
         display: block;
     }
 

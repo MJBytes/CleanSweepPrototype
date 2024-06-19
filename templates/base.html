@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
     <script src="https://kit.fontawesome.com/017c367aad.js"></script>  <!-- Font/icon kit -->
     <style>
-        /* to add a new image for each page--> */
+        /* Inheritable navbar image properties for each page */
         .navbar {
             background-image: url('{{ navbar_background_url }}');
             background-position: top;
@@ -21,13 +21,16 @@
 </head>
 
 <body>
+
+<!-- HEADER -->    
+
 <header>
     <div class="navbar">
         <div class="nav-container">
-            <a href="{{ url_for('main') }}">
-                <img src="static/img/logos/logo.png" alt="Clean Sweep" class="header-logo">
+            <a href="{{ url_for('main') }}">        <!-- Links to the home page when logo clicked -->
+                <img src="static/img/logos/logo.png" alt="Clean Sweep" class="header-logo">      <!-- Header logo -->
             </a>
-            <ul class="links">
+            <ul class="links">                        <!-- Header page links -->
                 <li><a href="{{ url_for('main') }}">Home</a></li>
                 <li><a href="{{ url_for('profile') }}">Profile</a></li>
                 <li><a href="{{ url_for('tasks') }}">Tasks</a></li>
@@ -35,12 +38,12 @@
                 <li><a href="{{ url_for('contact') }}">Contact</a></li>
                 <li><a href="#">Tips</a></li>
             </ul>
-            <a href="#" class="action_btn">Login</a>      <!-- Login page link goes here -->
-            <div class="toggle_btn">
+            <a href="#" class="login-btn">Login</a>      <!-- Login button -->
+            <div class="ham-btn">
                 <i class="fa-solid fa-bars"></i>          <!-- Responsive hamburger icon -->
             </div>
         </div>
-        <div class="heading-container">
+        <div class="heading-container">                       <!-- Site Heading -->
             <div class="site-heading">
                 <div class="block-heading"> {% block heading %} {% endblock %}</div>
             </div>
@@ -52,7 +55,7 @@
         <li><a href="{{ url_for('tasks') }}">Tasks</a></li>
         <li><a href="{{ url_for('about') }}">About</a></li>
         <li><a href="{{ url_for('contact') }}">Contact</a></li>
-        <li><a href="#" class="action_btn">Login</a></li>
+        <li><a href="#" class="login-btn">Login</a></li>
     </div>
 </header>
 
