@@ -1,25 +1,25 @@
 /* MJS CODE */
 
-/*h1{
+.headingOne{
     font-size: 48px;
     color: #A7BA9C;
 }
 
-h2{
+.headingTwo{
     font-size: 48px;
     color: #FFFFFF;
 }
 
-h3{
+.headingThree{
     font-size: 48px;
     color: #333333;
 }
 
-h4{
+.headingFour{
     font-size: 48px;
     color: #333333;
     font-weight: 100;
-}*/
+}
 
 .navHeading{
     z-index: 4;
