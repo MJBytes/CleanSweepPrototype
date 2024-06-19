@@ -53,6 +53,25 @@ body {
     height:100vh;          /* Could also be put in "main" */
 }
 
+/* HEADER BLOCK CONTENT */
+
+.heading-container {
+    margin-left: 40px;
+    margin-top: 15%;
+    height: 90px;
+}
+
+.site-heading {
+    border-left: 4px solid #333333;  /* For vertical line */
+}
+
+.block-heading h1 {
+    margin-left: 20px;
+    color: #A7BA9C;
+    font-size: 48px;
+    display: flex;
+}
+
 /* NAV BAR */
 
 .navbar {
@@ -245,24 +264,6 @@ body {
 header {                     /* If we don't want the left-right margin we can remove this header code */
     position: relative;
     padding: 0 1rem;
-}
-
-/* HEADER BLOCK CONTENT */
-
-.heading-container {
-    margin-left: 40px;
-    margin-top: 15%;
-    height: 90px;
-}
-
-.site-heading {
-    border-left: 4px solid #516d55;
-}
-
-.block-heading {
-    margin-left: 20px;
-    color: #3c5f41;
-    display: flex;
 }
 
 /* FOOTER */
