@@ -96,7 +96,8 @@
 #graph-container {
     align-self: flex-start; /* Aligns the graph to the start of the flex container */
     padding-top: 90px; /* Adds more space above the graph */
-    padding-right: 150px; /* Adds more space above the graph */
+    padding-right: 150px;
+    padding-bottom: 150px;
 }
 
 
@@ -104,7 +105,7 @@
 /*Achievements and Statistics sections*/
 .achievements,
 .statistics {
-    background-color: #f9f9f9; /* Your desired background color */
+    background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
