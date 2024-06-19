@@ -23,6 +23,11 @@ def contact():
 def about():
     return render_template("about.html")
 
+@app.route('/tips')
+def tips():
+    return render_template("tips.html")
+
+
 @app.route('/dashboard')
 def dashboard():
     return render_template("dashboard.html")
