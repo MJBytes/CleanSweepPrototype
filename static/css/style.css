@@ -53,6 +53,81 @@ body {
     height:100vh;          /* Could also be put in "main" */
 }
 
+/* LOGIN FORM POPUP */
+
+.login-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    max-width: 720px;
+    width: 100%;
+    background: #fff;
+    border: 2px solid #fff;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+}
+
+.login-popup .login-form {       /* Divides the 2 sections */
+    display: flex;
+}
+
+.login-form .left-info{          /* Left Content */
+    max-width: 330px;
+}
+
+.login-form h2 { 
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-form .form-content {       /* Right Content */
+    width: 100%;
+    padding: 35px;
+}
+
+form .input-field {
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+}
+
+form .input-field input {         /* Email & Password Input Fields */
+    width: 100%;
+    height: 80%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 0.95rem;
+    border-radius: 3px;
+    border: 1px solid #717171;
+}
+
+.input-field input:focus {
+    border-color: #516d55;
+}
+
+.input-field input:is(:focus, :valid) {     /* Padding for input transition */
+    padding: 8px 14px 0;
+}
+
+form .input-field label {          /* Email & Password Labels */
+    position: absolute;
+    top: 42%;
+    left: 14px;
+    color: #717171;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: 0.2s ease;
+}
+
+form .input-field input:is(:focus, :valid) ~ label {  /* For moving email and password text when input is initiated */
+    color: #516d55;
+    font-size: 0.75rem;
+    transform: translateY(-100%);
+}
+
+
+
 /* HEADER BLOCK CONTENT */
 
 .heading-container {

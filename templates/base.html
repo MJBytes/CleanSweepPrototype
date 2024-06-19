@@ -40,17 +40,17 @@
             </ul>
             <a href="#" class="login-btn">Login</a>      <!-- Login button -->
             <div class="ham-btn">
-                <i class="fa-solid fa-bars"></i>          <!-- Responsive hamburger icon -->
+                <i class="fa-solid fa-bars"></i>         <!-- Responsive hamburger icon -->
             </div>
         </div>
-        <div class="heading-container">                       <!-- Site Heading -->
+        <div class="heading-container">                  <!-- Site Heading -->
             <div class="site-heading">
                 <div class="block-heading"> {% block heading %} {% endblock %}</div>
             </div>
         </div>
     </div>
-    <div class="dropdown_menu">
-        <li><a href="{{ url_for('main') }}">Home</a></li>
+    <div class="dropdown_menu">                                    <!-- Drop Down Links -->
+        <li><a href="{{ url_for('main') }}">Home</a></li> 
         <li><a href="{{ url_for('profile') }}">Profile</a></li>
         <li><a href="{{ url_for('tasks') }}">Tasks</a></li>
         <li><a href="{{ url_for('about') }}">About</a></li>
@@ -63,19 +63,19 @@
 
 <div class="login-popup">             
     <div class="login-form">
-        <div class="form-details">
+        <div class="left-info">
             <h2>Welcome Back</h2>
             <p>Please login using your account information.</p>
         </div>
         <div class="form-content">
             <h2>LOGIN</h2>
-            <form action="#">
+            <form action="#">                <!-- DB link may go here -->
                 <div class="input-field">    <!-- Email input -->
-                    <input type="text">
+                    <input type="text" required>
                     <label>Email</label>
                 </div>
                 <div class="input-field">    <!-- Password input -->
-                    <input type="password">
+                    <input type="password" required>
                     <label>Password</label>
                 </div>
                 <a href="#" class="forgot-password">Forgot Password?</a>  <!-- Forgot Password Link -->
