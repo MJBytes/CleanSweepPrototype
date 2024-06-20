@@ -103,7 +103,7 @@ form .input-field input {         /* Email & Password Input Fields */
 }
 
 .input-field input:focus {
-    border-color: #516d55;
+    border-color: #3f5843;
 }
 
 .input-field input:is(:focus, :valid) {     /* Padding for input transition */
