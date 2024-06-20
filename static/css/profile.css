@@ -1,0 +1,122 @@
+/* Profile picture styles */
+.profile-picture-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#profile-picture {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;     /* Creating a round image for profile picture */
+    border: 2px solid #ddd;
+}
+
+#profile-picture-upload {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Form styles */
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  /* To align elements to the start */
+}
+
+.profile-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.profile-form form label,
+.profile-form form input[type="text"] {
+    align-self: flex-start;      /* To align elements to the start */
+}
+
+.profile-form form input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.profile-form form input[type="submit"] {
+    background-color: #758769;
+    color: white;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.profile-form form input[type="submit"]:hover {
+    background-color: #5a6b55;           /* Darker shade when hovering */
+}
+
+/* Additional styles for the date of birth dropdowns */
+.dob-dropdowns {
+    display: flex;
+    gap: 10px;      /* Creating space between the dropdowns */
+    margin-top: 5px;
+}
+
+.dob-dropdowns select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 100px;
+}
+
+/* Container for the entire content to use flexbox */
+.profile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.profile-form {
+    flex: 1;
+    margin-right: 20px;  /* Adding margin to separate the profile details */
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between the sections */
+    width: 300px;
+}
+
+/*Graph*/
+#graph-container {
+    align-self: flex-start; /* Aligns the graph to the start of the flex container */
+    padding-top: 90px; /* Adds more space above the graph */
+    padding-right: 150px;
+    padding-bottom: 150px;
+}
+
+
+
+/*Achievements and Statistics sections*/
+.achievements,
+.statistics {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border: 1px solid #e0e0e0; /*border color*/
+}
+
+.achievement-category,
+.statistics-category{
+    margin-bottom: 20px;
+}
+
+.achievement-category:last-child, .statistics-category:last-child {
+    margin-bottom: 0;
+}

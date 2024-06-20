@@ -2,7 +2,11 @@
 
 {% block title %} Task Management {% endblock %}
 
-{% set navbar_background_url = url_for('static', filename='img/images/task-management.jpg') %}
+{% set navbar_background_url = url_for('static', filename='img/images/task-management2.jpg') %}
+
+{% block head %}
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/tasks.css') }}">
+   {% endblock %}
 
 {% block heading %}
 <h1>Task Management</h1>
@@ -34,7 +38,6 @@
     Excepteur sint occaecat cupidatat non proident</div>
 </div>
 
-
 <br>
 
 <div class="task-categories">
@@ -50,6 +53,7 @@
         <h3 class="text-box">Task Templates</h3>
         <p class="text-box">Lorem ipsum dolor sit amet,</p>
     </div>
+
 </div>
 
 {% endblock %}

@@ -2,19 +2,27 @@
 
 {% block title %} Task Management {% endblock %}
 
-{% set navbar_background_url = url_for('static', filename='img/images/user-profile1.jpg') %}
+{% set navbar_background_url = url_for('static', filename='/img/images/user-profile1.jpg') %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+{% endblock %}
 
 {% block heading %}
-<h1>User Profile</h1>
+<div class="navHeading">
+    <h1 class="headingOne">User Profile</h1>
+</div>
 {% endblock %}
 
 {% block content %}
-
-
-
-
 <div class="profile-container">
     <div class="profile-form">
+        <div class="profile-picture-container">
+            <img id="profile-picture" src="{{ url_for('static', filename='path/to/default/profile-picture.png') }}" alt="Profile Picture">
+            <input type="file" id="profile-picture-upload" accept="image/*" onchange="loadFile(event)">
+        </div>
+
         <form>
             <label for="name">Name*</label>
             <input type="text" id="name" name="name" required>
@@ -25,20 +33,17 @@
             <label for="dob-day">Date of Birth*</label>
             <div class="dob-dropdowns">
                 <select id="dob-day" name="dob-day" required>
-                    <!-- Options for day (1-31) -->
                     {% for day in range(1, 32) %}
                     <option value="{{ day }}">{{ day }}</option>
                     {% endfor %}
                 </select>
                 <select id="dob-month" name="dob-month" required>
-                    <!-- Options for month (Jan-Dec) -->
                     {% set months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %}
                     {% for month in months %}
                     <option value="{{ month }}">{{ month }}</option>
                     {% endfor %}
                 </select>
                 <select id="dob-year" name="dob-year" required>
-                    <!-- Options for year (e.g., 1920-2024) -->
                     {% for year in range(1920, 2025) %}
                     <option value="{{ year }}">{{ year }}</option>
                     {% endfor %}
@@ -46,8 +51,39 @@
             </div>
             <input type="submit" value="Save Changes">
         </form>
-    </div>
+        <div id="graph-container">
+            <canvas id="myChart" style="width:100%;max-width:800px;height:400px;"></canvas>
+            <script>
+            const xValues = ["0 - 29%", "30 - 49%", "50  - 79%", "80 to 99%", "100%"];
+            const yValues = [55, 49, 44, 24, 15];
+            const barColors = [
+              "#90BE6D",
+              "#F94144",
+              "#F9C74F",
+              "#2CF3F3",
+              "#1e7145"
+            ];
 
+            new Chart("myChart", {
+              type: "doughnut",
+              data: {
+                labels: xValues,
+                datasets: [{
+                  backgroundColor: barColors,
+                  data: yValues
+                }]
+              },
+              options: {
+                title: {
+                  display: true,
+                  text: "Cleaning Activities"
+                }
+              }
+            });
+            </script>
+        </div>
+    </div>
+             <!--We will have to link this to database, so it records the below streaks -->
     <div class="profile-details">
         <section class="achievements">
             <h2>Achievements</h2>
@@ -72,17 +108,29 @@
             <h2>Statistics</h2>
             <div class="statistics-category">
                 <h3>Total Rooms Cleaned</h3>
-                <p></p> <!--data from the database -->
+                <p></p>
             </div>
             <div class="statistics-category">
                 <h3>Hours Spent Cleaning</h3>
-                <p></p> <!-- data from the database -->
+                <p></p>
             </div>
             <div class="statistics-category">
                 <h3>Total Days Cleaning</h3>
-                <p></p> <!-- data from the database -->
+                <p></p>
             </div>
         </section>
     </div>
 </div>
+
+       <!-- Adding some JavaScript for Profile Picture to upload -- >
+<script>
+    var loadFile = function(event) {
+        var image = document.getElementById('profile-picture');
+        image.src = URL.createObjectURL(event.target.files[0]);
+        image.onload = function() {
+            URL.revokeObjectURL(image.src) // free memory
+        }
+
+    };
+</script>
 {% endblock %}
