@@ -16,12 +16,10 @@
             background-image: url('{{ navbar_background_url }}');
             background-position: top;
             background-size: cover;
-        }
-
-
+        }        
     </style>
 
-{% block head %}   {% endblock %}
+{% block head %}{% endblock %}
 
 </head>
 
@@ -68,20 +66,23 @@
 
 <!-- LOGIN POP UP FORM -->
 
-<div class="login-popup">             
-    <div class="login-form">
+<div class="login-popup">       
+    <div class="close-btn">                   <!-- Close Button -->
+        <i class="fa-solid fa-x"></i>
+    </div>
+    <div class="login-form login">            <!-- LOGIN -->
         <div class="left-info">
             <h2>Welcome Back</h2>
             <p>Please login using your account information.</p>
         </div>
         <div class="form-content">
             <h2>LOGIN</h2>
-            <form action="#">                <!-- DB link may go here -->
-                <div class="input-field">    <!-- Email input -->
+            <form action="#">                      <!-- DB link may go here for login -->
+                <div class="input-field">          <!-- Email input -->
                     <input type="text" required>
                     <label>Email</label>
                 </div>
-                <div class="input-field">    <!-- Password input -->
+                <div class="input-field">          <!-- Password input -->
                     <input type="password" required>
                     <label>Password</label>
                 </div>
@@ -90,7 +91,41 @@
             </form>
             <div class="bottom-link">
                 Don't have an account?
-                <a href="#">Signup</a>          <!-- Sign Up Link -->
+                <a href="#" id="signup-link">Signup</a>          <!-- Sign Up Link -->
+            </div>
+        </div>
+    </div>
+
+<!-- SIGNUP POPUP FORM -->   
+
+    <div class="login-form signup">           <!-- SIGNUP -->
+        <div class="left-info">
+            <h2>Create Account</h2>
+            <p>To become a part of our community, please sign up using your personal information.</p>
+        </div>
+        <div class="form-content">
+            <h2>SIGNUP</h2>
+            <form action="#">                        <!-- DB link may go here for signup -->
+                <div class="input-field">            <!-- Insert Email -->
+                    <input type="text" required>
+                    <label>Enter your email</label>
+                </div>
+                <div class="input-field">                   <!-- Create Password -->
+                    <input type="password" required>
+                    <label>Create password</label>
+                </div>
+                <div class="policy-text">
+                    <input type="checkbox" id="policy">
+                    <label for="policy">
+                        I agree to the 
+                        <a href="#">Terms & Conditions</a>
+                    </label>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+            <div class="bottom-link">
+                Already have an account?
+                <a href="#" id="login-link">Login</a>          <!-- Login Link -->
             </div>
         </div>
     </div>
@@ -148,5 +183,6 @@
     <p class="copyright">Clean Sweep &#169; 2024</p>
 </footer>
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <div class="blur-background"></div>
 </body>
 </html>

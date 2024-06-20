@@ -7,10 +7,27 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: hsl(0, 0%, 100%);
-    height:100vh;          /* Could also be put in "main" */
+    height:100vh;                /* Could also be put in "main" */
 }
 
 /* LOGIN FORM POPUP */
+
+.blur-background {               /* Background Blur */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(5px);
+    transition: 0.1s ease;
+}
+
+.show-popup .blur-background {
+    opacity: 1;
+    pointer-events: auto;
+}
 
 .login-popup {
     position: fixed;
@@ -18,10 +35,28 @@ body {
     left: 50%;
     max-width: 720px;
     width: 100%;
+    opacity: 0;
+    pointer-events: none;
     background: #fff;
     border: 2px solid #fff;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -100%);
     border-radius: 5px;
+    z-index: 1000;                /* Ensure it stays on top of all page content */
+}
+
+.show-popup .login-popup {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease, opacity 0.1s;
+}
+
+.login-popup .close-btn {        /* Close Button */
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: #878484;
+    cursor: pointer;
 }
 
 .login-popup .login-form {       /* Divides the 2 sections */
@@ -30,9 +65,29 @@ body {
 
 .login-form .left-info{          /* Left Content */
     max-width: 330px;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    padding: 0 20px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.login .left-info {                                  /* Login Background */
+    background: url("../img/images/login.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
-.login-form h2 { 
+.signup .left-info {                                 /* Signup Background */
+    background: url("../img/images/signup.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.login-form h2 {                  /* Main Headings */
     text-align: center;
     margin-bottom: 30px;
 }
@@ -42,9 +97,9 @@ body {
     padding: 35px;
 }
 
-form .input-field {
+form .input-field {               /* Email & Password Box Fields */
     height: 50px;
-    width: 100%;
+    width: 90%;
     margin-top: 20px;
     position: relative;
 }
@@ -59,15 +114,15 @@ form .input-field input {         /* Email & Password Input Fields */
     border: 1px solid #717171;
 }
 
-.input-field input:focus {
-    border-color: #3f5843;
+.input-field input:focus {        /* Border of Email and PW Box When Clicked On */
+    border-color: #698f6f;
 }
 
 .input-field input:is(:focus, :valid) {     /* Padding for input transition */
     padding: 8px 14px 0;
 }
 
-form .input-field label {          /* Email & Password Labels */
+form .input-field label {         /* Email & Password Labels */
     position: absolute;
     top: 42%;
     left: 14px;
@@ -83,21 +138,93 @@ form .input-field input:is(:focus, :valid) ~ label {  /* For moving email and pa
     transform: translateY(-100%);
 }
 
+.login-form a {                     /* Forget PW and Signup Links */
+    color: #285a31;
+    text-decoration: none;
+}
 
+.login-form a:hover {               /* Forget PW and Signup Links Hover */
+    text-decoration: underline;
+}
 
-/* HEADER BLOCK CONTENT */
+.login-form :where(.forgot-password, .policy-text) {      /* Forgot PW & Policy Styling */
+    display: inline-flex;
+    margin-top: 14px;
+    font-size: 0.95rem;
+}
 
-.heading-container {
+form button {                       /* Login Button */
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 14px 0;
+    border-radius: 3px;
+    margin: 25px 0;
+    color: #fff;
+    cursor: pointer;
+    background: #516d55; 
+    transition: 0.2s ease;
+}
+
+form button:hover {                 /* Login Button Hover */
+    background: #3f5843;
+}
+
+.login-form .bottom-link {          /* Signup Styling */
+    text-align: center;
+}
+
+.login-popup .signup,
+.login-popup.show-signup .login  {   /* Removes Signup/Login Section When Not on Display */
+    display: none;
+}
+
+.login-popup.show-signup .signup {   /* Shows Signup Section */
+    display: flex;
+}
+
+.signup .policy-text {              /* Policy Stying */
+    display: flex;
+    align-items: center;
+}
+
+.signup .policy-text input {
+    width: 14px;
+    height: 14px;
+    margin-right: 7px;
+}
+
+/* RESPONSIVE LOGIN/SIGNUP POPUP FORM */
+
+@media (max-width: 760px) {
+    .login-popup {
+        width: 80%;
+    }
+
+    .login-form .left-info {       /* Removes left content when scaled down */
+        display: none;
+    }
+
+    .login-form .form-content {
+        padding: 30px 20px;
+    }
+}
+
+/* HEADING BLOCK CONTENT */
+  
+.heading-container {                 /* For Sizing Site Heading Content */
     margin-left: 40px;
     margin-top: 15%;
     height: 90px;
 }
 
 .site-heading {
-    border-left: 4px solid #333333;  /* For vertical line */
+    border-left: 4px solid #333333;    /* For Vertical Line */
 }
 
-.block-heading h1 {
+.block-heading h1 {                      /* First Heading Word */
     margin-left: 20px;
     color: #A7BA9C;
     font-size: 48px;
@@ -116,7 +243,7 @@ form .input-field input:is(:focus, :valid) ~ label {  /* For moving email and pa
     margin-bottom: 30px;
 }
 
-.nav-container {
+.nav-container {                   /* Top Nav Bar*/
     background-color: rgba(154, 161, 157, .5); /* #9aa19d */
     display: flex;
     width: 100%;
@@ -133,26 +260,26 @@ form .input-field input:is(:focus, :valid) ~ label {  /* For moving email and pa
 .navbar a {
     text-decoration: none;
     color: #fff;
-    font-size: 1.1rem;     /* Font size of links */
+    font-size: 1.1rem;             /* Font size of links */
     cursor: pointer;
 }
 
-.navbar ul a:hover {
+.navbar ul a:hover {               /* Link Hover */
     color: #516d55;
 }
 
-.navbar .header-logo {
+.navbar .header-logo {             /* Header Logo */
     width: 125px;
     margin-left: 20px;
     display: flex;
 }
 
-.navbar .links {
+.navbar .links {                   /* Links Styling */
     display: flex;
     gap: 4rem;
 }
 
-.navbar .ham-btn {       /* Hamburger button */
+.navbar .ham-btn {                 /* Hamburger Button */
     color: #6b7763;
     margin-right: 20px;
     font-size: 1.5rem;
@@ -160,8 +287,8 @@ form .input-field input:is(:focus, :valid) ~ label {  /* For moving email and pa
     display: none;
 }
 
-.navbar .login-btn {      /* Login button */
-    background-color: #677260;
+.navbar .login-btn {               /* Login Button */
+    background-color: #516d55;
     color: #fff;
     padding: 5px 20px;
     border: none;
@@ -175,16 +302,16 @@ form .input-field input:is(:focus, :valid) ~ label {  /* For moving email and pa
     margin-bottom: auto;
     margin-right: 20px;
     width: 40px;
-    transition: scale 0.2 ease;
+    transition: scale 0.2 ease;     /* Login Button Movement When Hovered */
 }
 
-.navbar .login-btn:hover {
+.navbar .login-btn:hover {          /* Login Button Hover */
     scale: 1.05;
-    color: #323b32;
+    background: #3f5843;
 }
 
-.navbar .login-btn:active {
-    scale: 0.95;
+.navbar .login-btn:active {         
+    scale: 0.95; 
 }
 
 /* DROP DOWN MENU */
@@ -203,19 +330,19 @@ form .input-field input:is(:focus, :valid) ~ label {  /* For moving email and pa
     transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.dropdown_menu.open {
+.dropdown_menu.open {                    /* Open Dropdown */
     height: 290px;
 }
 
-.dropdown_menu li {
+.dropdown_menu li {                      /* Dropdown Links */
     padding: 0.7rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.dropdown_menu .login-btn {
-    background-color: #677260;
+.dropdown_menu .login-btn {              /* Dropdown Login Button */
+    background-color: #516d55; 
     color: #fff;
     padding: 5px 20px;
     border: none;
@@ -233,7 +360,7 @@ form .input-field input:is(:focus, :valid) ~ label {  /* For moving email and pa
 
 .dropdown_menu .login-btn:hover {
     scale: 1.05;
-    color: #323b32;
+    background: #3f5843;
 }
 
 .dropdown_menu .login-btn:active {
