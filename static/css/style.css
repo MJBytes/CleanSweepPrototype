@@ -176,8 +176,13 @@ form button:hover {                 /* Login Button Hover */
     text-align: center;
 }
 
-.login-popup .signup {              /* Removes Signup Section */
+.login-popup .signup,
+.login-popup.show-signup .login  {   /* Removes Signup/Login Section When Not on Display */
     display: none;
+}
+
+.login-popup.show-signup .signup {   /* Shows Signup Section */
+    display: flex;
 }
 
 .signup .policy-text {              /* Policy Stying */
