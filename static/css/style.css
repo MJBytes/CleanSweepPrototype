@@ -97,14 +97,14 @@ body {
     padding: 35px;
 }
 
-form .input-field {               /* Email & Password Box Fields */
+.login-form form .input-field {               /* Email & Password Box Fields */
     height: 50px;
     width: 90%;
     margin-top: 20px;
     position: relative;
 }
 
-form .input-field input {         /* Email & Password Input Fields */
+.login-form form .input-field input {         /* Email & Password Input Fields */
     width: 100%;
     height: 80%;
     outline: none;
@@ -122,7 +122,7 @@ form .input-field input {         /* Email & Password Input Fields */
     padding: 8px 14px 0;
 }
 
-form .input-field label {         /* Email & Password Labels */
+.login-form form .input-field label {         /* Email & Password Labels */
     position: absolute;
     top: 42%;
     left: 14px;
@@ -132,7 +132,7 @@ form .input-field label {         /* Email & Password Labels */
     transition: 0.2s ease;
 }
 
-form .input-field input:is(:focus, :valid) ~ label {  /* For moving email and password text when input is initiated */
+.login-form form .input-field input:is(:focus, :valid) ~ label {  /* For moving email and password text when input is initiated */
     color: #516d55;
     font-size: 0.75rem;
     transform: translateY(-100%);
@@ -153,7 +153,7 @@ form .input-field input:is(:focus, :valid) ~ label {  /* For moving email and pa
     font-size: 0.95rem;
 }
 
-form button {                       /* Login Button */
+.login-form form button {                       /* Login Button */
     width: 100%;
     outline: none;
     border: none;
@@ -168,7 +168,7 @@ form button {                       /* Login Button */
     transition: 0.2s ease;
 }
 
-form button:hover {                 /* Login Button Hover */
+.login-form form button:hover {                 /* Login Button Hover */
     background: #3f5843;
 }
 
