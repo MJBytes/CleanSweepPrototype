@@ -8,7 +8,7 @@
     text-align: center;
     flex-direction: column;
     margin: auto;
-    max-width: 600px;
+    max-width: 600px; 
     padding: 20px;
 }
 
@@ -39,12 +39,13 @@
 
 
 .contactContentHead {
-    display: flex;
-    align-items: center;
+    display: flex; 
+    align-items: center; 
 }
 
 .contactContentHead h3, .contactContentHead h1 {
-    margin: 0;
+    margin: 0; 
+
 }
 
 .contactForm{
@@ -54,7 +55,7 @@
     text-align: left;
     flex-direction: column;
     margin: auto;
-    max-width: 600px;
+    max-width: 600px; 
     padding: 20px;
 }
 
@@ -106,14 +107,15 @@
 }
 
 .contactUL{
-   list-style-type: none;
+   list-style-type: none; 
    padding: 0;
    margin: 0;
    flex-grow: 1;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   padding-bottom: 45px;
+   padding-bottom: 45px; 
+
 }
 
 .contactLI {
@@ -124,4 +126,6 @@
 
 .contactLI img {
    margin-right: 10px;
+
 }
+

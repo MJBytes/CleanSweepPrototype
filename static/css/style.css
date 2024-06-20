@@ -1,3 +1,6 @@
+
+/* TANISHA'S CODE */
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0 auto;
@@ -5,6 +8,100 @@ body {
     box-sizing: border-box;
     background-color: hsl(0, 0%, 100%);
     height:100vh;          /* Could also be put in "main" */
+}
+
+/* LOGIN FORM POPUP */
+
+.login-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    max-width: 720px;
+    width: 100%;
+    background: #fff;
+    border: 2px solid #fff;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+}
+
+.login-popup .login-form {       /* Divides the 2 sections */
+    display: flex;
+}
+
+.login-form .left-info{          /* Left Content */
+    max-width: 330px;
+}
+
+.login-form h2 { 
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-form .form-content {       /* Right Content */
+    width: 100%;
+    padding: 35px;
+}
+
+form .input-field {
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+}
+
+form .input-field input {         /* Email & Password Input Fields */
+    width: 100%;
+    height: 80%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 0.95rem;
+    border-radius: 3px;
+    border: 1px solid #717171;
+}
+
+.input-field input:focus {
+    border-color: #3f5843;
+}
+
+.input-field input:is(:focus, :valid) {     /* Padding for input transition */
+    padding: 8px 14px 0;
+}
+
+form .input-field label {          /* Email & Password Labels */
+    position: absolute;
+    top: 42%;
+    left: 14px;
+    color: #717171;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: 0.2s ease;
+}
+
+form .input-field input:is(:focus, :valid) ~ label {  /* For moving email and password text when input is initiated */
+    color: #516d55;
+    font-size: 0.75rem;
+    transform: translateY(-100%);
+}
+
+
+
+/* HEADER BLOCK CONTENT */
+
+.heading-container {
+    margin-left: 40px;
+    margin-top: 15%;
+    height: 90px;
+}
+
+.site-heading {
+    border-left: 4px solid #333333;  /* For vertical line */
+}
+
+.block-heading h1 {
+    margin-left: 20px;
+    color: #A7BA9C;
+    font-size: 48px;
+    display: flex;
 }
 
 /* NAV BAR */
@@ -55,7 +152,7 @@ body {
     gap: 4rem;
 }
 
-.navbar .toggle_btn {     /* Hamburger */
+.navbar .ham-btn {       /* Hamburger button */
     color: #6b7763;
     margin-right: 20px;
     font-size: 1.5rem;
@@ -63,7 +160,7 @@ body {
     display: none;
 }
 
-.navbar .action_btn {      /* Login button */
+.navbar .login-btn {      /* Login button */
     background-color: #677260;
     color: #fff;
     padding: 5px 20px;
@@ -81,12 +178,12 @@ body {
     transition: scale 0.2 ease;
 }
 
-.navbar .action_btn:hover {
+.navbar .login-btn:hover {
     scale: 1.05;
     color: #323b32;
 }
 
-.navbar .action_btn:active {
+.navbar .login-btn:active {
     scale: 0.95;
 }
 
@@ -117,7 +214,7 @@ body {
     justify-content: center;
 }
 
-.dropdown_menu .action_btn {
+.dropdown_menu .login-btn {
     background-color: #677260;
     color: #fff;
     padding: 5px 20px;
@@ -134,12 +231,12 @@ body {
     transition: scale 0.2 ease;
 }
 
-.dropdown_menu .action_btn:hover {
+.dropdown_menu .login-btn:hover {
     scale: 1.05;
     color: #323b32;
 }
 
-.dropdown_menu .action_btn:active {
+.dropdown_menu .login-btn:active {
     scale: 0.80;
 }
 
@@ -157,11 +254,11 @@ body {
 
 @media(max-width: 1010px) {
     .navbar .links,
-    .navbar .action_btn {
+    .navbar .login-btn {
         display: none;
     }
 
-    .navbar .toggle_btn {
+    .navbar .ham-btn {
         display: block;
     }
 
@@ -199,6 +296,7 @@ header {                     /* If we don't want the left-right margin we can re
     position: relative;
     padding: 0 1rem;
 }
+
 
 /* HEADER BLOCK CONTENT */
 
@@ -436,9 +534,8 @@ button:hover {
     margin-bottom: 0;
 }
 
-
-
 /* RICHARD'S CODE */
+
 
 /* FOOTER */
 
