@@ -1,7 +1,7 @@
-// DROP DOWN JS FUNCTIONALITY
+// DROP DOWN JS FUNCTIONALITY FOR NAV LINKS
            
-const toggleBtn = document.querySelector('.toggle_btn'); 
-const toggleBtnIcon = document.querySelector('.toggle_btn i');
+const toggleBtn = document.querySelector('.ham-btn'); 
+const toggleBtnIcon = document.querySelector('.ham-btn i');
 const dropDownMenu = document.querySelector('.dropdown_menu'); 
 
 toggleBtn.onclick = function () {
