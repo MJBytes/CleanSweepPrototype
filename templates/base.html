@@ -39,11 +39,11 @@
                 <li><a href="{{ url_for('tasks') }}">Tasks</a></li>
                 <li><a href="{{ url_for('about') }}">About</a></li>
                 <li><a href="{{ url_for('contact') }}">Contact</a></li>
-                <li><a href="#">Tips</a></li>
-            </ul>
-            <a href="#" class="login-btn">Login</a>      <!-- Login button -->
-            <div class="ham-btn">
-                <i class="fa-solid fa-bars"></i>         <!-- Responsive hamburger icon -->
+                <li><a href="{{ url_for('tips') }}">Tips</a></li>
+                </ul>
+            <a href="#" class="action_btn">Login</a>      <!-- Login page link goes here -->
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>          <!-- Responsive hamburger icon -->
             </div>
         </div>
         <div class="heading-container">                  <!-- Site Heading -->
@@ -58,6 +58,8 @@
         <li><a href="{{ url_for('tasks') }}">Tasks</a></li>
         <li><a href="{{ url_for('about') }}">About</a></li>
         <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        <li><a href="{{ url_for('tips') }}">Tips</a></li>
+        <li><a href="#" class="action_btn">Login</a></li>
         <li><a href="#" class="login-btn">Login</a></li>
     </div>
 </header>
@@ -158,7 +160,8 @@
                 <li><a href="{{ url_for('profile') }}">Profile</a></li>
                 <li><a href="{{ url_for('tasks') }}">Tasks</a></li>
                 <li><a href="{{ url_for('about') }}">About Us</a></li>
-                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('tips') }}">Tips</a></li>
             </ul>
         </div>
         <div class="col">
