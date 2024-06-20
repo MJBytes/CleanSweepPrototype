@@ -43,11 +43,21 @@ body {
     width: 100%;
     color: #fff;
     display: flex;
+    padding: 0 20px;
     text-align: center;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+ 
+.login .left-info {                                  /* Login Background */
     background: url("../img/images/login.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.signup .left-info {                                 /* Signup Background */
+    background: url("../img/images/signup.jpg");
     background-size: cover;
     background-position: center;
 }
