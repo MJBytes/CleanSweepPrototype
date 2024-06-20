@@ -41,8 +41,8 @@
                 <li><a href="{{ url_for('contact') }}">Contact</a></li>
                 <li><a href="{{ url_for('tips') }}">Tips</a></li>
                 </ul>
-            <a href="#" class="action_btn">Login</a>      <!-- Login page link goes here -->
-            <div class="toggle_btn">
+            <a href="#" class="login-btn">Login</a>      <!-- Login Button -->
+            <div class="ham-btn">
                 <i class="fa-solid fa-bars"></i>          <!-- Responsive hamburger icon -->
             </div>
         </div>
@@ -53,13 +53,11 @@
         </div>
     </div>
     <div class="dropdown_menu">                                    <!-- Drop Down Links -->
-        <li><a href="{{ url_for('main') }}">Home</a></li> 
         <li><a href="{{ url_for('profile') }}">Profile</a></li>
         <li><a href="{{ url_for('tasks') }}">Tasks</a></li>
         <li><a href="{{ url_for('about') }}">About</a></li>
         <li><a href="{{ url_for('contact') }}">Contact</a></li>
         <li><a href="{{ url_for('tips') }}">Tips</a></li>
-        <li><a href="#" class="action_btn">Login</a></li>
         <li><a href="#" class="login-btn">Login</a></li>
     </div>
 </header>
@@ -156,7 +154,6 @@
         <div class="col">
             <h3>Links <div class="underline"><span></span></div> </h3>
             <ul>
-                <li><a href="{{ url_for('main') }}">Home</a></li>
                 <li><a href="{{ url_for('profile') }}">Profile</a></li>
                 <li><a href="{{ url_for('tasks') }}">Tasks</a></li>
                 <li><a href="{{ url_for('about') }}">About Us</a></li>
