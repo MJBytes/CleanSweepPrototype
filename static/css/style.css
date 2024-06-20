@@ -12,17 +12,43 @@ body {
 
 /* LOGIN FORM POPUP */
 
+.blur-background {               /* Background Blur */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(5px);
+    transition: 0.1s ease;
+}
+
+.show-popup .blur-background {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 .login-popup {
     position: fixed;
     top: 50%;
     left: 50%;
     max-width: 720px;
     width: 100%;
+    opacity: 0;
+    pointer-events: none;
     background: #fff;
     border: 2px solid #fff;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -100%);
     border-radius: 5px;
     z-index: 1000;                /* Ensure it stays on top of all page content */
+}
+
+.show-popup .login-popup {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease, opacity 0.1s;
 }
 
 .login-popup .close-btn {        /* Close Button */
@@ -74,7 +100,7 @@ body {
 
 form .input-field {               /* Email & Password Box Fields */
     height: 50px;
-    width: 93%;
+    width: 90%;
     margin-top: 20px;
     position: relative;
 }
@@ -122,7 +148,7 @@ form .input-field input:is(:focus, :valid) ~ label {  /* For moving email and pa
     text-decoration: underline;
 }
 
-.login-form .forgot-password {      /* Forgot PW Styling */
+.login-form :where(.forgot-password, .policy-text) {      /* Forgot PW & Policy Styling */
     display: inline-flex;
     margin-top: 14px;
     font-size: 0.95rem;
@@ -151,10 +177,40 @@ form button:hover {                 /* Login Button Hover */
     text-align: center;
 }
 
+.login-popup .signup {              /* Removes Signup Section */
+    display: none;
+}
+
+.signup .policy-text {              /* Policy Stying */
+    display: flex;
+    align-items: center;
+}
+
+.signup .policy-text input {
+    width: 14px;
+    height: 14px;
+    margin-right: 7px;
+}
+
+/* RESPONSIVE LOGIN/SIGNUP POPUP FORM */
+
+@media (max-width: 760px) {
+    .login-popup {
+        width: 80%;
+    }
+
+    .login-form .left-info {       /* Removes left content when scaled down */
+        display: none;
+    }
+
+    .login-form .form-content {
+        padding: 30px 20px;
+    }
+}
 
 /* HEADING BLOCK CONTENT */
   
-.heading-container {                     /* For Sizing Site Heading Content */
+.heading-container {                 /* For Sizing Site Heading Content */
     margin-left: 40px;
     margin-top: 15%;
     height: 90px;
@@ -282,7 +338,7 @@ form button:hover {                 /* Login Button Hover */
 }
 
 .dropdown_menu .login-btn {              /* Dropdown Login Button */
-    background-color: #516d55;
+    background-color: #516d55; 
     color: #fff;
     padding: 5px 20px;
     border: none;
@@ -300,7 +356,7 @@ form button:hover {                 /* Login Button Hover */
 
 .dropdown_menu .login-btn:hover {
     scale: 1.05;
-    color: #323b32;
+    background: #3f5843;
 }
 
 .dropdown_menu .login-btn:active {
