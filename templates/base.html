@@ -64,11 +64,39 @@
 
 <!-- LOGIN POP UP FORM -->
 
-<div class="login-popup">             
-    <div class="login-form">
+<div class="login-popup">       
+    <div class="close-btn">                   <!-- Close Button -->
+        <i class="fa-solid fa-x"></i>
+    </div>
+    <div class="login-form login">            <!--Login -->
         <div class="left-info">
             <h2>Welcome Back</h2>
             <p>Please login using your account information.</p>
+        </div>
+        <div class="form-content">
+            <h2>LOGIN</h2>
+            <form action="#">                <!-- DB link may go here -->
+                <div class="input-field">    <!-- Email input -->
+                    <input type="text" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-field">    <!-- Password input -->
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <a href="#" class="forgot-password">Forgot Password?</a>  <!-- Forgot Password Link -->
+                <button type="submit">Log In</button>
+            </form>
+            <div class="bottom-link">
+                Don't have an account?
+                <a href="#">Signup</a>          <!-- Sign Up Link -->
+            </div>
+        </div>
+    </div>
+    <div class="login-form signup">           <!-- Sign Up -->
+        <div class="left-info">
+            <h2>Create Account</h2>
+            <p>To become a part of our community, please sign up using your personal information.</p>
         </div>
         <div class="form-content">
             <h2>LOGIN</h2>
