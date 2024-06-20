@@ -13,8 +13,20 @@ toggleBtn.onclick = function () {
         : 'fa-solid fa-bars';
 };
 
-const showPopupBtn = document.querySelector(".login-btn");
 
-showPopupBtn.addEventListener("click", () => {
-    document.body.classList.toggle("show-popup");
+// LOGIN POPUP FUNCTIONALITY
+
+const showPopupBtns = document.querySelectorAll('.login-btn');
+const closePopupBtn = document.querySelector('.login-popup .close-btn');
+
+ 
+showPopupBtns.forEach(btn => {                        // Show Popup
+    btn.addEventListener('click', () => {
+        document.body.classList.add('show-popup');
+    });
 });
+
+closePopupBtn.addEventListener('click', () => {       // Close Popup
+    document.body.classList.remove('show-popup');
+});
+
