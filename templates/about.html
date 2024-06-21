@@ -2,8 +2,7 @@
 
 {% block title %} About Us {% endblock %}
 
-{% set navbar_background_url = url_for('static', filename='img/images/about1.jpg') %}
-{% set more_about_url = url_for('static', filename='img/images/more-about-us_edited.jpg') %}
+{% set navbar_background_url = url_for('static', filename='/img/images/about1.jpg') %}
 
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
@@ -13,10 +12,10 @@
 {% block heading %}
 
 <h1>About</h1>
+
 {% endblock %}
 
 {% block content %}
-
 
 <div class="leftDiv">
    <h3 class="headingThree">Our Vision</h3>
