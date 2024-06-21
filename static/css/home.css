@@ -1,0 +1,30 @@
+.signup-containter {
+    position: flex;
+    background-color: rgba(154, 161, 157, .5);
+}
+
+.signup-container .signup {       /* Divides the 2 sections */
+    display: flex;
+    background-color: rgba(154, 161, 157, .5);
+}
+
+.sign-up .form-content{          /* Left Content */
+    max-width: 330px;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    padding: 0 20px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* signup-container
+signup
+welcome-msg
+form-content
+input-field
+policy-text 
+button */  

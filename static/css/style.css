@@ -168,11 +168,11 @@ body {
     transition: 0.2s ease;
 }
 
-.login-form form button:hover {                 /* Login Button Hover */
+.login-form form button:hover {      /* Login Button Hover */
     background: #3f5843;
 }
 
-.login-form .bottom-link {          /* Signup Styling */
+.login-form .bottom-link {           /* Signup Styling */
     text-align: center;
 }
 
