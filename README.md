@@ -1,5 +1,13 @@
 What the project does?
 
+<<<<<<< HEAD
+=======
+![Clean Sweep](static/img/logos/logo.png)
+
+
+What the project does?
+
+>>>>>>> origin/MJ
 Clean Sweep is an app that will plan cleaning schedules for users based on how long ago it was done and how often a cleaning activity needs to be done. 
 
 Why is the project worthwhile?
@@ -20,4 +28,8 @@ We are three student developers working collaboratively on this project:
 
 1. Marietjie (MJ) Van der Westhuizen
 2. Tanisha Dyer
+<<<<<<< HEAD
 3. Richard Hill
+=======
+3. Richard Hill
+>>>>>>> origin/MJ

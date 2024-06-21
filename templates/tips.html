@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %} Tips {% endblock %}
+
+{% set navbar_background_url = url_for('static', filename='img/images/cleaning-tips.jpg') %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tips.css') }}">
+{% endblock %}
+
+{% block heading %}
+<h1 style="text-align: center;">Tips & Tricks</h1>
+{% endblock %}
+
+{% block content %}
+
+<!-- Centered Introduction section -->
+<div class="intro-section">
+    <h2>Making Cleaning Fun and Easy</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<!-- Content sections in a grid -->
+<div class="content-container">
+    <!-- Eco-Friendly Cleaning Products section -->
+    <div class="section">
+        <img src="{{ url_for('static', filename='img/images/eco-friendly.jpg') }}" alt="Eco-Friendly Cleaning Products">
+        <div class="text-content">
+            <h3>Eco-Friendly Cleaning Products</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+
+    <!-- Leather Care section -->
+    <div class="section reverse">
+        <div class="text-content">
+            <h3>Leather Care</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <img src="{{ url_for('static', filename='img/images/leather-care.jpg') }}" alt="Leather Care">
+    </div>
+
+    <!-- Cleaning with Pets section -->
+    <div class="section">
+        <img src="{{ url_for('static', filename='img/images/pets.jpg') }}" alt="Cleaning with Pets">
+        <div class="text-content">
+            <h3>Cleaning with Pets</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

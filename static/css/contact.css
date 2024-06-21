@@ -45,6 +45,7 @@
 
 .contactContentHead h3, .contactContentHead h1 {
     margin: 0; 
+
 }
 
 .contactForm{
@@ -114,6 +115,7 @@
    flex-direction: column;
    justify-content: space-between;
    padding-bottom: 45px; 
+
 }
 
 .contactLI {
@@ -124,4 +126,6 @@
 
 .contactLI img {
    margin-right: 10px;
+
 }
+
