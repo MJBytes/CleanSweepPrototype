@@ -412,7 +412,7 @@ body {
 /* RESPONSIVE HEIGHT OF NAVBAR IMAGE WHEN PAGE SCALED UP */
 
 @media (min-width: 1000px) {
-    .navbar {
+    .navbar .signup-container {
         height: 10px;
     }
 }

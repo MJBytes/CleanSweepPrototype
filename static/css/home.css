@@ -47,6 +47,67 @@
     border: 1px solid #717171;
 }
 
+.input-field input:focus {                  /* Border of Email and PW Box When Clicked On */
+    border-color: #698f6f;
+}
+
+.input-field input:is(:focus, :valid) {     /* Padding for input transition */
+    padding: 8px 14px 0;
+}
+
+.signup form .input-field label {           /* Email & Password Labels */
+    position: absolute;
+    top: 42%;
+    left: 14px;
+    color: #717171;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: 0.2s ease;
+}
+
+.signup form .input-field input:is(:focus, :valid) ~ label {  /* For moving email and password text when input is initiated */
+    color: #516d55;
+    font-size: 0.75rem;
+    transform: translateY(-100%);
+}
+
+.signup a {                     /* Signup Link */
+    color: #285a31;
+    text-decoration: none;
+}
+
+.signup a:hover {               /* Signup Link Hover */
+    text-decoration: underline;
+}
+
+.signup :where(.policy-text) {      /* Policy Styling */
+    display: inline-flex;
+    margin-top: 14px;
+    font-size: 0.95rem;
+}
+
+.signup form button {           /* Signup Button */
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 14px 0;
+    border-radius: 3px;
+    margin: 25px 0;
+    color: #fff;
+    cursor: pointer;
+    background: #516d55; 
+    transition: 0.2s ease;
+}
+
+.signup form button:hover {      /* Signup Button Hover */
+    background: #3f5843;
+}
+
+.signup .bottom-link {       /* Signup Styling */
+    text-align: center;
+}
 
 /* signup-container
 signup
