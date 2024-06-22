@@ -28,8 +28,13 @@ We are three student developers working collaboratively on this project:
 **How to run the Application using GitBash.**
 
 Step 1: Clone our GitHub Repo. If you don't know how to clone a repo, please follow these instructions - https://docs.github.com/en/repositories/creating-and-managing-repositories/duplicating-a-repository
+
 Step 2: Make sure your on the main branch with the "git checkout main" command. Working colaboratively that caused us to work on diffrent branches, but our final end-product will availible on the main branch.
+
 Step 3: Activate your virtual enviroment using the  "source venv/Scripts/activate" command.
+
 Step 4: run command - "export FLASK_APP=cleanSweep.py"
+
 Step 5: run command - "export FLASK_ENV=development"
+
 Step 6: run command - "flask run"
