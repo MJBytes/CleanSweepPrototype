@@ -40,6 +40,10 @@
     color: white;
 }
 
+.signup-container h1 {
+    color: #fff;
+}
+
 .signup-container .form-content {             /* Right Content */
     background: rgba(101, 121, 101, 0.8);
     padding: 20px;
@@ -50,30 +54,30 @@
 
 .signup-container .input-field {          /* Email & Password Box Fields */
     height: 50px;
-    width: 90%;
+    width: 88%;
     margin-top: 20px;
     position: relative;
 }
 
-.signup-container .input-field input {         /* Email & Password Input Fields */
+.signup-container .input-field input {    /* Email & Password Input Fields */
     width: 100%;
     height: 80%;
     outline: none;
     padding: 0 15px;
     font-size: 0.95rem;
     border-radius: 5px;
-    border: 1px solid #63796c;
+    border: 1px solid #3c4d3e;
 }
 
 .input-field input:focus {                  /* Border of Email and PW Box When Clicked On */
-    border-color: #304132;
+    border-color: #2e3b30;
 }
 
 .input-field input:is(:focus, :valid) {     /* Padding for input transition */
     padding: 8px 14px 0;
 }
 
-.signup-container .input-field label {           /* Email & Password Labels */
+.signup-container .input-field label {      /* Email & Password Labels */
     position: absolute;
     top: 42%;
     left: 14px;
@@ -83,56 +87,52 @@
     transition: 0.2s ease;
 }
 
-.signup form .input-field input:is(:focus, :valid) ~ label {  /* For moving email and password text when input is initiated */
+.signup-container .input-field input:is(:focus, :valid) ~ label {  /* For moving email and password text when input is initiated */
     color: #516d55;
     font-size: 0.75rem;
     transform: translateY(-100%);
 }
 
-.signup a {                            /* Signup Link */
-    color: #285a31;
+.signup-container a {                           /* Signup Link */
+    color: #fff;
+    font-size: 0.95rem;
     text-decoration: none;
 }
 
-.signup a:hover {                     /* Signup Link Hover */
+.signup-container a:hover {                     /* Signup Link Hover */
     text-decoration: underline;
 }
 
-.signup :where(.policy-text) {        /* Policy Styling */
+.signup-container :where(.policy-text) {        /* Policy Styling */
     display: inline-flex;
     margin-top: 14px;
     font-size: 0.95rem;
 }
 
-.signup form button {                 /* Signup Button */
-    width: 100%;
+.signup-container button {          /* Signup Button */
+    width: 90%;
     outline: none;
     border: none;
     font-size: 1rem;
     font-weight: 600;
     padding: 14px 0;
     border-radius: 3px;
-    margin: 25px 0;
+    margin-top: 15px;
     color: #fff;
     cursor: pointer;
-    background: #516d55; 
+    background: #313f33; 
     transition: 0.2s ease;
 }
 
-.signup form button:hover {      /* Signup Button Hover */
-    background: #3f5843;
+.signup-container button:hover {         /* Signup Button Hover */
+    background: #203324;
 }
 
-.signup .bottom-link {           /* Signup Styling */
-    text-align: center;
-}
-
-.signup .policy-text {              /* Policy Stying */
+.signup-container .policy-text {              /* Policy Stying */
     display: flex;
-    align-items: center;
 }
 
-.signup .policy-text input {
+.signup-container .policy-text input {
     width: 14px;
     height: 14px;
     margin-right: 7px;
