@@ -168,11 +168,11 @@ body {
     transition: 0.2s ease;
 }
 
-.login-form form button:hover {                 /* Login Button Hover */
+.login-form form button:hover {      /* Login Button Hover */
     background: #3f5843;
 }
 
-.login-form .bottom-link {          /* Signup Styling */
+.login-form .bottom-link {           /* Signup Styling */
     text-align: center;
 }
 
@@ -241,10 +241,11 @@ body {
     max-width: 1200%;
     margin: 0 auto;
     margin-bottom: 30px;
+    overflow: hidden;               /* To ensure content is not overflowing when page resized */
 }
 
-.nav-container {                   /* Top Nav Bar*/
-    background-color: rgba(154, 161, 157, .5); /* #9aa19d */
+.nav-container {                                    /* Top Nav Bar*/
+    background-color: rgba(154, 161, 157, .5);
     display: flex;
     width: 100%;
     max-width: 1200%;
@@ -379,7 +380,7 @@ body {
 
 /* RESPONSIVE NAV/HEADER DESIGN */
 
-@media(max-width: 1010px) {
+@media (max-width: 1010px) {
     .navbar .links,
     .navbar .login-btn {
         display: none;
@@ -394,7 +395,7 @@ body {
     }
 }
 
-@media(max-width: 576px) {
+@media (max-width: 576px) {
     .dropdown_menu {
         left: 2rem;
         width: unset;
@@ -405,13 +406,13 @@ body {
 
 @media (max-width: 100px) {
     .navbar {
-        height: 220px;
+        height: 100px;
     }
 }
 
 /* RESPONSIVE HEIGHT OF NAVBAR IMAGE WHEN PAGE SCALED UP */
 
-@media (min-width: 1000px) {
+@media (min-width: 1100px) {
     .navbar {
         height: 10px;
     }
@@ -533,6 +534,7 @@ footer ul li a {
 footer ul li a:hover {
     color: #314936;
 }
+
 footer form {
     padding-bottom: 15px;
     display: flex;

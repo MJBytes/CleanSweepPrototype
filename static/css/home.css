@@ -1,0 +1,215 @@
+/* TANISHA'S CODE */
+
+.signup-container {               /* Divides the 2 sections */
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);  
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* RESPONSIVENESS OF SIGNUP-CONTAINER */
+
+@media (max-width: 890px) {
+    .signup-container {
+        width: 90%;                      /* Width for smaller screens */
+        padding: 10px;
+        flex-direction: column;          /* To adjust the style of welcome message and signup to column */
+        border-radius: 10px;
+        margin-bottom: -300px;
+    }
+
+    .signup-container .form-content {
+        margin-top: -30px;
+    }
+}
+
+@media (min-width: 900px) {
+    .signup-container {
+        width: 100%;                    /* Width for larger screens */
+        padding: 30px; 
+        /* add code here for text at wider screen size*/
+    }
+
+    .signup-container .form-content {
+        margin-left: 90px;
+        margin-right: 60px;
+        flex: 2;
+    }
+}
+
+@media (min-width: 1400px) {            /* Responsive top margin at certain screen width */
+    .signup-container {
+        margin-top: 70px;
+    }
+}
+
+.signup-container .welcome-msg h1,
+.signup-container h2 {                   /* Main Headings */
+    text-align: center;
+    margin: 40px 0 40px 30px;
+    color: white;
+}
+
+.signup-container h1 {
+    color: #fff;
+}
+
+.signup-container .form-content {             /* Right Content */
+    background: rgba(101, 121, 101, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.signup-container .input-field {          /* Email & Password Box Fields */
+    height: 50px;
+    width: 88%;
+    margin-top: 20px;
+    position: relative;
+}
+
+.signup-container .input-field input {    /* Email & Password Input Fields */
+    width: 100%;
+    height: 80%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 0.95rem;
+    border-radius: 5px;
+    border: 1px solid #3c4d3e;
+}
+
+.input-field input:focus {                  /* Border of Email and PW Box When Clicked On */
+    border-color: #2e3b30;
+}
+
+.input-field input:is(:focus, :valid) {     /* Padding for input transition */
+    padding: 8px 14px 0;
+}
+
+.signup-container .input-field label {      /* Email & Password Labels */
+    position: absolute;
+    top: 42%;
+    left: 14px;
+    color: #717171;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: 0.2s ease;
+}
+
+.signup-container .input-field input:is(:focus, :valid) ~ label {  /* For moving email and password text when input is initiated */
+    color: #516d55;
+    font-size: 0.75rem;
+    transform: translateY(-100%);
+}
+
+.signup-container a {                           /* Signup Link */
+    color: #fff;
+    font-size: 0.95rem;
+    text-decoration: none;
+}
+
+.signup-container a:hover {                     /* Signup Link Hover */
+    text-decoration: underline;
+}
+
+.signup-container :where(.policy-text) {        /* Policy Styling */
+    display: inline-flex;
+    margin-top: 14px;
+    font-size: 0.95rem;
+}
+
+.signup-container button {          /* Signup Button */
+    width: 90%;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 14px 0;
+    border-radius: 3px;
+    margin-top: 15px;
+    color: #fff;
+    cursor: pointer;
+    background: #313f33; 
+    transition: 0.2s ease;
+}
+
+.signup-container button:hover {         /* Signup Button Hover */
+    background: #203324;
+}
+
+.signup-container .policy-text {              /* Policy Stying */
+    display: flex;
+}
+
+.signup-container .policy-text input {
+    width: 14px;
+    height: 14px;
+    margin-right: 7px;
+}
+
+/* TANISHA'S CODE */
+
+/* RICHARD'S CODE */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.section {
+    display: flex;
+    justify-content: space-between;
+
+    width: 80%;
+    max-width: 1200px;
+    margin-bottom: 40px;
+}
+
+.text-left, .text-right {
+    flex: 1;
+    padding: 40px;
+}
+
+.image-left {
+    flex: 1;
+    padding: 10px;
+    margin-right: -20px; /* Negative margin to move image to the right */
+}
+
+.image-right {
+    flex: 1;
+    padding: 10px;
+    margin-left: -20px; /* Negative margin to move image to the left */
+}
+
+.image-left img, .image-right img {
+    width: 100%; /* Adjust as needed */
+    max-width: 130%; /* Adjust as needed */
+    height: auto;
+}
+
+.text-left h3, .text-right h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+
+.text-left p, .text-right p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column; /* Stack sections vertically on smaller screens */
+        text-align: center; /* Center text content */
+    }
+}
+
+/* RICHARD'S CODE */

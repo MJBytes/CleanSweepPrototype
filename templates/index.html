@@ -1,12 +1,81 @@
 {% extends 'base.html' %}
 
-{% block title %} Home Page {% endblock %}
+{% block title %} Clean Sweep {% endblock %}
 
 {% set navbar_background_url = url_for('static', filename='img/images/home-background.jpg') %}
 
-{% block content %}
+{% block head %}
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
 
-<p>Welcome to <span style="color: #A7BA9C; font-weight: bold;">Clean Sweep</span>.</p>
-<p>The easiest way to clean your home.</p>
+<!-- TANISHA'S CODE -->
+
+{% block home %} 
+
+<div class="signup-container">    
+    <div class="welcome-msg">
+        <h1>Welcome to <span style="color: #A7BA9C; font-weight: bold;">Clean Sweep</span></h1>  <!--<span style="color: #A7BA9C; font-weight: bold;">Clean Sweep</span>-->
+        <h2>The easiest way to clean your home.</h2>
+        <p></p>
+    </div>
+    <div class="form-content">
+        <h1>Signup</h1>
+        <form action="#">                        <!-- DB link may go here for signup -->
+            <div class="input-field">            <!-- Insert Email -->
+                <input type="text" required>
+                <label>Enter your email</label>
+            </div>
+            <div class="input-field">                   <!-- Create Password -->
+                <input type="password" required>
+                <label>Create password</label>
+            </div>
+            <div class="policy-text">
+                <input type="checkbox" id="policy">
+                <label for="policy">
+                    I agree to the 
+                    <a href="#">Terms & Conditions</a>
+                </label>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+</div> 
 
 {% endblock %}
+
+<!-- TANISHA'S CODE -->
+
+<!-- RICHARD'S CODE -->
+
+{% block content %}
+
+<div class="container">
+    <div class="section">
+        <div class="text-left">
+            <h3>Cleaning shouldn't be a chore.</h3>
+            <h3 class="help-text">We can help</h3>
+            <br>
+            <br>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="image-right">
+            <img src="{{ url_for('static', filename='img/images/cleaning-journey.jpg') }}" alt="Cleaning Supplies">
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="image-left">
+            <img src="{{ url_for('static', filename='img/images/disinfecting-tips.jpg') }}" alt="Gloves">
+        </div>
+        <div class="text-right">
+            <h3>We have the tips and tricks</h3>
+            <br>
+            <br>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+<!-- RICHARD'S CODE -->
