@@ -29,37 +29,37 @@ We are three student developers working collaboratively on this project:
 
 Step 1: Clone our GitHub Repo. If you don't know how to clone a repo, please follow these instructions:
 
-                    https://docs.github.com/en/repositories/creating-and-managing-repositories/duplicating-a-repository
+    https://docs.github.com/en/repositories/creating-and-managing-repositories/duplicating-a-repository
 
 Step 2: navigate to the project directory where 'cleanSweep.py' is located.
 
 Step 3: Set a virtual enviroment up by running the command:
 
-                   python -m venv venv
+    python -m venv venv
 
 Step 4: Activate the virtual enviroment with the command:
 
-            source venv/Scripts/activate
+    source venv/Scripts/activate
 
 Step 5: Install denpendencies - with the virtual enviroment activated, run:
 
-         pip install flask flask_sqlalchemy flask_login
+    pip install flask flask_sqlalchemy flask_login
 
 Step 6: ensure you are on the main branch in your terminal. You can switch to the main branch by typing:
 
-          git checkout main
+    git checkout main
 
 Step 7: Set enviroment variables:
 
 *** Set the FLASK_APP environment variable: 
 
-                 export FLASK_APP=cleanSweep.py
+    export FLASK_APP=cleanSweep.py
                               
 *** Set the FLASK_ENV environment variable: 
 
-                     export FLASK_ENV=development
+    export FLASK_ENV=development
 
 Step 8: Run the Application - with the 
 
-      flask run 
+    flask run 
   command.
