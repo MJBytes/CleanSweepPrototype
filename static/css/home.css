@@ -1,6 +1,5 @@
 .signup-containter {
     position: flex;
-    background-color: rgba(154, 161, 157, .5);
 }
 
 .signup-container .signup {       /* Divides the 2 sections */
@@ -8,7 +7,7 @@
     background-color: rgba(154, 161, 157, .5);
 }
 
-.sign-up .form-content{          /* Left Content */
+.sign-up .welcome-msg{          /* Left Content */
     max-width: 330px;
     width: 100%;
     color: #fff;
@@ -18,6 +17,34 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.signup h1 {                              /* Main Headings */
+    text-align: center;
+    margin: 40px 0 40px 30px;
+}
+
+.signup .form-content {                   /* Right Content */
+    width: 50%;
+    height: 100%;
+    padding: 0 35px 35px 35px;
+}
+
+.signup form .input-field {               /* Email & Password Box Fields */
+    height: 50px;
+    width: 90%;
+    margin-top: 20px;
+    position: relative;
+}
+
+.signup form .input-field input {         /* Email & Password Input Fields */
+    width: 100%;
+    height: 80%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 0.95rem;
+    border-radius: 3px;
+    border: 1px solid #717171;
 }
 
 
