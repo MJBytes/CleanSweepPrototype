@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %} Task Management {% endblock %}
+
+{% set navbar_background_url = url_for('static', filename='img/images/task-management.jpg') %}
+
+{% block head %}
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/tasks.css') }}">
+   {% endblock %}
+
+{% block heading %}
+<h1>Task Management</h1>
+{% endblock %}
+
+{% block content %}
+
+<br>
+
+<h2 class="half-width-paragraph">Customize your Tasks</h2>
+<p class="half-width-paragraph">
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+<br>
+
+<form>
+    <button type="submit" class="button">Submit</button>
+</form>
+
+<br>
+<div class="image-container">
+    <img src="{{ url_for('static', filename='img/images/tasks.jpg') }}" alt="Descriptive Text">
+    <div class="image-text half-width-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident</div>
+</div>
+
+<br>
+
+<div class="task-categories">
+    <div class="task-category" style="background-image: url('{{ url_for('static', filename='img/images/chores.jpg') }}');">
+        <h3 class="text-box">Today's tasks</h3>
+        <p class="text-box">Lorem ipsum dolor sit amet,</p>
+    </div>
+    <div class="task-category" style="background-image: url('{{ url_for('static', filename='img/images/chores1.jpg') }}');">
+        <h3 class="text-box">Completed Tasks</h3>
+        <p class="text-box">Lorem ipsum dolor sit amet,</p>
+    </div>
+    <div class="task-category" style="background-image: url('{{ url_for('static', filename='img/images/chores2.jpg') }}');">
+        <h3 class="text-box">Task Templates</h3>
+        <p class="text-box">Lorem ipsum dolor sit amet,</p>
+    </div>
+
+</div>
+
+{% endblock %}

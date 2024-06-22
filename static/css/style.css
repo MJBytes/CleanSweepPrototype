@@ -1,32 +1,251 @@
-body {          
+
+/* TANISHA'S CODE */
+
+body {
     font-family: 'Poppins', sans-serif;
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
     background-color: hsl(0, 0%, 100%);
-    height:100vh;          /* Could also be put in "main" */ 
+    height:100vh;                /* Could also be put in "main" */
+}
+
+/* LOGIN FORM POPUP */
+
+.blur-background {               /* Background Blur */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(5px);
+    transition: 0.1s ease;
+}
+
+.show-popup .blur-background {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.login-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    max-width: 720px;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    background: #fff;
+    border: 2px solid #fff;
+    transform: translate(-50%, -100%);
+    border-radius: 5px;
+    z-index: 1000;                /* Ensure it stays on top of all page content */
+}
+
+.show-popup .login-popup {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease, opacity 0.1s;
+}
+
+.login-popup .close-btn {        /* Close Button */
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: #878484;
+    cursor: pointer;
+}
+
+.login-popup .login-form {       /* Divides the 2 sections */
+    display: flex;
+}
+
+.login-form .left-info{          /* Left Content */
+    max-width: 330px;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    padding: 0 20px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.login .left-info {                                  /* Login Background */
+    background: url("../img/images/login.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.signup .left-info {                                 /* Signup Background */
+    background: url("../img/images/signup.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.login-form h2 {                  /* Main Headings */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-form .form-content {       /* Right Content */
+    width: 100%;
+    padding: 35px;
+}
+
+.login-form form .input-field {               /* Email & Password Box Fields */
+    height: 50px;
+    width: 90%;
+    margin-top: 20px;
+    position: relative;
+}
+
+.login-form form .input-field input {         /* Email & Password Input Fields */
+    width: 100%;
+    height: 80%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 0.95rem;
+    border-radius: 3px;
+    border: 1px solid #717171;
+}
+
+.input-field input:focus {        /* Border of Email and PW Box When Clicked On */
+    border-color: #698f6f;
+}
+
+.input-field input:is(:focus, :valid) {     /* Padding for input transition */
+    padding: 8px 14px 0;
+}
+
+.login-form form .input-field label {         /* Email & Password Labels */
+    position: absolute;
+    top: 42%;
+    left: 14px;
+    color: #717171;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: 0.2s ease;
+}
+
+.login-form form .input-field input:is(:focus, :valid) ~ label {  /* For moving email and password text when input is initiated */
+    color: #516d55;
+    font-size: 0.75rem;
+    transform: translateY(-100%);
+}
+
+.login-form a {                     /* Forget PW and Signup Links */
+    color: #285a31;
+    text-decoration: none;
+}
+
+.login-form a:hover {               /* Forget PW and Signup Links Hover */
+    text-decoration: underline;
+}
+
+.login-form :where(.forgot-password, .policy-text) {      /* Forgot PW & Policy Styling */
+    display: inline-flex;
+    margin-top: 14px;
+    font-size: 0.95rem;
+}
+
+.login-form form button {                       /* Login Button */
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 14px 0;
+    border-radius: 3px;
+    margin: 25px 0;
+    color: #fff;
+    cursor: pointer;
+    background: #516d55; 
+    transition: 0.2s ease;
+}
+
+.login-form form button:hover {      /* Login Button Hover */
+    background: #3f5843;
+}
+
+.login-form .bottom-link {           /* Signup Styling */
+    text-align: center;
+}
+
+.login-popup .signup,
+.login-popup.show-signup .login  {   /* Removes Signup/Login Section When Not on Display */
+    display: none;
+}
+
+.login-popup.show-signup .signup {   /* Shows Signup Section */
+    display: flex;
+}
+
+.signup .policy-text {              /* Policy Stying */
+    display: flex;
+    align-items: center;
+}
+
+.signup .policy-text input {
+    width: 14px;
+    height: 14px;
+    margin-right: 7px;
+}
+
+/* RESPONSIVE LOGIN/SIGNUP POPUP FORM */
+
+@media (max-width: 760px) {
+    .login-popup {
+        width: 80%;
+    }
+
+    .login-form .left-info {       /* Removes left content when scaled down */
+        display: none;
+    }
+
+    .login-form .form-content {
+        padding: 30px 20px;
+    }
+}
+
+/* HEADING BLOCK CONTENT */
+  
+.heading-container {                 /* For Sizing Site Heading Content */
+    margin-left: 40px;
+    margin-top: 15%;
+    height: 90px;
+}
+
+.site-heading {
+    border-left: 4px solid #333333;    /* For Vertical Line */
+}
+
+.block-heading h1 {                      /* First Heading Word */
+    margin-left: 20px;
+    color: #A7BA9C;
+    font-size: 48px;
+    display: flex;
 }
 
 /* NAV BAR */
 
 .navbar {
     padding-bottom: 40%;
-    position: relative; 
+    position: relative;
     background: no-repeat;
     background-position: fixed;
     max-width: 1200%;
     margin: 0 auto;
     margin-bottom: 30px;
+    overflow: hidden;               /* To ensure content is not overflowing when page resized */
 }
 
-@media (max-width: 800px) {  /* RESPONSIVE HEIGHT OF NAVBAR IMAGE WHEN PAGE SCALED DOWN */
-    .navbar {
-        height: 250px;
-    }
-}
-
-.nav-container {
-    background-color: rgba(154, 161, 157, .5); /* #9aa19d */
+.nav-container {                                    /* Top Nav Bar*/
+    background-color: rgba(154, 161, 157, .5);
     display: flex;
     width: 100%;
     max-width: 1200%;
@@ -42,26 +261,26 @@ body {
 .navbar a {
     text-decoration: none;
     color: #fff;
-    font-size: 1.1rem;     /* Font size of links */
+    font-size: 1.1rem;             /* Font size of links */
     cursor: pointer;
 }
 
-.navbar ul a:hover {
+.navbar ul a:hover {               /* Link Hover */
     color: #516d55;
 }
 
-.navbar .header-logo {
+.navbar .header-logo {             /* Header Logo */
     width: 125px;
     margin-left: 20px;
     display: flex;
 }
 
-.navbar .links {
+.navbar .links {                   /* Links Styling */
     display: flex;
     gap: 4rem;
 }
 
-.navbar .toggle_btn {     /* Hamburger */
+.navbar .ham-btn {                 /* Hamburger Button */
     color: #6b7763;
     margin-right: 20px;
     font-size: 1.5rem;
@@ -69,8 +288,8 @@ body {
     display: none;
 }
 
-.navbar .action_btn {      /* Login button */
-    background-color: #677260;
+.navbar .login-btn {               /* Login Button */
+    background-color: #516d55;
     color: #fff;
     padding: 5px 20px;
     border: none;
@@ -84,16 +303,16 @@ body {
     margin-bottom: auto;
     margin-right: 20px;
     width: 40px;
-    transition: scale 0.2 ease;
+    transition: scale 0.2 ease;     /* Login Button Movement When Hovered */
 }
 
-.navbar .action_btn:hover {
+.navbar .login-btn:hover {          /* Login Button Hover */
     scale: 1.05;
-    color: #323b32;
+    background: #3f5843;
 }
 
-.navbar .action_btn:active {
-    scale: 0.95;
+.navbar .login-btn:active {         
+    scale: 0.95; 
 }
 
 /* DROP DOWN MENU */
@@ -112,19 +331,19 @@ body {
     transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.dropdown_menu.open {
+.dropdown_menu.open {                    /* Open Dropdown */
     height: 290px;
 }
 
-.dropdown_menu li {
+.dropdown_menu li {                      /* Dropdown Links */
     padding: 0.7rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.dropdown_menu .action_btn {
-    background-color: #677260;
+.dropdown_menu .login-btn {              /* Dropdown Login Button */
+    background-color: #516d55; 
     color: #fff;
     padding: 5px 20px;
     border: none;
@@ -140,12 +359,12 @@ body {
     transition: scale 0.2 ease;
 }
 
-.dropdown_menu .action_btn:hover {
+.dropdown_menu .login-btn:hover {
     scale: 1.05;
-    color: #323b32;
+    background: #3f5843;
 }
 
-.dropdown_menu .action_btn:active {
+.dropdown_menu .login-btn:active {
     scale: 0.80;
 }
 
@@ -161,13 +380,13 @@ body {
 
 /* RESPONSIVE NAV/HEADER DESIGN */
 
-@media(max-width: 1010px) {
+@media (max-width: 1010px) {
     .navbar .links,
-    .navbar .action_btn {
+    .navbar .login-btn {
         display: none;
     }
 
-    .navbar .toggle_btn {
+    .navbar .ham-btn {
         display: block;
     }
 
@@ -176,28 +395,61 @@ body {
     }
 }
 
-@media(max-width: 576px) {
+@media (max-width: 576px) {
     .dropdown_menu {
         left: 2rem;
         width: unset;
     }
 }
 
+/* RESPONSIVE HEIGHT OF NAVBAR IMAGE WHEN PAGE SCALED DOWN */
+
+@media (max-width: 100px) {
+    .navbar {
+        height: 100px;
+    }
+}
+
+/* RESPONSIVE HEIGHT OF NAVBAR IMAGE WHEN PAGE SCALED UP */
+
+@media (min-width: 1100px) {
+    .navbar {
+        height: 10px;
+    }
+}
+
 /* HEADER */
 
-header {
+header {                     /* If we don't want the left-right margin we can remove this header code */
     position: relative;
     padding: 0 1rem;
+}
+
+
+/* HEADER BLOCK CONTENT */
+
+.heading-container {                 /* For Sizing Site Heading Content */
+    margin-left: 40px;
+    margin-top: 15%;
+    height: 90px;
+}
+.site-heading {
+    border-left: 4px solid #333333;    /* For Vertical Line */
+}
+
+.block-heading h1 {                      /* First Heading Word */
+    margin-left: 20px;
+    color: #A7BA9C;
+    font-size: 48px;
+    display: flex;
 }
 
 /* MAIN CONTENT */
 
 main {
-    width: 100%;
     max-width: 1200%;
-    margin: 0 auto;
     position: relative;
-    margin-left: 30px;
+    margin: 30px;
 }
 
 /* FOOTER */
@@ -262,7 +514,7 @@ footer .col p {
 
 footer .email-id {
     width: fit-content;
-    border-bottom: 1px solid #779181; 
+    border-bottom: 1px solid #779181;
     margin: 25px 20px 0px 0px;
     padding-bottom: 2px;
 }
@@ -280,8 +532,9 @@ footer ul li a {
 }
 
 footer ul li a:hover {
-    color: #285a31;
+    color: #314936;
 }
+
 footer form {
     padding-bottom: 15px;
     display: flex;
@@ -298,7 +551,7 @@ footer form .fa-regular {
 
 footer input {
     background: transparent;
-    color: #2b3d2c; 
+    color: #2b3d2c;
     border: 0;
     outline: none;
     width: 250px;
