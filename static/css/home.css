@@ -1,39 +1,43 @@
-.signup-containter {
+.signup-container {               /* Divides the 2 sections */
     position: relative;
-}
-
-.signup-container .signup {       /* Divides the 2 sections */
     display: flex;
-    background-color: rgba(0, 0, 0, 0.5);  
-    margin-top:50px;
-}
-
-.sign-up .welcome-msg{          /* Left Content */
-    width: 100%;
-    color: #fff;
-    display: flex;
-    flex-basis: 10%;
-    padding: 0 40px;
-    text-align: center;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);  
+    /*margin-top: 50px;   /* Revisit */
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.signup h1 {                              /* Main Headings */
+/* RESPONSIVENESS OF SIGNUP-CONTAINER */
+
+@media (max-width: 760px) {
+    .signup-container {
+        width: 90%;                      /* Width for smaller screens */
+        padding: 10px;
+        flex-direction: column;          /* To adjust the style of welcome message and signup to column */
+    }
+}
+
+@media (min-width: 1000px) {
+    .signup-container {
+        width: 100%;                      /* Width for larger screens */
+        padding: 30px; 
+    }
+}
+
+.signup-container h1,
+.signup-container h2 {                   /* Main Headings */
     text-align: center;
     margin: 40px 0 40px 30px;
     color: white;
 }
 
-.signup .welcome-msg h2 {                
-    color: white;
-    text-align: center;
-}
-.signup .form-content {                   /* Right Content */
-    width: 60%;
-    height: 100%;
-    padding: 0px 35px 35px 0px;
+.signup-container .form-content {                   /* Right Content */
+    background: rgba(101, 121, 101, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .signup form .input-field {               /* Email & Password Box Fields */

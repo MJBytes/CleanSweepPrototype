@@ -241,10 +241,11 @@ body {
     max-width: 1200%;
     margin: 0 auto;
     margin-bottom: 30px;
+    overflow: hidden;               /* To ensure content is not overflowing when page resized */
 }
 
-.nav-container {                   /* Top Nav Bar*/
-    background-color: rgba(154, 161, 157, .5); /* #9aa19d */
+.nav-container {                                    /* Top Nav Bar*/
+    background-color: rgba(154, 161, 157, .5);
     display: flex;
     width: 100%;
     max-width: 1200%;
@@ -412,10 +413,13 @@ body {
 /* RESPONSIVE HEIGHT OF NAVBAR IMAGE WHEN PAGE SCALED UP */
 
 @media (min-width: 1000px) {
-    .navbar .signup-container {
+    .navbar {
         height: 10px;
     }
 }
+
+/* RESPONSIVE HEIGHT OF SIGNUP WHEN PAGE SCALED UP  */
+
 
 /* HEADER */
 
