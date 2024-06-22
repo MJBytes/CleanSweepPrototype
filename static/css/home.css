@@ -3,7 +3,6 @@
     display: flex;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);  
-    /*margin-top: 50px;   /* Revisit */
     margin: 0 auto;
     padding: 20px;
 }
@@ -16,7 +15,11 @@
         padding: 10px;
         flex-direction: column;          /* To adjust the style of welcome message and signup to column */
         border-radius: 10px;
-        margin-bottom: -150px;
+        margin-bottom: -300px;
+    }
+
+    .signup-container .form-content {
+        margin-top: -30px;
     }
 }
 
@@ -24,14 +27,22 @@
     .signup-container {
         width: 100%;                    /* Width for larger screens */
         padding: 30px; 
+        /* add code here for text at wider screen size*/
+    }
+
+    .signup-container .form-content {
+        margin-left: 90px;
+        margin-right: 60px;
+        flex: 2;
     }
 }
 
-@media (min-width: 1300px) {            /* Responsive top margin at certain screen width */
+@media (min-width: 1400px) {            /* Responsive top margin at certain screen width */
     .signup-container {
         margin-top: 70px;
     }
 }
+
 
 .signup-container .welcome-msg h1,
 .signup-container h2 {                   /* Main Headings */
@@ -48,7 +59,6 @@
     background: rgba(101, 121, 101, 0.8);
     padding: 20px;
     border-radius: 10px;
-    width: 100%;
     box-sizing: border-box;
 }
 
@@ -137,11 +147,3 @@
     height: 14px;
     margin-right: 7px;
 }
-
-/* signup-container
-signup
-welcome-msg
-form-content
-input-field
-policy-text 
-button */  
