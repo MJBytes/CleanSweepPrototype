@@ -1,18 +1,19 @@
 .signup-containter {
-    position: flex;
+    position: relative;
 }
 
 .signup-container .signup {       /* Divides the 2 sections */
     display: flex;
-    background-color: rgba(154, 161, 157, .5);
+    background-color: rgba(0, 0, 0, 0.5);  
+    margin-top:50px;
 }
 
 .sign-up .welcome-msg{          /* Left Content */
-    max-width: 330px;
     width: 100%;
     color: #fff;
     display: flex;
-    padding: 0 20px;
+    flex-basis: 10%;
+    padding: 0 40px;
     text-align: center;
     flex-direction: column;
     align-items: center;
@@ -22,12 +23,17 @@
 .signup h1 {                              /* Main Headings */
     text-align: center;
     margin: 40px 0 40px 30px;
+    color: white;
 }
 
+.signup .welcome-msg h2 {                
+    color: white;
+    text-align: center;
+}
 .signup .form-content {                   /* Right Content */
-    width: 50%;
+    width: 60%;
     height: 100%;
-    padding: 0 35px 35px 35px;
+    padding: 0px 35px 35px 0px;
 }
 
 .signup form .input-field {               /* Email & Password Box Fields */
@@ -71,22 +77,22 @@
     transform: translateY(-100%);
 }
 
-.signup a {                     /* Signup Link */
+.signup a {                            /* Signup Link */
     color: #285a31;
     text-decoration: none;
 }
 
-.signup a:hover {               /* Signup Link Hover */
+.signup a:hover {                     /* Signup Link Hover */
     text-decoration: underline;
 }
 
-.signup :where(.policy-text) {      /* Policy Styling */
+.signup :where(.policy-text) {        /* Policy Styling */
     display: inline-flex;
     margin-top: 14px;
     font-size: 0.95rem;
 }
 
-.signup form button {           /* Signup Button */
+.signup form button {                 /* Signup Button */
     width: 100%;
     outline: none;
     border: none;
@@ -105,8 +111,19 @@
     background: #3f5843;
 }
 
-.signup .bottom-link {       /* Signup Styling */
+.signup .bottom-link {           /* Signup Styling */
     text-align: center;
+}
+
+.signup .policy-text {              /* Policy Stying */
+    display: flex;
+    align-items: center;
+}
+
+.signup .policy-text input {
+    width: 14px;
+    height: 14px;
+    margin-right: 7px;
 }
 
 /* signup-container

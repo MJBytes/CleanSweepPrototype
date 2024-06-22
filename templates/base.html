@@ -46,12 +46,12 @@
                 <i class="fa-solid fa-bars"></i>          <!-- Responsive hamburger icon -->
             </div>
         </div>
+        <div class="home-heading"> {% block home %} {% endblock %}</div>   <!-- Home Signup Block -->
         <div class="heading-container">                  <!-- Site Heading -->
             <div class="site-heading">
                 <div class="block-heading"> {% block heading %} {% endblock %}</div>
             </div>
         </div>
-        <div class="home-heading"> {% block home %} {% endblock %}</div>   <!-- Home Signup Block -->
     </div>
     <div class="dropdown_menu">                                    <!-- Drop Down Links -->
         <li><a href="{{ url_for('profile') }}">Profile</a></li>
