@@ -8,6 +8,8 @@
    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 {% endblock %}
 
+<!-- TANISHA'S CODE -->
+
 {% block home %} 
 
 <div class="signup-container">    
@@ -39,12 +41,41 @@
     </div>
 </div> 
 
-
-
-
-
 {% endblock %}
+
+<!-- TANISHA'S CODE -->
+
+<!-- RICHARD'S CODE -->
 
 {% block content %}
 
+<div class="container">
+    <div class="section">
+        <div class="text-left">
+            <h3>Cleaning shouldn't be a chore.</h3>
+            <h3 class="help-text">We can help</h3>
+            <br>
+            <br>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="image-right">
+            <img src="{{ url_for('static', filename='img/images/cleaning-journey.jpg') }}" alt="Cleaning Supplies">
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="image-left">
+            <img src="{{ url_for('static', filename='img/images/disinfecting-tips.jpg') }}" alt="Gloves">
+        </div>
+        <div class="text-right">
+            <h3>We have the tips and tricks</h3>
+            <br>
+            <br>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
+
+<!-- RICHARD'S CODE -->
