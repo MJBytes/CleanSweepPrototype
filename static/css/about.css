@@ -1,6 +1,7 @@
 .leftDiv, 
 .rightDiv{
- width: 740px;
+ width: 100%;
+ max-width: 700px;
  height: 425px;
  justify-content: center;
  align-items: center;
@@ -17,7 +18,7 @@
 }
 
 .moreAboutUs{
- background-image: url('{{ more_about_url }}');
+ background-image: url('../img/images/more-about-us_edited.jpg');
  background-repeat: no-repeat;
  height: 430px;
  width: 100%;
@@ -37,3 +38,12 @@
  text-align: center;
 }
 
+@media (max-width: 740px) {
+    .leftDiv, .rightDiv, .moreAboutUs {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        float: none; /* Ensure no float */
+        margin: 0 auto; /* Center the div */
+    }
+}
