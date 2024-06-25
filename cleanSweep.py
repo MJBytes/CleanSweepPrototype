@@ -1,20 +1,29 @@
 from flask import Flask, render_template, url_for
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
+from datetime import date
 
 #custom base class for SQLAlchemy models
 class Base(DeclarativeBase):
   pass
 
-#create SQL config extension
-db = SQLAlchemy(model_class=Base)
-
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
+
+#the database I created name will be users_profile
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users_profile.db" 
+#
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
-#initialize the app with the extension
-db.init_app(app)
+db = SQLAlchemy(app)
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key= True)
+    email = db.Column(db.String(100), unique=True)
+    password = db.Column(db.String)
+    first_name = db.Column(db.String(20))
+    last_name = db.Column(db.String(30))
+    birth_date = db.Column(db.Date)
+    mobile = db.Column(db.String)
 
 @app.route('/')
 def main():
