@@ -59,7 +59,7 @@ Step 7: Set enviroment variables:
 
     export FLASK_ENV=development
 
-Step 8: Run the Application - with the "flask run" command.
+Step 8: Run the Application - with the "flask run" command:
 
     flask run 
 
