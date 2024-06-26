@@ -13,11 +13,12 @@
 
 @media (max-width: 890px) {
     .signup-container {
-        width: 90%;                      /* Width for smaller screens */
+        width: 80%;                      /* Width for smaller screens */
         padding: 10px;
         flex-direction: column;          /* To adjust the style of welcome message and signup to column */
         border-radius: 10px;
         margin-bottom: -300px;
+        padding-right: 25px;
     }
 
     .signup-container .form-content {
@@ -29,13 +30,16 @@
     .signup-container {
         width: 100%;                    /* Width for larger screens */
         padding: 30px; 
+        flex-direction: row; 
+        justify-content: space-between;
         /* add code here for text at wider screen size*/
     }
 
     .signup-container .form-content {
         margin-left: 90px;
         margin-right: 60px;
-        flex: 2;
+        width: 30%;
+       /* flex: 2; */
     }
 }
 
@@ -139,7 +143,7 @@
     background: #203324;
 }
 
-.signup-container .policy-text {              /* Policy Stying */
+.signup-container .policy-text {         /* Policy Stying */
     display: flex;
 }
 
