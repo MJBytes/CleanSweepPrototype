@@ -15,15 +15,18 @@ from models import User
 @app.route('/', methods = ['GET', 'POST'])
 def main():
     if request.method == 'POST':
-        if not request.form['email'] or not request.form['password']:
-            flash('Please enter all the fields' , 'error')
+        email = request.form.get('email')
+        password = request.form.get('password')
+
+        if not email or not password:
+            flash('Please enter all the fields', 'error')
         else:
-            User = User(request.form["'email"], request.form['password'])
-            db.session.add(User)
+            user = User(email=email, password=password)
+            db.session.add(user)
             db.session.commit()
             
             flash('Record was successfully added')
-            return redirect(url_for('profile.html'))
+            return redirect(url_for('profile'))
 
     return render_template("index.html")
 

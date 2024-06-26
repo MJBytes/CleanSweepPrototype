@@ -20,9 +20,9 @@
     </div>
     <div class="form-content">
         <h1>Signup</h1>
-        <form action=" {{ request.path }} " method="post">                        <!-- DB link may go here for signup -->
+        <form action=" {{ url_for('main') }} " method="post">                        <!-- DB link may go here for signup -->
             <div class="input-field">            <!-- Insert Email -->
-                <input type="text"name= "email" required>
+                <input type="text" name= "email" required>
                 <label>Enter your email</label>
             </div>
             <div class="input-field">                   <!-- Create Password -->
