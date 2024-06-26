@@ -13,15 +13,17 @@
 
 @media (max-width: 890px) {
     .signup-container {
-        width: 90%;                      /* Width for smaller screens */
-        padding: 10px;
+        width: auto;                      /* Width for smaller screens */
+        padding: 10px 25px 30px 20px;
         flex-direction: column;          /* To adjust the style of welcome message and signup to column */
         border-radius: 10px;
         margin-bottom: -300px;
     }
 
-    .signup-container .form-content {
-        margin-top: -30px;
+    .signup-container .welcome-msg h1,  /* Centers left text when scaled down */
+    .signup-container h2 {
+        text-align: center;
+        padding-right: 40px;
     }
 }
 
@@ -29,13 +31,21 @@
     .signup-container {
         width: 100%;                    /* Width for larger screens */
         padding: 30px; 
-        /* add code here for text at wider screen size*/
+        flex-direction: row; 
+        justify-content: space-between;
+    }
+
+    .signup-container .welcome-msg {
+        flex: 1;                         /* Allows welcome message to take up available space */
+        margin: 0 auto; 
+        max-width: 60%; 
     }
 
     .signup-container .form-content {
         margin-left: 90px;
-        margin-right: 60px;
-        flex: 2;
+        margin-right: 75px;
+        width: 30%;
+       /* flex: 2; */
     }
 }
 
@@ -47,8 +57,7 @@
 
 .signup-container .welcome-msg h1,
 .signup-container h2 {                   /* Main Headings */
-    text-align: center;
-    margin: 40px 0 40px 30px;
+    margin: 40px 0 40px 50px;
     color: white;
 }
 
@@ -58,15 +67,16 @@
 
 .signup-container .form-content {             /* Right Content */
     background: rgba(101, 121, 101, 0.8);
-    padding: 20px;
+    padding: 15px 30px 30px 40px;
     border-radius: 10px;
     box-sizing: border-box;
 }
 
 .signup-container .input-field {          /* Email & Password Box Fields */
     height: 50px;
-    width: 88%;
+    width: auto;
     margin-top: 20px;
+    margin-right: 40px;
     position: relative;
 }
 
@@ -121,7 +131,7 @@
 }
 
 .signup-container button {          /* Signup Button */
-    width: 90%;
+    width: 98%;
     outline: none;
     border: none;
     font-size: 1rem;
@@ -139,14 +149,19 @@
     background: #203324;
 }
 
-.signup-container .policy-text {              /* Policy Stying */
+.signup-container .policy-text {         /* Policy Stying */
     display: flex;
+    font-size: 0.80rem;
 }
 
 .signup-container .policy-text input {
     width: 14px;
     height: 14px;
     margin-right: 7px;
+}
+
+.signup-container .policy-text a {
+    font-size: 0.80rem;
 }
 
 /* TANISHA'S CODE */
@@ -163,7 +178,6 @@
 .section {
     display: flex;
     justify-content: space-between;
-
     width: 80%;
     max-width: 1200px;
     margin-bottom: 40px;
