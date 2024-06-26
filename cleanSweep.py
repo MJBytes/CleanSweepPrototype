@@ -1,29 +1,16 @@
 from flask import Flask, render_template, url_for, request, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import DeclarativeBase
-from datetime import date
 
-#custom base class for SQLAlchemy models
-class Base(DeclarativeBase):
-  pass
 
 app = Flask(__name__)
-
-#the database I created name will be users_profile
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users_profile.db" 
-#
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users_profile.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+app.config['SECRET_KEY'] = 'your_secret_key'  # Required for flash messages
 
 db = SQLAlchemy(app)
 
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key= True)
-    email = db.Column(db.String(100), unique=True)
-    password = db.Column(db.String)
-    first_name = db.Column(db.String(20))
-    last_name = db.Column(db.String(30))
-    birth_date = db.Column(db.Date)
-    mobile = db.Column(db.String)
+#import User model after initializing db
+from models import User
 
 @app.route('/', methods = ['GET', 'POST'])
 def main():
@@ -32,7 +19,6 @@ def main():
             flash('Please enter all the fields' , 'error')
         else:
             User = User(request.form["'email"], request.form['password'])
-
             db.session.add(User)
             db.session.commit()
             
