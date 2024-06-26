@@ -324,7 +324,7 @@ body {
     top: 70px;
     height: 0;
     width: 400px;
-    background: rgba(7, 8, 7, 0.1);
+    background: rgba(254, 255, 254, 0.1);
     backdrop-filter: blur(15px);
     border-radius: 10px;
     overflow: hidden;
@@ -369,13 +369,13 @@ body {
 }
 
 .dropdown_menu a {
-    color: black;
+    color: #fff;
     text-decoration: none;
     cursor: pointer;
 }
 
 .dropdown_menu a:hover {
-    color: white;
+    color: black;
 }
 
 /* RESPONSIVE NAV/HEADER DESIGN */
