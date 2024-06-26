@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
 from datetime import date
@@ -25,8 +25,20 @@ class User(db.Model):
     birth_date = db.Column(db.Date)
     mobile = db.Column(db.String)
 
-@app.route('/')
+@app.route('/', methods = ['GET', 'POST'])
 def main():
+    if request.method == 'POST':
+        if not request.form['email'] or not request.form['password']:
+            flash('Please enter all the fields' , 'error')
+        else:
+            User = User(request.form["'email"], request.form['password'])
+
+            db.session.add(User)
+            db.session.commit()
+            
+            flash('Record was successfully added')
+            return redirect(url_for('profile.html'))
+
     return render_template("index.html")
 
 @app.route('/profile')
