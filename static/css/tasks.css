@@ -57,20 +57,20 @@
 }
 
 button {
-  background: linear-gradient(to bottom, #758769, #5a6b55);
-  border: none;
-  border-radius: 5px;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s;
+    background: linear-gradient(to bottom, #758769, #5a6b55);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
 button:hover {
-  background: linear-gradient(to bottom, #5a6b55, #758769);
-  box-shadow: 0 2px #4b5946;
+    background: linear-gradient(to bottom, #5a6b55, #758769);
+    box-shadow: 0 2px #4b5946;
 }
 
 .text-box {
@@ -80,9 +80,86 @@ button:hover {
     border-radius: 5px; /* rounded corners for the box */
 }
 
-.text-box {
-    background-color: rgba(211, 211, 211, 0.9); /* Light grey with semi-transparency */
-    backdrop-filter: blur(5px); /* Adjust the blur level as needed */
-    padding: 10px; /* padding around the text */
-    border-radius: 5px; /* rounded corners for the box */
+.tasks-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(99, 115, 99, 0.8); /* #637363 with 80% opacity */
+    width: 500px; /* Adjusted width for the popup */
+    max-width: calc(100% - 40px); /* Maximum width based on viewport, adjust as needed */
+    height: 550px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+}
+
+.tasks-popup .popup-content {
+    flex: 1; /* Take up remaining space */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tasks-popup .popup-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.tasks-popup .popup-content label {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.tasks-popup .popup-content select,
+.tasks-popup .popup-content input[type="date"],
+.tasks-popup .popup-content button,
+.tasks-popup .popup-content input[type="text"],
+.tasks-popup .popup-content input[type="email"],
+.tasks-popup .popup-content input[type="password"] {
+    width: calc(100% - 20px); /* Adjusted width for input fields */
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+.tasks-popup .popup-content button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.tasks-popup .popup-content button:hover {
+    background-color: #45a049;
+}
+
+
+
+.tasks-popup .popup-image {
+    flex: 1; /* Take up remaining space */
+    background: url('{{ url_for('static', filename='img/images/tasks.jpg') }}') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+.tasks-popup .close-btn {
+    align-self: flex-end; /* Align to the end (right side) of the container */
+    margin-top: 10px; /* Adjust spacing from the top as needed */
+    margin-right: 10px; /* Adjust spacing from the right as needed */
+    cursor: pointer;
+    font-size: 24px;
+    color: black;
+}
+
+.hidden {
+    display: none;
 }
