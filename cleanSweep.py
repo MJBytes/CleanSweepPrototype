@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, flash, redirect
+from flask import Flask, render_template, url_for, request, flash, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -24,7 +24,7 @@ def main():
             user = User(email=email, password=password)
             db.session.add(user)
             db.session.commit()
-            
+
             flash('Record was successfully added')
             return redirect(url_for('profile'))
 
