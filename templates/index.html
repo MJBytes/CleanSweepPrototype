@@ -12,6 +12,8 @@
 
 {% block home %} 
 
+
+
 <div class="signup-container">    
     <div class="welcome-msg">
         <h1>Welcome to <span style="color: #A7BA9C; font-weight: bold;">Clean Sweep</span></h1>  <!--<span style="color: #A7BA9C; font-weight: bold;">Clean Sweep</span>-->
@@ -30,16 +32,17 @@
                 <label>Create password</label>
             </div>
             <div class="policy-text">
-                <input type="checkbox" id="policy">
+                <input type="checkbox" id="policy" required>
                 <label for="policy">
                     I agree to the 
                     <a href="#">Terms & Conditions</a>
                 </label>
             </div>
             <button type="submit">Sign Up</button>
-        </form>
+        </form>  
     </div>
 </div> 
+
 
 {% endblock %}
 
@@ -48,6 +51,21 @@
 <!-- RICHARD'S CODE -->
 
 {% block content %}
+
+
+<!--For any flash messages that will apear in content-->
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+
+<ul class="flashes">
+  {% for category, message in messages %}
+    <li class="{{ category }}">{{ message }}</li>
+  {% endfor %}
+</ul>
+
+{% endif %}
+{% endwith %}  
+
 
 <div class="container">
     <div class="section">
@@ -77,5 +95,3 @@
 </div>
 
 {% endblock %}
-
-<!-- RICHARD'S CODE -->
