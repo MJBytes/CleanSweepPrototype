@@ -1,16 +1,23 @@
 from flask import Flask, render_template, url_for, request, flash, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+from models import db, User
 
+def create_app():
+   app = Flask(__name__)
+   app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users_profile.db"
+   app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+   app.config['SECRET_KEY'] = 'your_secret_key'  # Required for flash messages
 
-app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users_profile.db"
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.config['SECRET_KEY'] = 'your_secret_key'  # Required for flash messages
+#initialize SQLAlchemy instance
 
-db = SQLAlchemy(app)
+   db.init_app(app)
 
-#import User model after initializing db
-from models import User
+   with app.app_context():
+        db.create_all()
+
+   return app
+
+app = create_app()
 
 @app.route('/', methods = ['GET', 'POST'])
 def main():
@@ -20,6 +27,14 @@ def main():
 
         if not email or not password:
             flash('Please enter all the fields', 'error')
+            return redirect(url_for('main'))
+
+         #check if email already exists
+        existing_user = User.query.filter_by(email=email).first()
+
+        if existing_user:
+            flash('Email address already registered', 'error')
+            
         else:
             user = User(email=email, password=password)
             db.session.add(user)
@@ -56,6 +71,4 @@ def dashboard():
     return render_template("dashboard.html")
 
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
     app.run(debug=True)
