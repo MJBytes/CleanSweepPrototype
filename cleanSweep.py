@@ -1,23 +1,48 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import DeclarativeBase
+from models import db, User
 
-#custom base class for SQLAlchemy models
-class Base(DeclarativeBase):
-  pass
+def create_app():
+   app = Flask(__name__)
+   app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users_profile.db"
+   app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+   app.config['SECRET_KEY'] = 'your_secret_key'  # Required for flash messages
 
-#create SQL config extension
-db = SQLAlchemy(model_class=Base)
+#initialize SQLAlchemy instance
 
-app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+   db.init_app(app)
 
-#initialize the app with the extension
-db.init_app(app)
+   with app.app_context():
+        db.create_all()
 
-@app.route('/')
+   return app
+
+app = create_app()
+
+@app.route('/', methods = ['GET', 'POST'])
 def main():
+    if request.method == 'POST':
+        email = request.form.get('email')
+        password = request.form.get('password')
+
+        if not email or not password:
+            flash('Please enter all the fields', 'error')
+            return redirect(url_for('main'))
+
+         #check if email already exists
+        existing_user = User.query.filter_by(email=email).first()
+
+        if existing_user:
+            flash('Email address already registered', 'error')
+            
+        else:
+            user = User(email=email, password=password)
+            db.session.add(user)
+            db.session.commit()
+            
+            flash('Record was successfully added')
+            return redirect(url_for('profile'))
+
     return render_template("index.html")
 
 @app.route('/profile')
@@ -46,6 +71,4 @@ def dashboard():
     return render_template("dashboard.html")
 
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
     app.run(debug=True)
