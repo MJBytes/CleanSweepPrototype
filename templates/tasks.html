@@ -5,8 +5,8 @@
 {% set navbar_background_url = url_for('static', filename='img/images/task-management.jpg') %}
 
 {% block head %}
-   <link rel="stylesheet" href="{{ url_for('static', filename='css/tasks.css') }}">
-   {% endblock %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/tasks.css') }}">
+{% endblock %}
 
 {% block heading %}
 <h1>Task Management</h1>
@@ -40,20 +40,19 @@
 
 <br>
 
-<div class="task-categories">
-    <div class="task-category" style="background-image: url('{{ url_for('static', filename='img/images/chores.jpg') }}');">
-        <h3 class="text-box">Today's tasks</h3>
+<div class="tasks-categories">
+    <div class="tasks-category" style="background-image: url('{{ url_for('static', filename='img/images/chores.jpg') }}');">
+        <h3 class="text-box">Today's tasks ({{ todays_tasks_count }})</h3>
         <p class="text-box">Lorem ipsum dolor sit amet,</p>
     </div>
-    <div class="task-category" style="background-image: url('{{ url_for('static', filename='img/images/chores1.jpg') }}');">
-        <h3 class="text-box">Completed Tasks</h3>
+    <div class="tasks-category" style="background-image: url('{{ url_for('static', filename='img/images/chores1.jpg') }}');">
+        <h3 class="text-box">Completed Tasks ({{ completed_tasks_count }})</h3>
         <p class="text-box">Lorem ipsum dolor sit amet,</p>
     </div>
-    <div class="task-category" style="background-image: url('{{ url_for('static', filename='img/images/chores2.jpg') }}');">
-        <h3 class="text-box">Task Templates</h3>
+    <div class="tasks-category" style="background-image: url('{{ url_for('static', filename='img/images/chores2.jpg') }}');">
+        <h3 class="text-box">Uncompleted Tasks ({{ uncompleted_tasks_count }})</h3>
         <p class="text-box">Lorem ipsum dolor sit amet,</p>
     </div>
-
 </div>
 
 {% endblock %}

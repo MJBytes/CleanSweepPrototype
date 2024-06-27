@@ -1,10 +1,10 @@
-.task-categories {
+.tasks-categories {
     display: flex;
     justify-content: space-between;
     gap: 20px;
 }
 
-.task-category {
+.tasks-category {
     flex: 1;
     padding: 20px;
     background-size: cover;
@@ -20,11 +20,11 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.task-category h3 {
+.tasks-category h3 {
     margin-bottom: 10px;
 }
 
-.task-category p {
+.tasks-category p {
     margin: 0;
 }
 

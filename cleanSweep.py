@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, request, flash, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-from models import db, User
+from models import db, User, Task
+from datetime import date
 
 def create_app():
    app = Flask(__name__)
@@ -49,9 +50,17 @@ def main():
 def profile():
     return render_template('profile.html')
 
-@app.route('/tasks')
-def tasks():
-    return render_template("tasks.html")
+@app.route('/tasks', endpoint='tasks')
+def task_view():
+    todays_tasks_count = Task.query.filter_by(date_created=date.today()).count()
+    completed_tasks_count = Task.query.filter_by(is_completed=True).count()
+    uncompleted_tasks_count = Task.query.filter_by(is_completed=False).count()
+
+    return render_template("tasks.html",
+                        todays_tasks_count=todays_tasks_count,
+                        completed_tasks_count=completed_tasks_count,
+                        uncompleted_tasks_count=uncompleted_tasks_count)
+
 
 @app.route('/contact')
 def contact():
