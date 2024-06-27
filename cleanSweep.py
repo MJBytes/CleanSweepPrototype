@@ -35,8 +35,6 @@ def main():
         if existing_user:
             flash('Email address already registered', 'error')
             
-            
-
         else:
             user = User(email=email, password=password)
             db.session.add(user)
