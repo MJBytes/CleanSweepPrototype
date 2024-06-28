@@ -5,8 +5,8 @@
 {% set navbar_background_url = url_for('static', filename='img/images/task-management.jpg') %}
 
 {% block head %}
-   <link rel="stylesheet" href="{{ url_for('static', filename='css/tasks.css') }}">
-   {% endblock %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/tasks.css') }}">
+{% endblock %}
 
 {% block heading %}
 <h1>Task Management</h1>
@@ -18,42 +18,81 @@
 
 <h2 class="half-width-paragraph">Customize your Tasks</h2>
 <p class="half-width-paragraph">
-   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+   Here you can create your own tasks. Whether they are daily weekly or monthly tasks we have you covered.
+    Our fully customizable options will give you complete control over how your tasks are created and managed.
+    We get it, creating a task for something that you do not enjoy doing can be bit of a chore, rest assured that
+    our process is simple, easy to follow and hastle free. Simply click on the below to start your task creation journey
+    with us and you will be done in no time!
 </p>
 <br>
 
 <form>
-    <button type="submit" class="button">Submit</button>
+    <button type="button" class="button" id="show-task-popup">Click to Enter</button>
 </form>
 
 <br>
 <div class="image-container">
     <img src="{{ url_for('static', filename='img/images/tasks.jpg') }}" alt="Descriptive Text">
-    <div class="image-text half-width-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    Excepteur sint occaecat cupidatat non proident</div>
+    <div class="image-text half-width-paragraph">Keeping things organised is often seen as a major problem in our daily lives, this is why we have a dedicated team
+    who looks after all our added features, making sure that you only see the information that is relevant to you and we do all the hard work for you
+    by developing a simple, easy to follow process. No need for messy pen and paper notes on the fridge or trying to find notes you have made in your phone.</div>
 </div>
 
 <br>
 
-<div class="task-categories">
-    <div class="task-category" style="background-image: url('{{ url_for('static', filename='img/images/chores.jpg') }}');">
-        <h3 class="text-box">Today's tasks</h3>
-        <p class="text-box">Lorem ipsum dolor sit amet,</p>
-    </div>
-    <div class="task-category" style="background-image: url('{{ url_for('static', filename='img/images/chores1.jpg') }}');">
-        <h3 class="text-box">Completed Tasks</h3>
-        <p class="text-box">Lorem ipsum dolor sit amet,</p>
-    </div>
-    <div class="task-category" style="background-image: url('{{ url_for('static', filename='img/images/chores2.jpg') }}');">
-        <h3 class="text-box">Task Templates</h3>
-        <p class="text-box">Lorem ipsum dolor sit amet,</p>
-    </div>
+<div class="tasks-categories">
+    <div class="tasks-category" style="background-image: url('{{ url_for('static', filename='img/images/chores.jpg') }}');">
+        <h3 class="text-box">Today's tasks ({{ todays_tasks_count }})</h3>
 
+    </div>
+    <div class="tasks-category" style="background-image: url('{{ url_for('static', filename='img/images/chores1.jpg') }}');">
+        <h3 class="text-box">Completed Tasks ({{ completed_tasks_count }})</h3>
+
+    </div>
+    <div class="tasks-category" style="background-image: url('{{ url_for('static', filename='img/images/chores2.jpg') }}');">
+        <h3 class="text-box">Uncompleted Tasks ({{ uncompleted_tasks_count }})</h3>
+
+    </div>
+</div>
+
+<!-- Task Creation Popup -->
+<div class="tasks-popup hidden">
+    <div class="popup-image">
+        <span class="close-btn">&times;</span>
+    </div>
+    <div class="popup-content">
+        <h2>Create Task</h2>
+        <form id="tasks-form">
+            <label for="tasks-type">Task Type:</label>
+            <select id="tasks-type" name="task-type">
+                <option value="vacuum">Vacuum</option>
+                <option value="mop">Mop</option>
+                <option value="dust">Dust</option>
+                <option value="dishes">Dishes</option>
+                <option value="laundry">Laundry</option>
+            </select>
+            <br>
+            <label for="tasks-date">Date of Task:</label>
+            <input type="date" id="tasks-date" name="task-date">
+            <br>
+            <label for="tasks-frequency">Frequency:</label>
+            <select id="tasks-frequency" name="task-frequency">
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+            </select>
+            <br>
+            <label for="tasks-area">Select Area:</label>
+            <select id="tasks-area" name="task-area">
+                <option value="kitchen">Kitchen</option>
+                <option value="lounge">Lounge</option>
+                <option value="bedrooms">Bedrooms</option>
+                <option value="bathrooms">Bathrooms</option>
+            </select>
+            <br>
+            <button type="submit">Add Task</button>
+        </form>
+    </div>
 </div>
 
 {% endblock %}

@@ -1,7 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
-from models import db, User
+from flask_sqlalchemy import SQLAlchemy
+from models import db, User, Task
+from datetime import date
 from login import Login
 from signup import Signup
+
 
 def create_app():
     app = Flask(__name__)
@@ -48,11 +51,19 @@ def profile():
         
     #pass user data to the remplate
     return render_template('profile.html', user=user)
-        
-@app.route('/tasks')
-def tasks():
-    return render_template("tasks.html")
+    
+@app.route('/tasks', endpoint='tasks')
+def task_view():
+    todays_tasks_count = Task.query.filter_by(date_created=date.today()).count()
+    completed_tasks_count = Task.query.filter_by(is_completed=True).count()
+    uncompleted_tasks_count = Task.query.filter_by(is_completed=False).count()
 
+    return render_template("tasks.html",
+                        todays_tasks_count=todays_tasks_count,
+                        completed_tasks_count=completed_tasks_count,
+                        uncompleted_tasks_count=uncompleted_tasks_count)
+
+ 
 @app.route('/contact')
 def contact():
     return render_template("contact.html")
@@ -70,6 +81,7 @@ def logout():
     session.pop('user_id', None)
     flash('You have been logged out.', 'success')
     return redirect(url_for('main'))
+
 
 if __name__ == '__main__':
     app.run(debug=True)
