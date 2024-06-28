@@ -18,9 +18,7 @@
             background-size: cover;
         }        
     </style>
-
-{% block head %}{% endblock %}
-
+    {% block head %}{% endblock %}
 </head>
 
 <body>
@@ -40,8 +38,12 @@
                 <li><a href="{{ url_for('about') }}">About</a></li>
                 <li><a href="{{ url_for('contact') }}">Contact</a></li>
                 <li><a href="{{ url_for('tips') }}">Tips</a></li>
-                </ul>
-            <a href="#" class="login-btn">Login</a>      <!-- Login Button -->
+            </ul>
+            {% if 'user_id' in session %}                                            <!-- Functionality for session check whether user is logged in or out  -->
+                <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>      <!-- Logout Button -->
+            {% else %}
+                <a href="#" class="login-btn" onclick="openLoginPopup()">Login</a>   <!-- Login Button -->
+            {% endif %}
             <div class="ham-btn">
                 <i class="fa-solid fa-bars"></i>          <!-- Responsive hamburger icon -->
             </div>
@@ -59,7 +61,11 @@
         <li><a href="{{ url_for('about') }}">About</a></li>
         <li><a href="{{ url_for('contact') }}">Contact</a></li>
         <li><a href="{{ url_for('tips') }}">Tips</a></li>
-        <li><a href="#" class="login-btn">Login</a></li>
+        {% if 'user_id' in session %}                              <!-- Functionality for session check whether user is logged in or out  -->
+            <li><a href="{{ url_for('logout') }}" class="logout-btn">Logout</a></li>
+        {% else %}
+            <li><a href="#" class="login-btn">Login</a></li>
+        {% endif %}
     </div>
 </header>
 
