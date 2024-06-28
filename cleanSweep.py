@@ -4,23 +4,21 @@ from login import Login
 from signup import Signup
 
 def create_app():
-   app = Flask(__name__)
-   app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users_profile.db"
-   app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-   app.config['SECRET_KEY'] = 'your_secret_key'  # Required for flash messages
+    app = Flask(__name__)
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users_profile.db"
+    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+    app.config['SECRET_KEY'] = 'your_secret_key'
 
-#initialize SQLAlchemy instance
+    db.init_app(app)
 
-   db.init_app(app)
-
-   with app.app_context():
+    with app.app_context():
         db.create_all()
 
-   return app
+    return app
 
 app = create_app()
 
-@app.route('/', methods = ['POST'])
+@app.route('/', methods = ['GET', 'POST'])
 def main():
     if request.method == 'POST':
         action = request.form.get('action')
@@ -30,6 +28,8 @@ def main():
         elif action == 'login':
             login = login()
             return login.post()
+        return render_template("index.html")
+    else:
         return render_template("index.html")
 
   

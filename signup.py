@@ -1,7 +1,7 @@
 from flask import request, flash, redirect, url_for
 from models import db, User
 
-class Lignup:
+class Signup:
     def post(self):
         email = request.form.get('email')
         password = request.form.get('password')
