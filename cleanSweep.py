@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 from models import db, User
 from login import Login
 from signup import Signup
@@ -34,8 +34,20 @@ def main():
   
 @app.route('/profile')
 def profile():
-    return render_template('profile.html')
+        if 'user_id' not in session:
+           flash('Please log in to access your profile', 'error')
+           return redirect(url_for('main'))
+        
+        user_id = session['user_id']
+        user = User.query.get(user_id)
 
+        if not user:
+            flash('Invalid email or password', 'error')
+            return redirect(url_for('main'))
+        
+        #pass user data to the remplate
+        return render_template('profile.html', user=user)
+        
 @app.route('/tasks')
 def tasks():
     return render_template("tasks.html")
