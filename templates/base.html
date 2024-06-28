@@ -76,17 +76,17 @@
         </div>
         <div class="form-content">
             <h2>LOGIN</h2>
-            <form action="#">                      <!-- DB link may go here for login -->
+            <form action="{{ url_for('main') }} " method="post">                      
                 <div class="input-field">          <!-- Email input -->
-                    <input type="text" required>
+                    <input type="text" name="email" required>
                     <label>Email</label>
                 </div>
                 <div class="input-field">          <!-- Password input -->
-                    <input type="password" required>
+                    <input type="password" name="password" required>
                     <label>Password</label>
                 </div>
                 <a href="#" class="forgot-password">Forgot Password?</a>  <!-- Forgot Password Link -->
-                <button type="submit">Log In</button>
+                <button type="submit" name="action" value="login">Log In</button>
             </form>
             <div class="bottom-link">
                 Don't have an account?
@@ -104,7 +104,7 @@
         </div>
         <div class="form-content">
             <h2>SIGNUP</h2>
-            <form action="{{ url_for('main') }} " method="post">                        <!-- DB link may go here for signup -->
+            <form action="{{ url_for('main') }} " method="post">                        
                 <div class="input-field">            <!-- Insert Email -->
                     <input type="text" name="email" required>
                     <label>Enter your email</label>
@@ -120,7 +120,7 @@
                         <a href="#">Terms & Conditions</a>
                     </label>
                 </div>
-                <button type="submit">Sign Up</button>
+                <button type="submit" >Sign Up</button>
             </form>
             <div class="bottom-link">
                 Already have an account?

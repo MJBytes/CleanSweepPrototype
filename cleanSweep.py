@@ -23,12 +23,11 @@ def main():
     if request.method == 'POST':
         action = request.form.get('action')
         if action == 'signup':
-            signup = signup()
-            return signup.post()
+            signup_instance = Signup()
+            return signup_instance.post()
         elif action == 'login':
-            login = login()
-            return login.post()
-        return render_template("index.html")
+            login_instance = Login()
+            return login_instance.post()
     else:
         return render_template("index.html")
 
