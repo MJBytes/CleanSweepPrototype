@@ -40,6 +40,7 @@ loginSignUpLink.forEach(link => {
 
 // TASK CREATION POPUP FUNCTIONALITY
 
+
 const showTasksPopupBtn = document.getElementById('show-task-popup');
 const tasksPopup = document.querySelector('.tasks-popup');
 const closeTasksPopupBtn = tasksPopup.querySelector('.tasks-popup .close-btn');

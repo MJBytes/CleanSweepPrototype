@@ -142,8 +142,6 @@ button:hover {
     background-color: #45a049;
 }
 
-
-
 .tasks-popup .popup-image {
     flex: 1; /* Take up remaining space */
     background: url('{{ url_for('static', filename='img/images/tasks.jpg') }}') no-repeat center center;
