@@ -164,7 +164,133 @@
     font-size: 0.80rem;
 }
 
-/* TANISHA'S CODE */
+/* MAIN CONTENT - OPTIONS */
+
+.about {
+    background: rgba(182, 196, 182, 0.4); 
+    padding-top: 20px;
+    height: 60px;
+    margin: 40px 0;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+}
+
+.options {                                /* Secondary Heading */
+    width: 80%;
+    margin: auto;
+    margin-top: 60px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 15px;
+}
+
+.options .row {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.options .about-col {
+    flex-basis: 31%;
+    background: #fff3f3;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+.options .about-col h3 {
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.about-col:hover {                                /* Box Highlight */
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.21);
+}
+
+@media(max-width: 700px) {                        /* Mobile responsiveness for column style */
+    .row {
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 930px) {
+    .options h1 {
+        margin-top: 100px;
+    }
+}
+
+/* DESCRIPTION */
+
+.description {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.description .descript-container {
+    background: rgba(182, 196, 182, 0.4); 
+    padding-top: 10px;
+    height: 70px;
+    margin: 10px 0;
+    width: 100%;
+    font-size: 25px;
+}
+
+.description p {
+    width: 80%;
+    margin: auto;
+    margin-top: 60px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+.description .row {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.descript-column {
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.descript-column img {           /* IMAGE */
+    width: 100%;
+}
+
+@media(max-width: 680px) {
+    .description p {
+        margin-top: 100px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* RICHARD'S CODE */
 

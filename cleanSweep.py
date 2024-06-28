@@ -1,55 +1,58 @@
-from flask import Flask, render_template, url_for, request, flash, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_sqlalchemy import SQLAlchemy
 from models import db, User, Task
 from datetime import date
+from login import Login
+from signup import Signup
+
 
 def create_app():
-   app = Flask(__name__)
-   app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users_profile.db"
-   app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-   app.config['SECRET_KEY'] = 'your_secret_key'  # Required for flash messages
+    app = Flask(__name__)
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users_profile.db"
+    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+    app.config['SECRET_KEY'] = 'your_secret_key'
 
-#initialize SQLAlchemy instance
+    db.init_app(app)
 
-   db.init_app(app)
-
-   with app.app_context():
+    with app.app_context():
         db.create_all()
 
-   return app
+    return app
 
 app = create_app()
 
 @app.route('/', methods = ['GET', 'POST'])
 def main():
     if request.method == 'POST':
-        email = request.form.get('email')
-        password = request.form.get('password')
+        action = request.form.get('action')
+        if action == 'signup':
+            signup_instance = Signup()
+            return signup_instance.post()
+        elif action == 'login':
+            login_instance = Login()
+            return login_instance.post()
+    else:
+        return render_template("index.html")
 
-        if not email or not password:
-            flash('Please enter all the fields', 'error')
-            return redirect(url_for('main'))
-
-         #check if email already exists
-        existing_user = User.query.filter_by(email=email).first()
-
-        if existing_user:
-            flash('Email address already registered', 'error')
-            
-        else:
-            user = User(email=email, password=password)
-            db.session.add(user)
-            db.session.commit()
-
-            flash('Record was successfully added')
-            return redirect(url_for('profile'))
-
-    return render_template("index.html")
-
+  
 @app.route('/profile')
 def profile():
-    return render_template('profile.html')
+        if 'user_id' not in session:
+           flash('Please log in to access your profile', 'error')
+           return redirect(url_for('main'))
+        
+        user_id = session['user_id']
+        user = User.query.get(user_id)
 
+        if not user:
+            flash('Invalid email or password', 'error')
+            return redirect(url_for('main'))
+        
+        #pass user data to the remplate
+        return render_template('profile.html', user=user)
+ 
+   
+ 
 @app.route('/tasks', endpoint='tasks')
 def task_view():
     todays_tasks_count = Task.query.filter_by(date_created=date.today()).count()
@@ -61,7 +64,7 @@ def task_view():
                         completed_tasks_count=completed_tasks_count,
                         uncompleted_tasks_count=uncompleted_tasks_count)
 
-
+ 
 @app.route('/contact')
 def contact():
     return render_template("contact.html")

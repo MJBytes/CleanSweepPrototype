@@ -461,7 +461,7 @@ header {                     /* If we don't want the left-right margin we can re
 main {
     max-width: 1200%;
     position: relative;
-    margin: 30px;
+    margin: 15px;
 }
 
 /* FOOTER */
