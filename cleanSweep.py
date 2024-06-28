@@ -1,6 +1,7 @@
-from flask import Flask, render_template, url_for, request, flash, redirect
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, render_template, request, redirect, url_for, flash
 from models import db, User
+from login import Login
+from signup import Signup
 
 def create_app():
    app = Flask(__name__)
@@ -19,32 +20,19 @@ def create_app():
 
 app = create_app()
 
-@app.route('/', methods = ['GET', 'POST'])
+@app.route('/', methods = ['POST'])
 def main():
     if request.method == 'POST':
-        email = request.form.get('email')
-        password = request.form.get('password')
+        action = request.form.get('action')
+        if action == 'signup':
+            signup = signup()
+            return signup.post()
+        elif action == 'login':
+            login = login()
+            return login.post()
+        return render_template("index.html")
 
-        if not email or not password:
-            flash('Please enter all the fields', 'error')
-            return redirect(url_for('main'))
-
-         #check if email already exists
-        existing_user = User.query.filter_by(email=email).first()
-
-        if existing_user:
-            flash('Email address already registered', 'error')
-            
-        else:
-            user = User(email=email, password=password)
-            db.session.add(user)
-            db.session.commit()
-            
-            flash('Record was successfully added')
-            return redirect(url_for('profile'))
-
-    return render_template("index.html")
-
+  
 @app.route('/profile')
 def profile():
     return render_template('profile.html')
