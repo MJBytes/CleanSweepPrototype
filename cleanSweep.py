@@ -29,24 +29,25 @@ def main():
             login_instance = Login()
             return login_instance.post()
     else:
-        return render_template("index.html")
-
+        return render_template("home.html")
+    
+    return redirect(url_for('main'))
   
 @app.route('/profile')
 def profile():
-        if 'user_id' not in session:
-           flash('Please log in to access your profile', 'error')
-           return redirect(url_for('main'))
+    if 'user_id' not in session:
+        flash('Please log in to access your profile', 'error')
+        return redirect(url_for('main'))
         
-        user_id = session['user_id']
-        user = User.query.get(user_id)
+    user_id = session['user_id']
+    user = User.query.get(user_id)
 
-        if not user:
-            flash('Invalid email or password', 'error')
-            return redirect(url_for('main'))
+    if not user:
+        flash('Invalid email or password', 'error')
+        return redirect(url_for('main'))
         
-        #pass user data to the remplate
-        return render_template('profile.html', user=user)
+    #pass user data to the remplate
+    return render_template('profile.html', user=user)
         
 @app.route('/tasks')
 def tasks():
@@ -64,10 +65,11 @@ def about():
 def tips():
     return render_template("tips.html")
 
-
-@app.route('/dashboard')
-def dashboard():
-    return render_template("dashboard.html")
+@app.route('/logout')                                   # When user logs out, it redirects to
+def logout():
+    session.pop('user_id', None)
+    flash('You have been logged out.', 'success')
+    return redirect(url_for('main'))
 
 if __name__ == '__main__':
     app.run(debug=True)
