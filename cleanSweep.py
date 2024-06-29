@@ -4,6 +4,7 @@ from models import db, User, Task
 from datetime import date
 from login import Login
 from signup import Signup
+from updateProfile import Update_Profile
 
 
 def create_app():
@@ -36,20 +37,31 @@ def main():
     
     return redirect(url_for('main'))
   
-@app.route('/profile')
+@app.route('/profile', methods = ['GET', 'POST'])
 def profile():
-    if 'user_id' not in session:
-        flash('Please log in to access your profile', 'error')
-        return redirect(url_for('main'))
-        
+
     user_id = session['user_id']
     user = User.query.get(user_id)
 
+
+    if 'user_id' not in session:
+        flash('Please log in to access your profile', 'error')
+        return redirect(url_for('main'))
+    
     if not user:
         flash('Invalid email or password', 'error')
         return redirect(url_for('main'))
     
-     
+    if 'user_id' in session:
+        request.method == 'POST'
+        action = request.form.get('action')
+        if action == 'update_profile':
+            update_instance = Update_Profile()
+            return update_instance.post()
+
+
+        
+    
     #pass user data to the remplate
     return render_template('profile.html', user=user)
     
