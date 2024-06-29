@@ -62,36 +62,37 @@
     </div>
     <div class="popup-content">
         <h2>Create Task</h2>
-        <form id="tasks-form">
-            <label for="tasks-type">Task Type:</label>
-            <select id="tasks-type" name="task-type">
-                <option value="vacuum">Vacuum</option>
-                <option value="mop">Mop</option>
-                <option value="dust">Dust</option>
-                <option value="dishes">Dishes</option>
-                <option value="laundry">Laundry</option>
-            </select>
-            <br>
-            <label for="tasks-date">Date of Task:</label>
-            <input type="date" id="tasks-date" name="task-date">
-            <br>
-            <label for="tasks-frequency">Frequency:</label>
-            <select id="tasks-frequency" name="task-frequency">
-                <option value="daily">Daily</option>
-                <option value="weekly">Weekly</option>
-                <option value="monthly">Monthly</option>
-            </select>
-            <br>
-            <label for="tasks-area">Select Area:</label>
-            <select id="tasks-area" name="task-area">
-                <option value="kitchen">Kitchen</option>
-                <option value="lounge">Lounge</option>
-                <option value="bedrooms">Bedrooms</option>
-                <option value="bathrooms">Bathrooms</option>
-            </select>
-            <br>
-            <button type="submit">Add Task</button>
-        </form>
+        <form id="tasks-form" method="POST" action="{{ url_for('tasks') }}">
+    <label for="tasks-type">Task Type:</label>
+    <select id="tasks-type" name="task-type">
+        <option value="vacuum">Vacuum</option>
+        <option value="mop">Mop</option>
+        <option value="dust">Dust</option>
+        <option value="dishes">Dishes</option>
+        <option value="laundry">Laundry</option>
+    </select>
+    <br>
+    <label for="tasks-date">Date of Task:</label>
+    <input type="date" id="tasks-date" name="task-date">
+    <br>
+    <label for="tasks-frequency">Frequency:</label>
+    <select id="tasks-frequency" name="task-frequency">
+        <option value="daily">Daily</option>
+        <option value="weekly">Weekly</option>
+        <option value="monthly">Monthly</option>
+    </select>
+    <br>
+    <label for="tasks-area">Select Area:</label>
+    <select id="tasks-area" name="task-area">
+        <option value="kitchen">Kitchen</option>
+        <option value="lounge">Lounge</option>
+        <option value="bedrooms">Bedrooms</option>
+        <option value="bathrooms">Bathrooms</option>
+    </select>
+    <br>
+    <button type="submit">Add Task</button>
+</form>
+
     </div>
 </div>
 

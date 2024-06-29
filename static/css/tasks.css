@@ -86,8 +86,8 @@ button:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     background: rgba(99, 115, 99, 0.8); /* #637363 with 80% opacity */
-    width: 500px; /* Adjusted width for the popup */
-    max-width: calc(100% - 40px); /* Maximum width based on viewport, adjust as needed */
+    width: 500px; /* Adjusted width */
+    max-width: calc(100% - 40px); /* Maximum width based on viewport */
     height: 550px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -144,7 +144,6 @@ button:hover {
 
 .tasks-popup .popup-image {
     flex: 1; /* Take up remaining space */
-    background: url('{{ url_for('static', filename='img/images/tasks.jpg') }}') no-repeat center center;
     background-size: cover;
     position: relative;
 }
