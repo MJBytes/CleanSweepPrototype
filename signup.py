@@ -21,3 +21,5 @@ class Signup:
 
         flash('Record was successfully added')
         return redirect(url_for('profile'))
+    
+    

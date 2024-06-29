@@ -6,6 +6,9 @@
 
 {% block head %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 {% endblock %}
 
@@ -16,6 +19,24 @@
 {% endblock %}
 
 {% block content %}
+
+<!--For any flash messages that will apear in content-->
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+
+<ul class="flashes contactUL">
+  {% for category, message in messages %}
+    <li class="flashItem contactLI"> 
+        <img class="iconSpesification" src="{{ url_for('static', filename='/img/icons/warning.png') }}" alt="Warning Icon"> 
+        <span class="flashMessage">{{ message }}</span>
+    </li>
+  {% endfor %}
+</ul>
+
+{% endif %}
+{% endwith %}  
+
+
 <div class="profile-container">
     <div class="profile-form">
         <div class="profile-picture-container">

@@ -48,7 +48,8 @@ def profile():
     if not user:
         flash('Invalid email or password', 'error')
         return redirect(url_for('main'))
-        
+    
+     
     #pass user data to the remplate
     return render_template('profile.html', user=user)
     
