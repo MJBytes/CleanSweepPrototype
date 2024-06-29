@@ -86,9 +86,9 @@ button:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     background: rgba(99, 115, 99, 0.8); /* #637363 with 80% opacity */
-    width: 500px; /* Adjusted width for the popup */
-    max-width: calc(100% - 40px); /* Maximum width based on viewport, adjust as needed */
-    height: 550px;
+    width: 500px; /* Adjusted width */
+    max-width: calc(100% - 40px); /* Maximum width based on viewport */
+    height: 600px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     display: flex;
@@ -113,7 +113,11 @@ button:hover {
     display: block;
     margin-top: 10px;
     font-size: 14px;
-    color: #333;
+    color: #111;
+}
+
+.tasks-popup .popup-content p {
+    color: #111;
 }
 
 .tasks-popup .popup-content select,
@@ -144,15 +148,14 @@ button:hover {
 
 .tasks-popup .popup-image {
     flex: 1; /* Take up remaining space */
-    background: url('{{ url_for('static', filename='img/images/tasks.jpg') }}') no-repeat center center;
     background-size: cover;
     position: relative;
 }
 
 .tasks-popup .close-btn {
     align-self: flex-end; /* Align to the end (right side) of the container */
-    margin-top: 10px; /* Adjust spacing from the top as needed */
-    margin-right: 10px; /* Adjust spacing from the right as needed */
+    margin-top: 10px; /* Adjust spacing from the top  */
+    margin-right: 10px; /* Adjust spacing from the right */
     cursor: pointer;
     font-size: 24px;
     color: black;
