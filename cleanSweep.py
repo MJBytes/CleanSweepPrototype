@@ -89,8 +89,9 @@ def tips():
     return render_template("tips.html")
 
 @app.route('/logout')                                   # When user logs out, it redirects to
+@login_required
 def logout():
-    session.pop('user_id', None)
+    logout_user()
     flash('You have been logged out.', 'success')
     return redirect(url_for('main'))
 
