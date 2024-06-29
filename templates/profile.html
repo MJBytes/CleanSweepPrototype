@@ -52,23 +52,23 @@
             <input type="text" id="email" name="email" value="{{ user.email }}" required>
 
             <label for="dob-day">Date of Birth*</label>
-    <div class="dob-dropdowns">
-        <select id="dob-day" name="dob-day" required>
-            {% for day in range(1, 32) %}
-            <option value="{{ day }}" {% if day == user.birth_date.day %}selected{% endif %}>{{ day }}</option>
-            {% endfor %}
-        </select>
-        <select id="dob-month" name="dob-month" required>
-            {% set months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %}
-            {% for month in months %}
-            <option value="{{ month }}" {% if month == user.birth_date.strftime('%b') %}selected{% endif %}>{{ month }}</option>
-            {% endfor %}
-        </select>
-        <select id="dob-year" name="dob-year" required>
-            {% for year in range(1920, 2025) %}
-            <option value="{{ year }}" {% if year == user.birth_date.year %}selected{% endif %}>{{ year }}</option>
-            {% endfor %}
-        </select>
+<div class="dob-dropdowns">
+    <select id="dob-day" name="dob-day" required>
+        {% for day in range(1, 32) %}
+        <option value="{{ day }}" {% if user.birth_date and day == user.birth_date.day %}selected{% endif %}>{{ day }}</option>
+        {% endfor %}
+    </select>
+    <select id="dob-month" name="dob-month" required>
+        {% set months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %}
+        {% for month in months %}
+        <option value="{{ month }}" {% if user.birth_date and month == user.birth_date.strftime('%b') %}selected{% endif %}>{{ month }}</option>
+        {% endfor %}
+    </select>
+    <select id="dob-year" name="dob-year" required>
+        {% for year in range(1920, 2025) %}
+        <option value="{{ year }}" {% if user.birth_date and year == user.birth_date.year %}selected{% endif %}>{{ year }}</option>
+        {% endfor %}
+    </select>
             </div>
             <button type="submit" name="action" value="updateProfile" >Save Changes</button>
         </form>
@@ -145,7 +145,7 @@
     </div>
 </div>
 
-       <!-- Adding some JavaScript for Profile Picture to upload -- >
+      
 <script>
     var loadFile = function(event) {
         var image = document.getElementById('profile-picture');
