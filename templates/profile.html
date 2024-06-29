@@ -44,7 +44,7 @@
             <input type="file" id="profile-picture-upload" accept="image/*" onchange="loadFile(event)">
         </div>
 
-        <form>
+        <form action=" {{ url_for('profile') }} " method="post">
             <label for="name">Name*</label>
             <input type="text" id="name" name="name" value="{{ user.name }}" required>
 
@@ -70,8 +70,10 @@
                     {% endfor %}
                 </select>
             </div>
-            <input type="submit" value="Save Changes">
+            <button type="submit" name="action" value="updateProfile" >Save Changes</button>
         </form>
+
+
         <div id="graph-container">
             <canvas id="myChart" style="width:100%;max-width:800px;height:400px;"></canvas>
             <script>

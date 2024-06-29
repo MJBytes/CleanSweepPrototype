@@ -1,15 +1,15 @@
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import UserMixin
 from datetime import date
 
 db = SQLAlchemy()
 
-class User(db.Model):
+class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.String, nullable=False)
     name = db.Column(db.String(50))
     birth_date = db.Column(db.Date)
-    mobile = db.Column(db.String)
 
     tasks = db.relationship('Task', back_populates='user', cascade='all, delete-orphan')
 

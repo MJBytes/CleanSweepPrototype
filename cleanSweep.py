@@ -1,9 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
+from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from flask_sqlalchemy import SQLAlchemy
 from models import db, User, Task
 from datetime import date
 from login import Login
 from signup import Signup
+from updateProfile import update_profile
+from datetime import date
 
 
 def create_app():
@@ -13,6 +16,15 @@ def create_app():
     app.config['SECRET_KEY'] = 'your_secret_key'
 
     db.init_app(app)
+
+#creating and initializing login manager that goes with flask-login
+    login_manager = LoginManager()
+    login_manager.init_app(app)
+    login_manager.login_view = 'profile'
+
+    @login_manager.user_loader
+    def load_user(user_id):
+        return User.query.get(int(user_id))
 
     with app.app_context():
         db.create_all()
@@ -37,28 +49,22 @@ def main():
     return redirect(url_for('main'))
   
 @app.route('/profile', methods=['GET', 'POST'])
+@login_required
 def profile():
-    if 'user_id' not in session:
-        flash('Please log in to access your profile', 'error')
-        return redirect(url_for('main'))
 
-    user_id = session['user_id']
-    user = User.query.get(user_id)
-
-    if not user:
-        flash('Invalid email or password', 'error')
-        return redirect(url_for('main'))
+    user = current_user
 
     if request.method == 'POST':
         action = request.form.get('action')
-        if action == 'update_profile':
-            update_instance = Update_Profile()
+        if action == 'updateProfile':
+            update_instance = update_profile()
             return update_instance.post()
 
     return render_template('profile.html', user=user)
 
     
 @app.route('/tasks', endpoint='tasks')
+@login_required #ensure only logged in users can access task page
 def task_view():
     todays_tasks_count = Task.query.filter_by(date_created=date.today()).count()
     completed_tasks_count = Task.query.filter_by(is_completed=True).count()
