@@ -40,7 +40,6 @@ loginSignUpLink.forEach(link => {
 
 // TASK CREATION POPUP FUNCTIONALITY
 
-
 const showTasksPopupBtn = document.getElementById('show-task-popup');
 const tasksPopup = document.querySelector('.tasks-popup');
 const closeTasksPopupBtn = tasksPopup.querySelector('.tasks-popup .close-btn');
@@ -54,10 +53,12 @@ closeTasksPopupBtn.addEventListener('click', () => {
 });
 
 document.getElementById('tasks-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    // Here you can add code to handle the form submission, e.g., send the data to the server
+    // e.preventDefault(); // Comment this line to allow form submission to the server
     tasksPopup.classList.add('hidden');
 });
+
+
+
 
 
 

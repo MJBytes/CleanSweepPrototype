@@ -43,15 +43,12 @@
 <div class="tasks-categories">
     <div class="tasks-category" style="background-image: url('{{ url_for('static', filename='img/images/chores.jpg') }}');">
         <h3 class="text-box">Today's tasks ({{ todays_tasks_count }})</h3>
-
     </div>
     <div class="tasks-category" style="background-image: url('{{ url_for('static', filename='img/images/chores1.jpg') }}');">
         <h3 class="text-box">Completed Tasks ({{ completed_tasks_count }})</h3>
-
     </div>
     <div class="tasks-category" style="background-image: url('{{ url_for('static', filename='img/images/chores2.jpg') }}');">
         <h3 class="text-box">Uncompleted Tasks ({{ uncompleted_tasks_count }})</h3>
-
     </div>
 </div>
 
@@ -62,7 +59,7 @@
     </div>
     <div class="popup-content">
         <h2>Create Task</h2>
-        <form id="tasks-form" method="POST" action="{{ url_for('tasks') }}">
+       <form id="tasks-form" method="POST" action="{{ url_for('tasks') }}">
     <label for="tasks-type">Task Type:</label>
     <select id="tasks-type" name="task-type">
         <option value="vacuum">Vacuum</option>
@@ -92,6 +89,7 @@
     <br>
     <button type="submit">Add Task</button>
 </form>
+
 
     </div>
 </div>
