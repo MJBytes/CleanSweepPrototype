@@ -7,43 +7,98 @@
  align-items: center;
  text-align: center;
  padding: 10px 10px;
+ margin: 60px auto;
 }
 
 .leftDiv{
  float: left;
+ margin: 60px auto;
 }
 
 .rightDiv{
  float: right;
+ margin: 60px auto;
+}
+
+.rightDiv .leftDev .headingThree p {
+    margin: auto;
 }
 
 .moreAboutUs{
  background-image: url('../img/images/more-about-us_edited.jpg');
  background-repeat: no-repeat;
- height: 430px;
+ background-position: center;
+ height: 500px;
  width: 100%;
  clear: both;
- padding: 10px 10px;
- padding-left: 10px;
- padding-right: 10px;
+ padding: 10px;
+ overflow: hidden;
 }
 
 .aboutAlignLeft{
- text-align: left;
+    text-align: center;
+    margin: 70px auto;
+    border-radius: 10px;
+    font-size: 40px;
+    color: #fff;
+    background-color: rgba(80, 100, 89, 0.7);
+    max-width: 80%;
+}
+
+.moreAboutContent {
+    padding: 20px;
+    color: #fff;
+    background-color: rgba(80, 100, 89, 0.7);
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 80%;
 }
 
 .moreAboutParagr{
- justify-content: center;
- align-items: center;
- text-align: center;
+    text-align: center;
+    margin: 0;
+    word-wrap: break-word;
 }
 
-@media (max-width: 740px) {
-    .leftDiv, .rightDiv, .moreAboutUs {
-        display: block;
-        width: 100%;
-        padding: 10px;
-        float: none; /* Ensure no float */
-        margin: 0 auto; /* Center the div */
+@media (max-width: 830px) {
+    .leftDiv, .rightDiv {
+        width: 90%;
+        margin: auto; /* Center the div */
+    }
+
+    .moreAboutUs {
+        height: auto;
+    }
+
+    .aboutAlignLeft {
+        margin: 50px auto;
+        max-width: 90%;
+    }
+
+    .moreAboutContent {
+        margin: 20px auto; 
+        max-width: 90%; 
+        padding: 20px; 
+    }
+
+    .leftDiv img,
+    .rightDiv img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: -50px;
+    }
+}
+
+@media (min-width: 1564px) {
+    .aboutAlignLeft {
+        margin: 100px 600px 80px 600px;
+    }
+
+    .leftDiv{
+        margin-left: 10%;
+    }
+
+    .rightDiv{
+        margin-right: 10%;
     }
 }
