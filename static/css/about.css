@@ -21,29 +21,31 @@
 .moreAboutUs{
  background-image: url('../img/images/more-about-us_edited.jpg');
  background-repeat: no-repeat;
+ background-position: center;
  height: 500px;
  width: 100%;
  clear: both;
- padding-left: 10px;
- padding-right: 10px;
+ padding: 10px;
  overflow: hidden;
 }
 
 .aboutAlignLeft{
     text-align: center;
-    margin: 50px 200px;
+    margin: 70px auto;
     border-radius: 10px;
     font-size: 40px;
     color: #fff;
     background-color: rgba(80, 100, 89, 0.7);
+    max-width: 80%;
 }
 
 .moreAboutContent {
     padding: 20px;
     color: #fff;
     background-color: rgba(80, 100, 89, 0.7);
-    margin: 60px 40px;
+    margin: 20px auto;
     border-radius: 10px;
+    max-width: 80%;
 }
 
 .moreAboutParagr{
@@ -53,9 +55,30 @@
 }
 
 @media (max-width: 830px) {
-    .leftDiv, .rightDiv, .moreAboutUs {
+    .leftDiv, .rightDiv {
         width: 100%;
         padding: 40px;
         margin: 0 auto; /* Center the div */
+    }
+
+    .moreAboutUs {
+        height: auto;
+    }
+
+    .aboutAlignLeft {
+        margin: 50px auto;
+        max-width: 90%;
+    }
+
+    .moreAboutContent {
+        margin: 20px auto; 
+        max-width: 90%; 
+        padding: 20px; 
+    }
+}
+
+@media (min-width: 1564px) {
+    .aboutAlignLeft {
+        margin: 100px 600px 80px 600px;
     }
 }
