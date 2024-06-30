@@ -11,6 +11,7 @@
 
 .leftDiv{
  float: left;
+ margin-bottom: 60px;
 }
 
 .rightDiv{
@@ -20,30 +21,41 @@
 .moreAboutUs{
  background-image: url('../img/images/more-about-us_edited.jpg');
  background-repeat: no-repeat;
- height: 430px;
+ height: 500px;
  width: 100%;
  clear: both;
- padding: 10px 10px;
  padding-left: 10px;
  padding-right: 10px;
+ overflow: hidden;
 }
 
 .aboutAlignLeft{
- text-align: left;
+    text-align: center;
+    margin: 50px 200px;
+    border-radius: 10px;
+    font-size: 40px;
+    color: #fff;
+    background-color: rgba(80, 100, 89, 0.7);
+}
+
+.moreAboutContent {
+    padding: 20px;
+    color: #fff;
+    background-color: rgba(80, 100, 89, 0.7);
+    margin: 60px 40px;
+    border-radius: 10px;
 }
 
 .moreAboutParagr{
- justify-content: center;
- align-items: center;
- text-align: center;
+    text-align: center;
+    margin: 0;
+    word-wrap: break-word;
 }
 
-@media (max-width: 740px) {
+@media (max-width: 830px) {
     .leftDiv, .rightDiv, .moreAboutUs {
-        display: block;
         width: 100%;
-        padding: 10px;
-        float: none; /* Ensure no float */
+        padding: 40px;
         margin: 0 auto; /* Center the div */
     }
 }
