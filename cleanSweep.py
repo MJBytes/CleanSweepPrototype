@@ -9,8 +9,6 @@ from sqlalchemy.exc import SQLAlchemyError
 from updateProfile import update_profile
 from datetime import date
 
-
-
 def create_app():
     app = Flask(__name__)
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users_profile.db"
