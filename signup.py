@@ -20,10 +20,8 @@ class Signup:
         db.session.add(user)
         db.session.commit()
 
-        #Login user
-        login_user(user)
+        flash('Account created successfully!')
 
-        flash('Record was successfully added')
-        return redirect(url_for('profile'))
+        return redirect(url_for('main'))
     
     
