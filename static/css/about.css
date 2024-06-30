@@ -7,15 +7,21 @@
  align-items: center;
  text-align: center;
  padding: 10px 10px;
+ margin: 60px auto;
 }
 
 .leftDiv{
  float: left;
- margin-bottom: 60px;
+ margin: 60px auto;
 }
 
 .rightDiv{
  float: right;
+ margin: 60px auto;
+}
+
+.rightDiv .leftDev .headingThree p {
+    margin: auto;
 }
 
 .moreAboutUs{
@@ -56,9 +62,8 @@
 
 @media (max-width: 830px) {
     .leftDiv, .rightDiv {
-        width: 100%;
-        padding: 40px;
-        margin: 0 auto; /* Center the div */
+        width: 90%;
+        margin: auto; /* Center the div */
     }
 
     .moreAboutUs {
@@ -75,10 +80,25 @@
         max-width: 90%; 
         padding: 20px; 
     }
+
+    .leftDiv img,
+    .rightDiv img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: -50px;
+    }
 }
 
 @media (min-width: 1564px) {
     .aboutAlignLeft {
         margin: 100px 600px 80px 600px;
+    }
+
+    .leftDiv{
+        margin-left: 10%;
+    }
+
+    .rightDiv{
+        margin-right: 10%;
     }
 }
