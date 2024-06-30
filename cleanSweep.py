@@ -130,8 +130,6 @@ def clear_tasks():
     # Redirect to the task view to ensure the counters are reset
     return redirect(url_for('task_view'))
 
-
-
 @app.route('/contact')
 def contact():
     return render_template("contact.html")
