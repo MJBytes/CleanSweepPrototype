@@ -69,8 +69,7 @@ def profile():
 @login_required
 def task_view():
     if request.method == 'POST':
-        # No need to check session['user_id'], use current_user from Flask-Login
-        user_id = current_user.id  # Assuming current_user is a User object with an 'id' attribute
+        user_id = current_user.id
         task_type = request.form['task-type']
         task_date = request.form['task-date']
         task_frequency = request.form['task-frequency']
@@ -103,14 +102,35 @@ def task_view():
 
         return redirect(url_for('task_view'))
 
-    todays_tasks_count = Task.query.filter_by(date_created=date.today()).count()
-    completed_tasks_count = Task.query.filter_by(is_completed=True).count()
-    uncompleted_tasks_count = Task.query.filter_by(is_completed=False).count()
+    # Update the task counts to be shown on the page
+    todays_tasks_count = Task.query.filter_by(user_id=current_user.id, date_created=date.today()).count()
+    completed_tasks_count = Task.query.filter_by(user_id=current_user.id, is_completed=True).count()
+    uncompleted_tasks_count = Task.query.filter_by(user_id=current_user.id, is_completed=False).count()
 
     return render_template("tasks.html",
                            todays_tasks_count=todays_tasks_count,
                            completed_tasks_count=completed_tasks_count,
                            uncompleted_tasks_count=uncompleted_tasks_count)
+
+@app.route('/clear_tasks', methods=['POST'])
+@login_required
+def clear_tasks():
+    user = current_user
+
+    try:
+        # Delete all tasks associated with the user
+        Task.query.filter_by(user_id=user.id).delete()
+        db.session.commit()
+
+        flash('All tasks cleared successfully!', 'success')
+    except SQLAlchemyError as e:
+        db.session.rollback()
+        flash(f'Failed to clear tasks: {str(e)}', 'error')
+
+    # Redirect to the task view to ensure the counters are reset
+    return redirect(url_for('task_view'))
+
+
 
 @app.route('/contact')
 def contact():

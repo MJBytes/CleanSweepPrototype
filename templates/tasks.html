@@ -90,6 +90,12 @@
             <br>
             <button type="submit">Add Task</button>
         </form>
+
+        <!-- Clear All Tasks Button within Popup -->
+        <form action="{{ url_for('clear_tasks') }}" method="post">
+            <button type="submit" class="button">Clear All Tasks</button>
+        </form>
+
     </div>
 </div>
 
