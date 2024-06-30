@@ -3,7 +3,6 @@ from flask_login import UserMixin
 from datetime import date
 
 db = SQLAlchemy()
-
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(100), unique=True, nullable=False)
@@ -15,6 +14,7 @@ class User(UserMixin, db.Model):
 
     def __repr__(self):
         return f'<User {self.email}>'
+
 
 class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)

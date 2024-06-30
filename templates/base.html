@@ -21,6 +21,7 @@
     {% block head %}{% endblock %}
 </head>
 
+
 <body>
 <!-- HEADER -->    
 <header>
@@ -32,7 +33,7 @@
             <ul class="links">                        <!-- Header page links -->
                 <li><a href="{{ url_for('main') }}">Home</a></li>
                 <li><a href="{{ url_for('profile') }}">Profile</a></li>
-                <li><a href="{{ url_for('tasks') }}">Tasks</a></li>
+                <li><a href="{{ url_for('task_view') }}">Tasks</a></li>
                 <li><a href="{{ url_for('about') }}">About</a></li>
                 <li><a href="{{ url_for('contact') }}">Contact</a></li>
                 <li><a href="{{ url_for('tips') }}">Tips</a></li>
@@ -55,7 +56,7 @@
     </div>
     <div class="dropdown_menu">                                    <!-- Drop Down Links -->
         <li><a href="{{ url_for('profile') }}">Profile</a></li>
-        <li><a href="{{ url_for('tasks') }}">Tasks</a></li>
+        <li><a href="{{ url_for('task_view') }}">Tasks</a></li>
         <li><a href="{{ url_for('about') }}">About</a></li>
         <li><a href="{{ url_for('contact') }}">Contact</a></li>
         <li><a href="{{ url_for('tips') }}">Tips</a></li>
@@ -157,7 +158,7 @@
             <h3>Links <div class="underline"><span></span></div> </h3>
             <ul>
                  <li><a href="{{ url_for('profile') }}">Profile</a></li>
-                <li><a href="{{ url_for('tasks') }}">Tasks</a></li>
+                <li><a href="{{ url_for('task_view') }}">Tasks</a></li>
                 <li><a href="{{ url_for('about') }}">About Us</a></li>
                 <li><a href="{{ url_for('contact') }}">Contact</a></li>
                 <li><a href="{{ url_for('tips') }}">Tips</a></li>
