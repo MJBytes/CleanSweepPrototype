@@ -10,7 +10,6 @@ from updateProfile import update_profile
 from datetime import date
 
 
-
 def create_app():
     app = Flask(__name__)
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users_profile.db"
@@ -22,7 +21,7 @@ def create_app():
 #creating and initializing login manager that goes with flask-login
     login_manager = LoginManager()
     login_manager.init_app(app)
-    login_manager.login_view = 'profile'
+    login_manager.login_view = 'main'
 
     @login_manager.user_loader
     def load_user(user_id):
@@ -49,8 +48,6 @@ def main():
         return render_template("home.html")
 
     return redirect(url_for('main'))
-    
-
   
 @app.route('/profile', methods=['GET', 'POST'])
 @login_required
@@ -65,8 +62,7 @@ def profile():
             return update_instance.post()
 
     return render_template('profile.html', user=user)
-
-    
+   
 @app.route('/tasks', endpoint='tasks')
 @login_required #ensure only logged in users can access task page
 def task_view():
@@ -120,7 +116,6 @@ def task_view():
                            completed_tasks_count=completed_tasks_count,
                            uncompleted_tasks_count=uncompleted_tasks_count)
 
-
 @app.route('/contact')
 def contact():
     return render_template("contact.html")
@@ -133,14 +128,12 @@ def about():
 def tips():
     return render_template("tips.html")
 
-@app.route('/logout')                                   # When user logs out, it redirects to
+@app.route('/logout')                   # When user logs out, it redirects to home
 @login_required
 def logout():
     logout_user()
     flash('You have been logged out.', 'success')
     return redirect(url_for('main'))
-
-
 
 if __name__ == '__main__':
     app.run(debug=True)
