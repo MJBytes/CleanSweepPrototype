@@ -37,7 +37,7 @@
                 <li><a href="{{ url_for('contact') }}">Contact</a></li>
                 <li><a href="{{ url_for('tips') }}">Tips</a></li>
             </ul>
-            {% if 'user_id' in session %}                                            <!-- Functionality for session check whether user is logged in or out  -->
+            {% if current_user.is_authenticated %}                                            <!-- Functionality for session check whether user is logged in or out  -->
                 <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>      <!-- Logout Button -->
             {% else %}
                 <a href="#" class="login-btn" onclick="openLoginPopup()">Login</a>   <!-- Login Button -->

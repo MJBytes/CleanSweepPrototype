@@ -1,4 +1,5 @@
 from flask import request, flash, redirect, url_for
+from flask_login import login_user
 from models import db, User
 
 class Signup:
@@ -19,5 +20,10 @@ class Signup:
         db.session.add(user)
         db.session.commit()
 
+        #Login user
+        login_user(user)
+
         flash('Record was successfully added')
         return redirect(url_for('profile'))
+    
+    
