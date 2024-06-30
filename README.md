@@ -45,6 +45,7 @@ Step 5: Install denpendencies - with the virtual enviroment activated, run:
 
     pip install flask flask_sqlalchemy flask_login
 and
+   
     pip install flask_login
 
 Step 6: ensure you are on the main branch in your terminal. You can switch to the main branch by typing:
