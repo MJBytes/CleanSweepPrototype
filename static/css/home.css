@@ -13,15 +13,17 @@
 
 @media (max-width: 890px) {
     .signup-container {
-        width: 90%;                      /* Width for smaller screens */
-        padding: 10px;
+        width: auto;                      /* Width for smaller screens */
+        padding: 10px 25px 30px 20px;
         flex-direction: column;          /* To adjust the style of welcome message and signup to column */
         border-radius: 10px;
         margin-bottom: -300px;
     }
 
-    .signup-container .form-content {
-        margin-top: -30px;
+    .signup-container .welcome-msg h1,  /* Centers left text when scaled down */
+    .signup-container h2 {
+        text-align: center;
+        padding-right: 40px;
     }
 }
 
@@ -29,13 +31,21 @@
     .signup-container {
         width: 100%;                    /* Width for larger screens */
         padding: 30px; 
-        /* add code here for text at wider screen size*/
+        flex-direction: row; 
+        justify-content: space-between;
+    }
+
+    .signup-container .welcome-msg {
+        flex: 1;                         /* Allows welcome message to take up available space */
+        margin: 0 auto; 
+        max-width: 60%; 
     }
 
     .signup-container .form-content {
         margin-left: 90px;
-        margin-right: 60px;
-        flex: 2;
+        margin-right: 75px;
+        width: 30%;
+       /* flex: 2; */
     }
 }
 
@@ -47,8 +57,7 @@
 
 .signup-container .welcome-msg h1,
 .signup-container h2 {                   /* Main Headings */
-    text-align: center;
-    margin: 40px 0 40px 30px;
+    margin: 40px 0 40px 50px;
     color: white;
 }
 
@@ -58,15 +67,16 @@
 
 .signup-container .form-content {             /* Right Content */
     background: rgba(101, 121, 101, 0.8);
-    padding: 20px;
+    padding: 15px 30px 30px 40px;
     border-radius: 10px;
     box-sizing: border-box;
 }
 
 .signup-container .input-field {          /* Email & Password Box Fields */
     height: 50px;
-    width: 88%;
+    width: auto;
     margin-top: 20px;
+    margin-right: 40px;
     position: relative;
 }
 
@@ -121,7 +131,7 @@
 }
 
 .signup-container button {          /* Signup Button */
-    width: 90%;
+    width: 98%;
     outline: none;
     border: none;
     font-size: 1rem;
@@ -139,8 +149,9 @@
     background: #203324;
 }
 
-.signup-container .policy-text {              /* Policy Stying */
+.signup-container .policy-text {         /* Policy Stying */
     display: flex;
+    font-size: 0.80rem;
 }
 
 .signup-container .policy-text input {
@@ -149,67 +160,132 @@
     margin-right: 7px;
 }
 
-/* TANISHA'S CODE */
-
-/* RICHARD'S CODE */
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+.signup-container .policy-text a {
+    font-size: 0.80rem;
 }
 
-.section {
+/* MAIN CONTENT - OPTIONS */
+
+.about {
+    background: rgba(182, 196, 182, 0.4); 
+    padding-top: 20px;
+    height: 60px;
+    margin: 40px 0;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+}
+
+.options {                                /* Secondary Heading */
+    width: 80%;
+    margin: auto;
+    margin-top: 60px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 15px;
+}
+
+.options h1 {
+    margin-top: 80px;
+}
+
+.options .row {
+    margin-top: 80px;
     display: flex;
     justify-content: space-between;
-
-    width: 80%;
-    max-width: 1200px;
-    margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
-.text-left, .text-right {
-    flex: 1;
-    padding: 40px;
+.options .about-col {
+    flex-basis: 31%;
+    background: #fff3f3;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
 }
 
-.image-left {
-    flex: 1;
-    padding: 10px;
-    margin-right: -20px; /* Negative margin to move image to the right */
+.options .about-col h3 {
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
 }
 
-.image-right {
-    flex: 1;
-    padding: 10px;
-    margin-left: -20px; /* Negative margin to move image to the left */
+.about-col:hover {                                /* Box Highlight */
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.21);
 }
 
-.image-left img, .image-right img {
-    width: 100%; /* Adjust as needed */
-    max-width: 130%; /* Adjust as needed */
-    height: auto;
-}
-
-.text-left h3, .text-right h3 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 30px;
-}
-
-
-.text-left p, .text-right p {
-    font-size: 16px;
-    color: #666;
-    line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-    .section {
-        flex-direction: column; /* Stack sections vertically on smaller screens */
-        text-align: center; /* Center text content */
+@media(max-width: 700px) {                        /* Mobile responsiveness for column style */
+    .row {
+        flex-direction: column;
     }
 }
 
-/* RICHARD'S CODE */
+@media(max-width: 930px) {
+    .options h1 {
+        margin-top: 100px;
+    }
+}
+
+/* DESCRIPTION */
+
+.description {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.description .descript-container {
+    background: rgba(182, 196, 182, 0.4); 
+    padding-top: 15px;
+    height: 70px;
+    margin: 20px 0;
+    width: 100%;
+    font-size: 25px;
+}
+
+.description h1 {
+    margin-top: 40px;
+}
+.description p {
+    width: 80%;
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: -15px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+.description .row {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.descript-column {
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin: 30px 30px 70px;
+    height: 70%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+.descript-column img {           /* IMAGE */
+    width: 100%;
+}
+
+@media(max-width: 616px) {      /* RESPONSIVE TEXT */
+    .description p {
+        margin-top: 120px;
+    }
+
+    .descript-column {           /* IMAGE RESPONSIVENESS */
+        margin-top: 10px;
+    }
+}

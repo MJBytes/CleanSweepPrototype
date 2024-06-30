@@ -6,6 +6,9 @@
 
 {% block head %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 {% endblock %}
 
@@ -16,6 +19,24 @@
 {% endblock %}
 
 {% block content %}
+
+<!--For any flash messages that will apear in content-->
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+
+<ul class="flashes contactUL">
+  {% for category, message in messages %}
+    <li class="flashItem contactLI"> 
+        <img class="iconSpesification" src="{{ url_for('static', filename='/img/icons/warning.png') }}" alt="Warning Icon"> 
+        <span class="flashMessage">{{ message }}</span>
+    </li>
+  {% endfor %}
+</ul>
+
+{% endif %}
+{% endwith %}  
+
+
 <div class="profile-container">
     <div class="profile-form">
         <div class="profile-picture-container">
@@ -23,34 +44,36 @@
             <input type="file" id="profile-picture-upload" accept="image/*" onchange="loadFile(event)">
         </div>
 
-        <form>
+        <form action=" {{ url_for('profile') }} " method="post">
             <label for="name">Name*</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" value="{{ user.name }}" required>
 
             <label for="email">Email*</label>
-            <input type="text" id="email" name="email" required>
+            <input type="text" id="email" name="email" value="{{ user.email }}" required>
 
             <label for="dob-day">Date of Birth*</label>
-            <div class="dob-dropdowns">
-                <select id="dob-day" name="dob-day" required>
-                    {% for day in range(1, 32) %}
-                    <option value="{{ day }}">{{ day }}</option>
-                    {% endfor %}
-                </select>
-                <select id="dob-month" name="dob-month" required>
-                    {% set months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %}
-                    {% for month in months %}
-                    <option value="{{ month }}">{{ month }}</option>
-                    {% endfor %}
-                </select>
-                <select id="dob-year" name="dob-year" required>
-                    {% for year in range(1920, 2025) %}
-                    <option value="{{ year }}">{{ year }}</option>
-                    {% endfor %}
-                </select>
+<div class="dob-dropdowns">
+    <select id="dob-day" name="dob-day" required>
+        {% for day in range(1, 32) %}
+        <option value="{{ day }}" {% if user.birth_date and day == user.birth_date.day %}selected{% endif %}>{{ day }}</option>
+        {% endfor %}
+    </select>
+    <select id="dob-month" name="dob-month" required>
+        {% set months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %}
+        {% for month in months %}
+        <option value="{{ month }}" {% if user.birth_date and month == user.birth_date.strftime('%b') %}selected{% endif %}>{{ month }}</option>
+        {% endfor %}
+    </select>
+    <select id="dob-year" name="dob-year" required>
+        {% for year in range(1920, 2025) %}
+        <option value="{{ year }}" {% if user.birth_date and year == user.birth_date.year %}selected{% endif %}>{{ year }}</option>
+        {% endfor %}
+    </select>
             </div>
-            <input type="submit" value="Save Changes">
+            <button type="submit" name="action" value="updateProfile" >Save Changes</button>
         </form>
+
+
         <div id="graph-container">
             <canvas id="myChart" style="width:100%;max-width:800px;height:400px;"></canvas>
             <script>
@@ -122,7 +145,7 @@
     </div>
 </div>
 
-       <!-- Adding some JavaScript for Profile Picture to upload -- >
+      
 <script>
     var loadFile = function(event) {
         var image = document.getElementById('profile-picture');

@@ -288,7 +288,8 @@ body {
     display: none;
 }
 
-.navbar .login-btn {               /* Login Button */
+.navbar .login-btn,
+.navbar .logout-btn {               /* Login Button */
     background-color: #516d55;
     color: #fff;
     padding: 5px 20px;
@@ -306,14 +307,18 @@ body {
     transition: scale 0.2 ease;     /* Login Button Movement When Hovered */
 }
 
-.navbar .login-btn:hover {          /* Login Button Hover */
+.navbar .login-btn:hover,
+.navbar .logout-btn:hover {          /* Login Button Hover */
     scale: 1.05;
     background: #3f5843;
 }
 
+.navbar .login-btn:active,
 .navbar .login-btn:active {         
     scale: 0.95; 
 }
+
+
 
 /* DROP DOWN MENU */
 
@@ -324,7 +329,7 @@ body {
     top: 70px;
     height: 0;
     width: 400px;
-    background: rgba(7, 8, 7, 0.1);
+    background: rgba(254, 255, 254, 0.1);
     backdrop-filter: blur(15px);
     border-radius: 10px;
     overflow: hidden;
@@ -342,7 +347,8 @@ body {
     justify-content: center;
 }
 
-.dropdown_menu .login-btn {              /* Dropdown Login Button */
+.dropdown_menu .login-btn,
+.dropdown_menu .logout-btn {              /* Dropdown Login Button */
     background-color: #516d55; 
     color: #fff;
     padding: 5px 20px;
@@ -359,23 +365,25 @@ body {
     transition: scale 0.2 ease;
 }
 
-.dropdown_menu .login-btn:hover {
+.dropdown_menu .login-btn:hover,
+.dropdown_menu .logout-btn:hover {
     scale: 1.05;
     background: #3f5843;
 }
 
+.dropdown_menu .login-btn:active,
 .dropdown_menu .login-btn:active {
     scale: 0.80;
 }
 
 .dropdown_menu a {
-    color: black;
+    color: #fff;
     text-decoration: none;
     cursor: pointer;
 }
 
 .dropdown_menu a:hover {
-    color: white;
+    color: black;
 }
 
 /* RESPONSIVE NAV/HEADER DESIGN */
@@ -410,9 +418,21 @@ body {
     }
 }
 
+@media (min-width: 680px) and (max-width: 891px) {
+    .navbar {
+        height: 400px;
+    }
+}
+
+@media (min-width: 891px) and (max-width: 1149px) {
+    .navbar {
+        height: 200px;
+    }
+}
+
 /* RESPONSIVE HEIGHT OF NAVBAR IMAGE WHEN PAGE SCALED UP */
 
-@media (min-width: 1100px) {
+@media (min-width: 1150px) {
     .navbar {
         height: 10px;
     }
@@ -449,7 +469,7 @@ header {                     /* If we don't want the left-right margin we can re
 main {
     max-width: 1200%;
     position: relative;
-    margin: 30px;
+    margin: 15px;
 }
 
 /* FOOTER */
