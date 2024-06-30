@@ -22,7 +22,7 @@ def create_app():
 #creating and initializing login manager that goes with flask-login
     login_manager = LoginManager()
     login_manager.init_app(app)
-    login_manager.login_view = 'profile'
+    login_manager.login_view = 'main'  #This was set to profile in Dev but caused multiple errors
 
     @login_manager.user_loader
     def load_user(user_id):
@@ -67,29 +67,23 @@ def profile():
     return render_template('profile.html', user=user)
 
     
-@app.route('/tasks', endpoint='tasks')
-@login_required #ensure only logged in users can access task page
+@app.route('/tasks', methods=['GET', 'POST'])
+@login_required
 def task_view():
     if request.method == 'POST':
-        if 'user_id' not in session:
-            flash('Please log in to create tasks', 'error')
-            return redirect(url_for('main'))
-
-        user_id = session['user_id']
+        # No need to check session['user_id'], use current_user from Flask-Login
+        user_id = current_user.id  # Assuming current_user is a User object with an 'id' attribute
         task_type = request.form['task-type']
         task_date = request.form['task-date']
         task_frequency = request.form['task-frequency']
         task_area = request.form['task-area']
 
-        # Convert task_date to a Python date object if necessary
         try:
             task_date = datetime.strptime(task_date, '%Y-%m-%d').date()
         except ValueError:
             flash('Invalid date format for task creation', 'error')
-            return redirect(url_for('tasks'))
+            return redirect(url_for('task_view'))
 
-        # This is to ensure description is provided or set a default value
-        # To keep it simple, setting it to an empty string if not provided
         description = request.form.get('task-description', '')
 
         new_task = Task(
@@ -109,7 +103,7 @@ def task_view():
             db.session.rollback()
             flash(f'Failed to create task: {str(e)}', 'error')
 
-        return redirect(url_for('tasks'))
+        return redirect(url_for('task_view'))
 
     todays_tasks_count = Task.query.filter_by(date_created=date.today()).count()
     completed_tasks_count = Task.query.filter_by(is_completed=True).count()
@@ -119,7 +113,6 @@ def task_view():
                            todays_tasks_count=todays_tasks_count,
                            completed_tasks_count=completed_tasks_count,
                            uncompleted_tasks_count=uncompleted_tasks_count)
-
 
 @app.route('/contact')
 def contact():
